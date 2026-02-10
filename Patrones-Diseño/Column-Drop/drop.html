@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        header, footer{
+            background-color: black;
+            width: 100%;
+            height: 50px;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+        footer{
+            order: 6;
+        }
+
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .c1,.c2,.c3,.c4,.c5{
+            width: 100%;
+            min-width: 150px;
+            height: 200px;
+        }
+
+        .c1 {background-color: #210a67;}
+        .c2 {background-color: #b40471;}
+        .c3 {background-color: #48b2ff;}
+        .c4 {background-color: #caf1f7;}
+        .c5 {background-color: #fffbf4;}
+        
+        @media (min-width: 600px){
+            .c1{
+                width: 24%; order: 1; height: 250px;
+            }
+            .c2{
+                width: 74%; order: 2; height: 250px;
+            }
+            .c3{
+                width: 100%; order: 3; height: 100px;
+            }
+            .c4{
+                width: 100%; order: 4; height: 100px;
+            }
+            .c5{
+                width: 100%; order: 5; height: 100px;
+            }
+        }
+
+        @media (min-width: 1000px){
+            .c1{
+                width: 30%; 
+            }
+            .c2{
+                width: 38%; 
+            }
+            .c3{
+                width: 30%; 
+            }
+            .c4, .c5{
+                width: 49%; 
+            }
+
+            .c1, .c2, .c3{
+                height: 67vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>Header</header>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+        <div class="c5"></div>
+        <footer>Footer</footer>
+    </main>
+    
+</body>
+</html>

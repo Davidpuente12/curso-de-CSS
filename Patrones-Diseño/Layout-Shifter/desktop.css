@@ -1,0 +1,29 @@
+.container{
+    width: 1000px;
+    margin: auto;
+}
+
+.c1{
+    width: 25%;
+    height: 50vh;
+    order: 3;
+}
+
+.c2{
+    width: 74%;
+    height: 50vh;
+    order: 2;
+}
+
+.c3,.c4{
+    height: 50%;
+}
+
+.c5, .c6{
+    width: 49.5%;
+    order: 1;
+}
+
+footer{
+    order: 5;
+}

@@ -1,0 +1,16 @@
+.c1{
+    width: 25%;
+    height: 50vh;
+}
+.c2{
+    width: 74%;
+    /* height: 200px; */
+}
+.c3,.c4{
+    height: 25vh;
+}
+
+.c5, .c6{
+    width: 49%;
+    height: 230px;
+}
