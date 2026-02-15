@@ -1,0 +1,179 @@
+/*____________________________ TRANSFORMACIONES */
+
+.container-for-transform{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #272727;
+    margin: 20px;
+}
+.container-for-transform div{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+/* transition */
+.transition{transition: 2s}
+
+/* traslate */
+.translateY:hover{ transform: translateY(-30px);}
+.translate:hover{ transform: translate(32px, -32px);}
+.translateX:hover{ transform: translateX(100%);}
+.translate2:hover{ transform: translate(32px, 32px);}
+.translateY2:hover{ transform: translateY(30px);}
+
+/* scale */
+.scale:hover{transform: scale(2);}
+.scale2:hover{transform: scale(0.1);}
+.scaleY:hover{transform: scaleY(1.5);}
+.scaleX:hover{transform: scaleX(1.5);}
+.scaleEspejo:hover{transform: scale(-1);}
+
+/* skew */
+.skewX:hover{transform: skewX(70deg); transition: 4s;}
+.skewX2:hover{transform: skewX(-70deg); transition: 4s;}
+.skewY:hover{transform: skewY(70deg); transition: 4s;}
+.skewY2:hover{transform: skewY(-70deg); transition: 4s;}
+.skew:hover{transform: skew(60deg, 60deg); transition: 4s;}
+
+/* rotate */
+.rotateX{transform: rotateX(1800deg); transition: 50s;}
+.rotateY{transform: rotateY(1800deg); transition: 50s;}
+.rotateZ{transform: rotateZ(1800deg); transition: 50s;}
+.rotate3d{transform: rotate3d(1, 1, 1, 1800deg); transition: 50s;}
+.rotate-T-O{
+    transform: rotate(360deg);
+    transform-origin: left;
+    transition: 10s;
+}
+
+/*__________________________ TRANSFORMACIONES 3D */
+
+/* container */
+.container-transform-3D{
+    width: 100px;
+    height: 100px;
+    background-color: #272727;
+    margin: 20px 20px 50px;
+    font-size: 1.6rem;
+}
+.perspective{
+    perspective: 150px;
+}
+.transform-style{
+    perspective: 150px;
+    transform-style: preserve-3d;
+}
+
+/* item */
+.item-transform-style{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient( 90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}
+
+/* backface-visibility */
+.container-backface-visibility{
+    width: 200px;
+    height: 200px;
+    font-size: 1.6rem;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.container-backface-visibility:hover{
+    transform: rotateY(1800deg);
+    transition: 40s;
+}
+.item-front-backface-visibility{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(90deg, 
+        rgba(131, 58, 180, 1) 0%, 
+        rgba(253, 29, 29, 1) 50%, 
+        rgba(252, 176, 69, 1) 100%
+    );
+    backface-visibility: hidden;
+} 
+
+.item-back-backface-visibility{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--gradientBlue);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+} 
+
+/*_________________________ TRANSICIONES */
+.element-for-transition{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: #001643;
+    cursor: pointer;
+}
+.trasition{
+    transition: 2s;
+}
+
+.element-for-transition:nth-child(1):hover{
+    background-color: rgb(117, 35, 35);
+    transform: translateX(250%);
+}
+.element-for-transition:nth-child(2):hover{
+    background-color: rgb(117, 35, 35);
+    transform: translateX(250%);
+    transition: 4s;
+}
+.element-for-transition:nth-child(3):hover{
+    background-color: rgb(117, 35, 35);
+    transform: translateX(250%);
+    transition: 2s;
+}
+.element-for-transition:nth-child(4):not(:hover){
+    background-color: rgb(117, 35, 35);
+    transform: translateX(250%);
+    transition: 2s;
+}
+
+/* transicion por propiedad */
+
+.element-to-transition-by-property{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    background: #272727;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.element-to-transition-by-property.uno:hover{
+    width: 100%;
+    background: var(--doger);
+    transition: 
+        width 5s ease-out 1s, 
+        background 2s;
+}
+
+.element-to-transition-by-property.dos:hover{
+    width: 100%;
+    background: var(--morado);
+    transition-property: width, background;
+    transition-duration: 5s, 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s, 0s;
+}

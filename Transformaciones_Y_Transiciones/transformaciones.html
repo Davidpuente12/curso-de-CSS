@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <link rel="stylesheet" href="/Transformaciones_Y_Transiciones/transformaciones.css">
+</head>
+<body>
+    <!-- transformaciones -->
+    <section id="transformaciones">
+        <h2 class="sticky">Transformaciones</h2>
+        <p>
+            Las transformaciones son una de las características de CSS que se 
+            introducen en el lenguaje para convertir las hojas de estilo en un sistema 
+            capaz de realizar efectos visuales 2D y 3D. Con ellas podemos hacer cosas 
+            como mover elementos, rotarlos, aumentarlos o disminuirlos y otras transformaciones relacionadas o combinadas.
+        </p>
+
+        <h3 class="sky">transform</h3>
+        <p>
+            es una propiedad CSS que sirve para transformar un elemento HTML mediante 
+            funciones determinadas. Estas funciones permitirán trasladar, escalar, rotar o torcer a lo 
+            largo, ancho y profundidad del elemento.
+        </p>
+
+        <h4 class="sky">transform-origin</h4>
+        <p>
+            es una propiedad que nos permite 
+            cambiar el punto de origen de una transformación, que por defecto esta
+            en el centro del elemento establecida a 50% 50%. Dicha función recibe
+            por parámetro la posición de origen de cada eje (X e Y), que podemos
+            indicar con porcentajes o con left, right, top y bottom.
+        </p>
+
+        <h4>Transformaciones 3D</h4>
+        <p>
+            Estas funciones, en la mayoría de los casos, no son más que la incorporación 
+            del eje Z a las anteriores que ya habíamos visto, además de la adición de 
+            una función de atajo 3D para poder utilizarlas todas de una sola vez. <br><br>
+
+            Antes de comenzar a verlas, recordar siempre que el eje X es el eje horizontal, 
+            el eje Y es el eje vertical y el eje Z es el eje de profundidad. Varios 
+            conceptos que se deben tener claros antes de comenzar con el 3D en CSS.
+        </p>
+
+        <h4 class="sky">transform-style</h4>
+        <p>
+            define cómo los elementos hijos de un contenedor transformado se renderizan 
+            en el espacio 3D: pueden mantenerse en un espacio tridimensional independiente 
+            (preserve-3d) o aplanarse en el plano del elemento padre (flat). <br><br>
+            
+            Es clave cuando trabajas con transformaciones 3D y quieres controlar si 
+            los hijos conservan su profundidad o se integran en una sola capa. Su valor 
+            por defecto es flat.
+        </p>
+
+        <h4 class="sky">perspective</h4>
+        <p>
+            La propiedad perspective se utiliza para proveer de profundidad a un 
+            elemento con respecto al usuario y dar la sensación de 3D. El valor que 
+            recibe la propiedad es una longitud (px, rem, etc.) que representa la 
+            profundidad del plano para construir la perspectiva.
+        </p>
+
+        <h4 class="sky">perspective-origin</h4>
+        <p>
+            Por defecto, el origen para las transformaciones 3D está en el centro, 
+            pero se puede modificar con la propiedad perpective-origin. esta es la 
+            encargada de cambiar el origen de la perspectiva, por lo que el usuario 
+            percibirá de diferente forma el elemento.
+        </p>
+
+        <h4>Funciones para transladar</h4>
+        <p>
+            Las funciones de translación son aquellas que realizan una transformación 
+            en la que mueven un elemento de un lugar a otro. Para ello, las utilizaremos 
+            en el interior de la propiedad CSS transform y elegiremos una de las 
+            siguientes funciones de translación. El valor que recibe puede ser una 
+            longitud (px, rem, etc.) o un porcentaje.
+        </p>
+
+        <p>
+            Si especificamos un valor positivo en el eje X (horizontal), lo moveremos 
+            hacia la derecha, y si especificamos un valor negativo, lo moveremos hacia 
+            la izquierda. Ocurre exactamente lo mismo con el eje Y (vertical), que con 
+            valores negativos lo movemos hacia arriba y con valores positivos lo 
+            movemos hacia abajo.
+        </p>
+        
+        <table class="tabla">
+            <tr>
+                <th>Funciones</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">translateX(x)</b></td>
+                <td>Traslada el elemento una distancia de  x horizontalmente.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">translateY(y)</b></td>
+                <td>Traslada el elemento una distancia de  y verticalmente.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">translate(x, y)</b></td>
+                <td>Propiedad de atajo de las dos anteriores.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">translateZ(z)</b></td>
+                <td>Traslada el elemento una distancia de  z en el eje de profundidad.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">translate3d(x, y, z)</b></td>
+                <td>Función de atajo 3D, donde podemos aplicar un  a x, y y z.</td>
+            </tr>
+        </table>
+
+        <h4>Funciones para escalar</h4>
+        <p>
+            Las funciones de escalado son aquellas que realizan una transformación en la 
+            que aumentan o reducen el tamaño de un elemento. Para ello, las utilizaremos 
+            en el interior de la propiedad CSS transform y elegiremos una de las siguientes
+            funciones de escalado. <br><br>
+            
+            El valor que recibe es un número multiplicador al elemento original. Si el 
+            elemento es igual a 1 entonces sigue como el original; mayor a 1 aumenta de 
+            tamaño; y, menor a 1 disminuye de tamaño.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th>Funciones</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">scaleX(x)</b></td>
+                <td>Reescala el elemento un numero de x veces horizontalmente.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">scaleY(y)</b></td>
+                <td>Reescala el elemento un numero de y veces verticalmente.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">scale(x, y)</b></td>
+                <td>Propiedad de atajo de las dos anteriores.</td>
+            </tr>
+        </table>
+
+        <h4>Funciones para Deformar</h4>
+        <p>
+            Por último, las funciones de deformación establecen un ángulo para torcer, 
+            tumbar o inclinar un elemento en 2D. A diferencia de las anteriores, no 
+            tiene función correspondiente para 3D. El valor que recibe es un ángulo para 
+            cada eje en el que el elemento se distorsionará.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th>Funciones</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">skewX(x)</b></td>
+                <td>Establece un angulo al elemento para una deformacion 2D respecto al eje X.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">skewY(y)</b></td>
+                <td>Establece un angulo al elemento para una deformacion 2D respecto al eje Y.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">skew(x, y)</b></td>
+                <td>Propiedad de atajo de las dos anteriores.</td>
+            </tr>
+        </table>
+
+        <h4>Funciones de rotacion</h4>
+        <p>
+            Las funciones de rotación son aquellas que realizan una transformación en 
+            la que giran un elemento respecto a un eje específico. Para ello, las 
+            utilizaremos en el interior de la propiedad CSS transform y elegiremos una 
+            de las siguientes funciones de rotación. <br><br>
+
+            El valor que recibe es un ángulo, por ejemplo, “45deg” (45 grados) o “2rad” 
+            (2 radianes). Los ángulos positivos están en sentido horario, y los 
+            negativos en sentido antihorario.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th style="width: 200px;">Funciones</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">rotateX(x)</b></td>
+                <td>Establece una rotacion al elemento con respecto al eje X.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">rotateY(y)</b></td>
+                <td>Establece una rotacion al elemento con respecto al eje Y.</td>
+            </tr>
+            <tr>
+                <td>
+                    <b class="amarillo">rotateZ(z)</b> |
+                    <b class="amarillo">rotate(z)</b>
+                </td>
+                <td>Establece una rotacion al elemento sobre si mismo.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">rotate3d(x, y, z, deg)</b></td>
+                <td>
+                    Función de atajo, que permite aplicar una rotación a uno o varios ejes.
+                    permite indicar un valor 0 o 1 para activar el eje correspondiente, 
+                    seguido de un número de grados.
+                </td>
+            </tr>
+        </table>
+
+        <!-- codigo -->
+         <div class="controls-consola">
+            <span>Ejecutar</span>
+            <button onclick="ejecutarTransform('traslate')">Traslate</button>
+            <button onclick="ejecutarTransform('scale')">scale</button>
+            <button onclick="ejecutarTransform('skew')">skew</button>
+            <button onclick="ejecutarTransform('rotate')">rotate</button>
+        </div>
+        <div class="codigo">
+            <div id="codigo-css">
+                <p>
+                    <b class="amarillo">element1</b>{<b class="sky">transform</b>: translateY(-30px);} 
+                </p>
+                <p>
+                    <b class="amarillo">element2</b>{<b class="sky">transform</b>: translate(20px, -20px);}
+                </p>
+                <p>
+                    <b class="amarillo">element3</b>{<b class="sky">transform</b>: translateX(50%);}
+                </p>
+                <p>
+                    <b class="amarillo">element4</b>{<b class="sky">transform</b>: translate(20px, 20px);}
+                </p>
+                <p>
+                    <b class="amarillo">element5</b>{<b class="sky">transform</b>: translateY(30px);}
+                </p>
+            </div>
+
+            <div id="circles">
+                <div class="container-for-transform">
+                    <div>click</div>
+                </div>
+
+                <div class="container-for-transform">
+                    <div>click</div>
+                </div>
+
+                <div class="container-for-transform">
+                    <div>click</div>
+                </div>
+
+                <div class="container-for-transform">
+                    <div>click</div>
+                </div>
+
+                <div class="container-for-transform">
+                    <div>click</div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="sky">backface-visibility</h4>
+        <p>
+            permite mostrar la cara posterior de un elemento. Esta propiedad recibe dos 
+            valores: visible (visible) y hidden (oculto); por defecto, su valor es 
+            visible. La cara posterior de un elemento siempre tiene un fondo transparente, 
+            por lo que al ser visible y realizar una transformación en un solo eje, 
+            mostrará un efecto de imagen espejo. En cambio, si el valor es hidden no 
+            mostrará contenido. Con esto podemos realizar que un elemento se muestre al 
+            ocultarse otro, como un efecto de voltear una carta.
+        </p>
+
+        <div class="controls-consola">
+            <span>Ejecutar</span>
+            <button 
+                onclick="ejecutarTransform3D()">
+                perspective y transform-style
+            </button>
+            <button 
+                onclick="ejecutarBackfaceVisibility('backface-visibility')">
+                backface-visibility
+            </button>
+        </div>
+        <!-- codigo -->
+        <div class="codigo">
+            <div id="codigo-backface-visibility">
+                <p>
+                    <b class="amarillo">element1</b>{ <br>
+                    &emsp; <b class="sky">transform</b>: <b class="amarillo2">rotateY</b>(180px) <br>
+                    } 
+                </p>
+                <p>
+                    <b class="amarillo">element2</b>{ <br>
+                    &emsp; <b class="sky">transform</b>: <b class="amarillo2">rotateY</b>(180px); <br>
+                    &emsp; <b class="sky">perspective</b>: 150px; <br>
+                    }
+                </p>
+                <p>
+                    <b class="amarillo">element3</b>{ <br>
+                    &emsp; <b class="sky">transform</b>: <b class="amarillo2">rotateY</b>(180px); <br>
+                    &emsp; <b class="sky">perspective</b>: 150px; <br>
+                    &emsp; <b class="sky">transform-style</b>: <b class="orange">preserve-3d</b>; <br>
+                    }
+                </p>
+            </div>
+            
+            <div id="vista-previa">
+                <div class="container-transform-3D">
+                    <div>Normal</div>
+                </div>
+
+                <div class="container-transform-3D perspective">
+                    <div>Perspective</div>
+                </div>
+
+                <div class="container-transform-3D transform-style">
+                    <div>transform-style</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transiciones -->
+    <section>
+        <h2 class="sticky">Transiciones</h2>
+        <p>
+            Las transiciones CSS son un tipo de animación muy simple, donde se establecen 
+            la forma en la que va a cambiar una o varias propiedades. Por defecto, 
+            en CSS los cambios se producen de forma inmediata y abrupta, por 
+            ejemplo, un cambio de color a otro se cambiaría de forma instantánea. 
+            Utilizando transiciones de CSS podríamos suavizar los cambios, de modo que 
+            se verían poco a poco, de forma más sutil. 
+        </p>
+
+        <h4>Desencadenante de la transición</h4>
+        <p>
+            Por lo general, estas transiciones suelen producirse cuando el usuario 
+            realiza una cierta acción, como hacer click, pasar el mouse por encima, y 
+            otros eventos que podemos capturar mediante <b class="amarillo">pseudo clases de interaccion</b>
+            o tambien podemos añadir clases que contienen las transiciones mediante 
+            <b class="amarillo2">Javascript</b>. <br><br>
+            
+            Para los siguientes ejemplos utilizaremos una de las acciones más básicas:
+            mover el ratón sobre un elemento, esta accion sera atrapada utilizando la 
+            pseudo clase hover.
+        </p>
+
+        <h3 class="sky">transition</h3>
+        <p>
+            Permite definir cómo deben animarse los cambios 
+            en una o varias propiedades de un elemento. En otras palabras, controla la 
+            velocidad y el estilo con que una propiedad pasa de un valor inicial a otro 
+            cuando ocurre un cambio (por ejemplo, al hacer hover). La propiedad transition combina hasta cuatro subpropiedades:
+        </p>
+
+        <div class="sintaxis">
+            <p>Sintaxis 1</p>
+            <p>
+                <b class="sky">transition</b>: 
+                [property] [duration] [timing-function] [delay];
+            </p>
+        </div>
+
+        <div class="sintaxis">
+            <p>Sintaxis 2</p>
+            <p><b class="sky">transition</b>: initial | inherit;</p>
+        </div>
+
+        <table class="tabla">
+            <tr>
+                <th style="width: 280px;">Subpropiedad</th>
+                <th>Descripción</th>
+            </tr>
+        
+            <tr>
+                <td class="sky"><b>transition-property</b></td>
+                <td>Indica qué propiedad(es) CSS se van a animar. (ejemplo: color, width, all).</td>
+            </tr>
+            <tr>
+                <td class="sky"><b>transition-duration</b></td>
+                <td>Define cuanto tiempo dura la transicion, en segundos o milisegundos (1s = 1000ms).</td>
+            </tr>
+            <tr>
+                <td class="sky"><b>transition-timing-function</b></td>
+                <td>Controla la curva de aceleración (cómo progresa la animación en el tiempo).</td>
+            </tr>
+            <tr>
+                <td class="sky"><b>transition-delay</b></td>
+                <td>Establece el tiempo de espera antes de iniciar la transición.</td>
+            </tr>
+        </table>
+
+        <h4>Transición de entrada y salida</h4>
+        <p>
+            Hay dos tipos de transiciones: de entrada y de salida. Las transiciones de 
+            entrada se aplican cuando el estado inicial cambia al estado final 
+            <span class="morado">(se produce la condición: el ratón encima del elemento)</span>, mientras que las 
+            transiciones de salida se aplican cuando se deja de cumplir dicha condición 
+            <span class="morado">(se quita el ratón encima del elemento)</span>, volviendo a su estado inicial. <br><br>
+
+            Por lo general, la transición CSS se coloca en el elemento. En ese caso, aplicaría siempre.
+        </p>
+
+        <div class="codigo margenTop" style="height: 530px;">
+            <div>
+                <!-- iguales -->
+                <b>Transicion de entrada y salida iguales</b>
+                <p>
+                    <b class="amarillo">elemento1</b>{ 
+                    background: blue; 
+                    <b class="sky">transition</b>: 2s; 
+                    }
+
+                    <b class="amarillo">elemento1:hover</b>{ 
+                    background: red;
+                    }
+                </p>
+
+                <!-- diferentes --> <br>
+                <b>Transicion de entrada y salida diferentes</b>
+                <p>
+                    <b class="amarillo">elemento2</b>{ 
+                    background: blue; 
+                    <b class="sky">transition</b>: 2s; 
+                    }
+                
+                    <b class="amarillo">elemento2:hover</b>{
+                        background: red;
+                        <b class="sky">transition</b>: 4s;
+                    }
+                </p>
+
+                <!-- transicion de entrada --> <br>
+                <b>Transicion de entrada</b> <br>
+                <p>
+                    <b class="amarillo">elemento3</b>{ 
+                    background: blue; 
+                    } <br>
+
+                    <b class="amarillo">elemento3:hover</b>{
+                    background: red;
+                    <b class="sky">transition</b>: 2s;
+                    }
+                </p>
+
+                <!-- transicion de salida --> <br>
+                <b>Transicion de salida</b> <br>
+                <p>
+                    <b class="amarillo">elemento4</b>{ 
+                    background: blue; 
+                    } <br>
+
+                    <b class="amarillo">elemento4:not(:hover)</b>{
+                        background: red;
+                        <b class="sky">transition</b>: 2s;
+                    }
+                </p>
+            </div>
+
+            <div>
+                <div class="element-for-transition transition">Entrada y Salida Iguales</div>
+                <div class="element-for-transition transition">Entrada y Salida diferentes</div>
+                <div class="element-for-transition">Entrada</div>
+                <div class="element-for-transition">Salida</div>
+            </div>
+        </div>
+
+        <!-- Transiciones por propiedad -->
+        <h4>Transiciones por propiedad</h4>
+        <p>
+            Es posible indicar las propiedadades CSS que van a tener una transicion. Por 
+            ejemplo, que tarde mucho en cambiar el ancho del elemento, pero muy poco en 
+            cambiar el color de fondo. Para ello, podemos usar la subpropiedad
+            <b class="sky">transition-property</b>, o usar la sintaxis de una sola linea con
+            <b class="sky">transition</b> separando con comas las propiedades que queremos transicionar.
+        </p>
+
+        <table class="tabla tablaValores">
+            <tr>
+                <th>Valor</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>all</td>
+                <td>Aplica la transición a todas las propiedades css.</td>
+            </tr>
+            <tr>
+                <td>none</td>
+                <td>No aplica transición. El cambio se producirá de golpe.</td>
+            </tr>
+            <tr>
+                <td>propiedad css</td>
+                <td>Aplica la transición sólo a la propiedad css especificada.</td>
+            </tr>
+        </table>
+
+        <p>
+            no todas las propiedades CSS son animables (o transicionables). Por norma 
+            general, la mayoría de las propiedades que son cuantificables (valores 
+            numéricos, porcentajes, valores hexadecimales como colores, etc...) son 
+            animables. Por ejemplo, la propiedad background-image para gradientes no se 
+            puede animar actualmente.
+        </p>
+
+        <h4>Curva de aceleracion</h4>
+        <p>
+            La propiedad <b class="sky">transition-timing-function</b> en CSS define la curva de velocidad 
+            de una transición, es decir, cómo cambia la velocidad del efecto a lo largo 
+            de su duración. En otras palabras, controla la aceleración y desaceleración 
+            del cambio de estilo. <br><br>
+
+            Esta pagina te ayudara a establecer parametros personalizados en el valor cubic-bezier: <a href="https://cubic-bezier.com/#.17,.67,.83,.67">cubic-bezier</a>
+        </p>
+        <table class="tabla tablaValores">
+            <tr>
+                <th>Valor</th>
+                <th>Descripción</th>
+            </tr>
+        
+            <tr>
+                <td>linear</td>
+                <td>Velocidad constante de inicio a fin.</td>
+            </tr>
+            <tr>
+                <td>ease</td>
+                <td>(por defecto) Comienza lento, acelera en el medio y termina lento.</td>
+            </tr>
+            <tr>
+                <td>ease-in</td>
+                <td>Comienza lento y acelera hacia el final.</td>
+            </tr>
+            <tr>
+                <td>ease-out</td>
+                <td>Comienza rápido y se desacelera al final.</td>
+            </tr>
+            <tr>
+                <td>ease-in-out</td>
+                <td>Lento al inicio y al final, rápido en el medio.</td>
+            </tr>
+            <tr>
+                <td>steps(n, start/end)</td>
+                <td>Divide la transición en pasos discretos.</td>
+            </tr>
+            <tr>
+                <td>cubic-bezier(x1, y1, x2, y2)</td>
+                <td>Curva personalizada para control total.</td>
+            </tr>
+        </table>
+
+        <div class="codigo margenTop">
+            <div>
+                <p class="margincero">
+                    <b class="amarillo">.elementos</b>{ <br>
+                    <div class="margenIz">
+                        width: 150px; <br>
+                        height: 150px; <br>
+                        background: #272727;
+                    </div>
+                    }
+                </p>
+                <p class="margincero">
+                    <b class="amarillo">.elementos.uno:hover</b>{ 
+                    <div class="margenIz">
+                        width: 100%; <br>
+                        background: var(--doger); <br>
+                        <b class="sky">transition</b>: <br>
+                        &emsp; width 5s <b class="orange">ease-out</b> 1s, <br>
+                        &emsp; background 2s;
+                    </div>
+                    }
+                </p>
+                <p class="margincero">
+                    <b class="amarillo">.elementos.dos:hover</b>{ <br>
+                    <div class="margenIz">
+                        width: 100%; <br>
+                        background: var(--morado); <br>
+                        <b class="sky">transition-property</b>: width, background; <br>
+                        <b class="sky">transition-duration</b>: 5s, 2s; <br>
+                        <b class="sky">transition-timing-function</b>: <b class="orange">linear</b>; <br>
+                        <b class="sky">transition-delay</b>: 1s, 0s;
+                    </div>
+                    }
+                </p>
+                
+            </div>
+            
+            <div>
+                <div class="element-to-transition-by-property uno">transition</div>
+                <div class="element-to-transition-by-property dos">transition-property</div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./transformaciones.js"></script>
+</body>
+</html>

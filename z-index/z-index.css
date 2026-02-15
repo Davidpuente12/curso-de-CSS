@@ -1,0 +1,42 @@
+.codigo p{
+    margin-bottom: 0;
+}
+.codigo button{
+    display: block;
+}
+.codigo button span:nth-child(1){
+    color: var(--sky);
+    font-weight: bold;
+}
+.codigo button span:nth-child(2){
+    color: var(--verde);
+    font-weight: bold;
+}
+
+#container{
+    position: relative;
+}
+
+#container > div{
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    font-size: 30px;
+}
+.itemUno{
+    background: rgb(218, 208, 23);
+}
+.itemDos{
+    background: rgb(37, 114, 203);
+    left: 60px;
+}
+.itemTres{
+    background: rgb(207, 60, 60);
+    left: 120px;
+}
+.z-index{
+    z-index: 4;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-INDEX</title>
+    <link rel="stylesheet" href="/z-index/z-index.css">
+    <link rel="stylesheet" href="/estilo.css">
+
+    <style>
+        .margincero{margin: 0;}
+        .margenIz{margin-left: 25px;}
+    </style>
+</head>
+<body>
+    <section>
+        <h2 class="sticky">Contexto de Apilamiento</h2>
+        
+        <p>El contexto de apilamiento consiste en la superposición de capas o elementos a lo largo del eje Z del navegador. Esto es importante para evitar que un elemento esté ocultando a otro.</p>
+        <p><b>Planos y ejes:</b> el navegador está constituido de tres planos y ejes: el ancho o X; el alto o Y; y el de profundidad o Z. El eje X positivo está hacia la derecha; el eje Y positivo está hacia abajo; y el eje Z positivo está hacia el usuario. Estos son muy importantes para mover los elementos del HTML desde un punto inicial hacia un punto final.</p>
+        
+        <figure style="display: flex; justify-content: center; margin: 80px 0;">
+            <img 
+                src="https://static.platzi.com/media/articlases/Images/animationland03.PNG" 
+                alt="planos del navegador">
+        </figure>
+
+        <p>
+            Por defecto, todos los elementos tienen un valor auto, es decir, el orden 
+            está definido por la estructura del HTML. Los primeros elementos estarán 
+            detrás y los últimos estarán de frente. Si se establece un valor positivo, 
+            este elemento se sitúa por delante de los demás. Si se establece un valor 
+            negativo, se sitúa por detrás. Si un elemento tiene un z-index mayor a otro, 
+            estará por delante. Sin embargo, si un elemento tiene un z-index menor a 
+            otros, sus hijos nunca estarán por encima, aunque su z-index sea mayor.
+        </p>
+
+        <h3 class="sky">z-index</h3>
+        <p>
+            controla el orden de apilamiento de los elementos en una página web, es decir, cuál se muestra por encima de otro cuando se superponen. Funciona sobre el eje z (profundidad), perpendicular a la pantalla.
+            Funciona solo en elementos posicionados (absolute, relative, fixed, sticky) y en hijos directos de contenedores flex.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th>Valores</th>
+                <th>Resultado</th>
+            </tr>
+
+            <tr>
+                <td>z-index: -1</td>
+                <td>El elemento estara detras de todo lo demas.</td>
+            </tr>
+            <tr>
+                <td>z-index: 0</td>
+                <td>Nivel base (igual que auto).</td>
+            </tr>
+            <tr>
+                <td>z-index: 1...+</td>
+                <td>Los elementos se posicionan de acuero al numero de mayor peso.</td>
+            </tr>
+        </table>
+        
+        <div class="codigo">
+            <div>
+                <p>
+                    <b class="amarillo">#container</b>{ <br>
+                    &emsp; <b class="sky">position</b>: 
+                    <b class="orange">relative</b>; <br>
+                    }
+                </p>
+                <p>
+                    <b class="amarillo">#container</b> > <b class="amarillo">div</b>{ <br>
+                    &emsp; <b class="sky">position</b>: 
+                    <b class="orange">absolute</b>; <br>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.itemUno</b>{
+                    <div class="margenIz">
+                        <button
+                            onclick="añadirZIndex('itemUno')">
+                            <span>z-index</span>: 
+                            <span>1</span>; 
+                        </button> 
+                        background: yellow;
+                    </div>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.itemDos</b>{
+                    <div class="margenIz">
+                        <button
+                            onclick="añadirZIndex('itemDos')">
+                            <span>z-index</span>: 
+                            <span>1</span>; 
+                        </button>
+                        background: blue; <br>
+                        left: 60px;
+                    </div>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.itemTres</b>{
+                    <div class="margenIz">
+                        <button
+                            onclick="añadirZIndex('itemTres')">
+                            <span>z-index</span>: 
+                            <span>1</span>; 
+                        </button>
+                        background: red; <br>
+                        left: 120px;
+                    </div>
+                    }
+                </p>
+            </div>
+
+            <div>
+                <div id="container">
+                    <div class="itemUno">1</div>
+                    <div class="itemDos">2</div>
+                    <div class="itemTres">3</div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/z-index/z-index.js"></script>
+    </section>
+</body>
+</html>
