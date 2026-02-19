@@ -35,8 +35,8 @@ body {
     color: white;
     box-sizing: border-box;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-size: 2.2rem;
+    font-family:'Roboto', sans-serif;
+    font-size: 2.1rem;
 }
 header{
     width: 100rem;
@@ -108,7 +108,7 @@ footer{
     text-align: center;
     background: rgb(0, 60, 139);
     margin-top: 0;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
     padding: 10px;
     position: sticky;
     top: 0;
@@ -144,7 +144,7 @@ a{color: rgb(4, 98, 198);}
 .tabla{
     border-collapse: collapse; 
     box-shadow: -4px 4px 5px  rgb(93, 93, 90);
-    font-size: 2.1rem;
+    font-size: 2rem;
     margin: 60px auto 100px; 
     width: 80%;
 }
@@ -154,6 +154,15 @@ a{color: rgb(4, 98, 198);}
 .tabla tr:nth-child(even){background-color: #1e1e1e;}
 
 .tablaValores tr td:nth-child(1){color: var(--orange);}
+.tablaPropiedades tr td:nth-child(1){color: var(--sky);}
+
+/* NOTAS */
+.notas{
+    background-color: rgb(28, 56, 107); 
+    padding: 15px; 
+    border-left: 7px solid rgb(78, 78, 255); 
+    margin-top: 25px;
+}
 
 /* codigo */
 .codigo{
@@ -581,31 +590,6 @@ a{color: rgb(4, 98, 198);}
 }
 /* ______________________________________*/
 
-/*________________________________TIPO DE FUENTES */
-#tablaFuentes p{
-    margin: 4px;
-    font-size: 21px;
-
-}
-#time {font-family: 'Times New Roman'; } 
-#helvetica {font-family: 'Helvetica' ;}
-#sanvito {font-family: 'Sanvito';}
-#critter {font-family: 'Critter';}
-#courier {font-family: 'Courier New';}
-
-#georgia {font-family: georgia;}
-#verdana {font-family: verdana;}
-#corsiva {font-family: corsiva;}
-#cottonwood {font-family: cottonwood;}
-#roboto {font-family: 'roboto mono';}
-
-#cont-font-weight{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 80px;
-    font-family: 'Roboto', sans-serif;
-}
-
 /* _______________________________TIPOS DE POSICIONAMIENTO */
 #contenedor{
     border: 5px solid #2069fc;
@@ -649,56 +633,6 @@ a{color: rgb(4, 98, 198);}
 .medio{
     display: flex;
     justify-content:space-between;
-}
-
-/*____________ Unidades de Medida en CSS: Absolutas y Relativas */
-#relativoPorcentaje div{
-    background-color: #818181;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-}#relativoPorcentaje div  div{
-    background-color: #2069fc;
-    width: 50%;
-    height: 50%;
-    margin: 0;
-}
-/* unidad en */
-#ejemploEm{
-    font-size: 16px;
-}#ejemploEm p{margin: 0;}
-
-#ejemploEm :nth-child(1){font-size: 1em;}
-#ejemploEm :nth-child(2){font-size: 1.5em;}
-#ejemploEm :nth-child(3){font-size: 2em;}
-#ejemploEm :nth-child(4){font-size: 2.5em;}
-/* unidad rem */
-#ejemploRem{
-    font-size: 20px;
-}#ejemploRem p{margin: 0;}
-
-#ejemploRem :nth-child(2){font-size: 1em;}
-#ejemploRem :nth-child(3){font-size: 1.5em;}
-#ejemploRem :nth-child(4){font-size: 2em;}
-/* unidad vmax y vmin */
-#contenedorFlex{
-    display: flex;
-    justify-content: space-evenly;
-}
-.contenedorVminmax{
-    width: 300px;
-    height: 500px;
-    border: 2px solid white;
-}
-#ejemploVmin{
-    width: 50%;
-    height: 150px;
-    background-color: indigo;
-}
-#ejemploVmax{
-    width: 250px;
-    height: 50%;
-    background-color: indigo;
 }
 
 /*__________________________________ DISEÑO RESPONSIVO */

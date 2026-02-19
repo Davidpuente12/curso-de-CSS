@@ -1,0 +1,40 @@
+/* ALINEAR TEXTO */
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.justify{
+    text-align: justify;
+}
+
+/* TRANSFORMAR TEXTO */
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+
+/* DECORAR TEXTO */
+.underline{
+    text-decoration: underline;
+}
+.overline{
+    text-decoration: overline;
+}
+.line-through{
+    text-decoration: line-through;
+}
+
+/* IDENTAR TEXTO */
+.indent{
+    text-indent: 4rem;
+}

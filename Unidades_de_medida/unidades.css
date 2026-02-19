@@ -1,0 +1,61 @@
+.codigo p{
+    margin-bottom: 0;
+}
+
+/* unidades de porcentaje */
+#container-porcentajes > div{
+    background-color: #818181;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+#container-porcentajes div div{
+    background-color: #2069fc;
+    width: 50%;
+    height: 50%;
+    margin: 0;
+}
+
+/* Unidad em */
+#container-em{
+    font-size: 16px;
+}
+
+#container-em p:nth-child(1){font-size: 1em;}
+#container-em p:nth-child(2){font-size: 1.5em;}
+#container-em p:nth-child(3){font-size: 2em;}
+
+/* Unidad rem */
+#container-rem{
+    font-size: 20px;
+}
+
+#container-rem p:nth-child(1){font-size: 1em;}
+#container-rem p:nth-child(2){font-size: 1.5em;}
+#container-rem p:nth-child(3){font-size: 2em;}
+
+/* Unidad vmax y vmin */
+#container-vh-vw{
+    width: 300px;
+    height: 500px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Vmin{
+    width: 50%;
+    height: 150px;
+    background-color: indigo;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.Vmax{
+    width: 250px;
+    height: 50%;
+    background-color: indigo;
+    padding: 20px;
+    box-sizing: border-box;
+}

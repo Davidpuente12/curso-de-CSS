@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de texto</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="texto.css">
+</head>
+<body>
+    <section>
+        <h2 class="sticky">Control de texto</h2>
+        <p>La alineación define la posición del contenido dentro de su contenedor. Por defecto, los párrafos se alinean a la izquierda y ocupan el 100 % del width disponible. El centrado funciona mientras el contenedor tenga espacio; si no, necesitarás otras técnicas de maquetación.</p>
+    
+        <!-- text-align -->
+        <h3 class="sky">text-align</h3>
+        <p>
+            La propiedad "alinear texto" en CSS se utiliza para definir la alineación horizontal del contenido de texto dentro de un elemento de bloque (como un párrafo, encabezado o celda de tabla).
+            No afecta directamente a elementos de bloque hijos, solo al texto dentro del contenedor. Es una propiedad heredable.
+        </p>
+        <table class="tabla tablaValores">
+            <tr>
+                <th>Valor</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>left</td>
+                <td>Alinea el texto a la izquierda. Es el valor por defecto</td>
+            </tr>
+            <tr>
+                <td>right</td>
+                <td>Alinea el texto a la derecha.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Centra el texto horizontalmente.</td>
+            </tr>
+            <tr>
+                <td>justify</td>
+                <td>Ajusta el texto para que ocupe todo el ancho disponible, alineando tanto a la izquierda como a la derecha.</td>
+            </tr>
+            <tr>
+                <td>start</td>
+                <td>Alinea el texto al inicio según la dirección de escritura (izquierda en idiomas LTR, derecha en RTL).</td>
+            </tr>
+            <tr>
+                <td>end</td>
+                <td>Alinea el texto al final según la dirección de escritura</td>
+            </tr>
+        </table>
+
+        <!-- text-transform -->
+        <h3 class="sky">text-transform</h3>
+        <p>La propiedad "transformar texto" en CSS se utiliza para controlar la capitalización del texto dentro de un elemento, es decir, cómo se muestran las letras en mayúsculas o minúsculas sin necesidad de modificar el contenido original del HTML. Es una propiedad heredable.</p>
+        <table class="tabla tablaValores">
+            <tr>
+                <th>Valor</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>none</td>
+                <td>No aplica ninguna transformación; el texto se muestra tal cual está escrito.</td>
+            </tr>
+            <tr>
+                <td>uppercase</td>
+                <td>Convierte todo el texto a mayúsculas.</td>
+            </tr>
+            <tr>
+                <td>lowercase</td>
+                <td>Convierte todo el texto a minúsculas.</td>
+            </tr>
+            <tr>
+                <td>capitalize</td>
+                <td>Convierte la primera letra de cada palabra en mayúscula.</td>
+            </tr>
+        </table>
+
+        <!-- text-decoration -->
+        <h3 class="sky">text-decoration</h3>
+        <p>La propiedad "decoracion de texto" en CSS se utiliza para aplicar líneas decorativas al texto, como subrayado, suprarrayado o tachado. Es una propiedad abreviada (shorthand) que combina varias subpropiedades relacionadas con la decoración del texto. La propiedad es heredable.</p>
+        
+        <table class="tabla" style="width: 100%;">
+            <tr>
+                <th>Sub propiedad</th>
+                <th>Descripcion y valor</th>
+            </tr>
+
+            <tr>
+                <td class="sky">text-decoration-line</td>
+                <td>
+                    <b>Define el tipo de linea</b>: <br>
+                    <b class="orange">none</b> (sin decoracion) <br>
+                    <b class="orange">underline</b>  (Subrayado) <br>
+                    <b class="orange">overline</b>  (linea sobre el texto) <br>
+                    <b class="orange">line-through</b>  (linea atravesando el texto) <br>
+                </td>
+            </tr>
+            <tr>
+                <td class="sky">text-decoration-style</td>
+                <td>
+                    <b>Define el estilo de la linea:</b> <br>
+                    <b class="orange">solid</b> |
+                    <b class="orange">double</b> |
+                    <b class="orange">dotted</b> |
+                    <b class="orange">dashed</b> |
+                    <b class="orange">wavy</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="sky">text-decoration-color</td>
+                <td>Establece el color de la línea decorativa.</td>
+            </tr>
+            <tr>
+                <td class="sky">text-decoration-thickness</td>
+                <td>Define el grosor de la linea.</td>
+            </tr>
+        </table>
+
+        <p>Todas estas subpropiedades (línea, estilo, color y grosor), se pueden combinar en una sola declaracion</p>
+        <div class="seccionB" style="text-align: center; margin: 0;">
+            <b class="sky">text-decoration</b>: 
+            <b class="orange">linea</b>
+            <b class="orange">estilo</b>
+            <b class="orange">color</b>
+            <b class="orange">grosor</b>;
+        </div>
+
+        <!-- text-indent -->
+        <h3 class="sky">text-indent</h3>
+        <p>La propiedad "identar texto" en CSS se utiliza para definir la sangría de la primera línea de un bloque de texto. Es decir, controla cuánto espacio en blanco se coloca antes de que empiece la primera línea de un párrafo u otro elemento de bloque.</p>
+        <p>Solo afecta la primera linea de un bloque de texto, su valor inicial es 0. los valores permitidos son: longitud fija (px) o relativa (rem,em), porcentajes (%), Negativos (-2em , la primera linea se mueve hacia la izquierda.)</p>
+
+        <!-- codigo -->
+        <div class="controls-consola">
+            <button onclick="controlDeTexto('text-align')">text-align</button>
+            <button onclick="controlDeTexto('text-transform')">text-transform</button>
+            <button onclick="controlDeTexto('text-decoration')">text-decoration</button>
+            <button onclick="controlDeTexto('text-indent')">text-indent</button>
+        </div>
+        <div class="codigo">
+            <div id="codigo-control-texto">
+                <p>
+                    <b class="amarillo">p</b>{ 
+                    <b class="sky">text-align</b>: 
+                    <button
+                        onclick="textAling('left')">
+                        <b class="orange">left</b>
+                    </button>; }
+                </p>
+                <p>
+                    <b class="amarillo">p</b>{
+                    <b class="sky">text-align</b>: 
+                    <button
+                        onclick="textAling('center')">
+                        <b class="orange">center</b>
+                    </button>; }
+                </p>
+                <p>
+                    <b class="amarillo">p</b>{
+                    <b class="sky">text-align</b>: 
+                    <button
+                        onclick="textAling('right')">
+                        <b class="orange">right</b>
+                    </button>; }
+                </p>
+                <p>
+                    <b class="amarillo">p</b>{
+                    <b class="sky">text-align</b>: 
+                    <button
+                        onclick="textAling('justify')">
+                        <b class="orange">justify</b>
+                    </button>; }
+                </p>
+            </div>
+
+            <div style="width: 900px;" id="pagina-control-texto">
+                Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos para diseños para probar el arte visual antes de insertar el texto final. Su uso en algunos editores de texto muy conocidos en la actualidad ha dado al texto lorem ipsum nueva popularidad.
+            </div>
+        </div>
+
+        <script src="texto.js"></script>
+    </section>
+</body>
+</html>

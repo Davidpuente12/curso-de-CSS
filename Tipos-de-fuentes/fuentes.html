@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="fuentes.css">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+    </style>
+</head>
+<body>
+    <section>
+        <h2 class="sticky">Fuentes y Tipografias</h2>
+        
+        <p>En CSS, las fuentes se refieren al estilo tipográfico que se aplica al texto en una página web. Esto incluye el tipo de letra, su tamaño, grosor, inclinación y otras características visuales que afectan la legibilidad y la estética del contenido.</p>
+        
+        <table class="tabla">
+            <caption>🔤 Propiedades principales de fuentes en CSS</caption>
+            <tr><th>Propiedad</th> <th>Funcion</th></tr>
+            <tr><td><span class="sky">font-family</span></td> <td>Define la familia tipografica</td></tr>
+            <tr><td><span class="sky">font-size</span></td> <td>Establece el tamaño del texto</td></tr>
+            <tr><td><span class="sky">font-weight</span></td> <td>Controla el grosor</td></tr>
+            <tr><td><span class="sky">font-style</span></td> <td>Aplica estilos como cursiva o inclinada</td></tr>
+            <tr><td><span class="sky">font-height</span></td> <td>Ajusta el espacio entre lineas</td></tr>
+            <tr><td><span class="sky">letter-spacing</span></td> <td>Modifica el espacio entre letras</td></tr>
+            <tr><td><span class="sky">text-transform</span></td> <td>Cambia el formato del texto.</td></tr>
+        </table>
+
+        <h3 class="sky">font-family</h3>
+        <p>Esta propiedad sirve para seleccionar una familia tipografica concreta. Es recomendable establecer una lista de tipografias, de esta forma el navegador busca la primera fuente en nuestro sistema, si no esta instalada pasa a buscar la siguiente y asi susesivamente. Se recomienda especificar al menos 2 o 3 tipografias alternativas.</p>
+        <div class="seccionB centrar">
+            <code>
+                <span class="amarillo">.container</span> { 
+                <br><span class="sky">font-family</span>: <span class="orange">Vegur</span>, <span class="orange">'PT Sans'</span>, <span class="orange">Verdana</span>, <span class="orange">sans-serif</span> ;
+                <br> }
+            </code>
+            <div class="notas">Nota: esta ultima no suele ser una tipografia especifica , sino una palabra clave de "fuentes seguras" con la que se designa una categoria de tipografias. indicando al navegador que debe buscar una tipografia instalada en el sistema.  </div>
+        </div>
+
+        <table class="tabla tablaPropiedades">
+            <caption>Fuentes seguras del navegador</caption>
+            <tr>
+                <th>Fuente</th> 
+                <th>Descripcions</th> 
+                <th colspan="2" style="width: 400px;">Fuentes de Ejemplo</th>
+            </tr>
+
+            <tr>
+                <td>serif</td>       
+                <td>Estilo formal o clasico con acabado en las puntas</td> 
+                <td><span id="time">Time New Roman</span></td>   
+                <td><span id="georgia">Georgia</span></td>
+            </tr>
+            <tr><td>sans-serif</td>  <td>Estilo sin acabado en las puntas </td> <td><p id="helvetica">Helvetica</p></td>   <td><p id="verdana">Verdana</p></td></tr>
+            <tr><td>cursive</td>     <td>Estilos cursivos</td> <td><p id="sanvito">Sanvito</p></td>       <td><p id="corsiva">Corsiva</p></td></tr>
+            <tr><td>fantasy</td>     <td>Estilos fantasia</td> <td><p id="critter">Critter</p></td>       <td><p id="cottonwood">Cottonwood</p></td></tr>
+            <tr><td>monospace</td>   <td>Estilos con espaciados</td> <td><p id="courier">Courier New</p></td>   <td><p id="roboto">Roboto Mono</p></td></tr>
+        </table>
+              
+        <h4>Fuentes desconocidas</h4>
+        <p> los navegadores solo son capaces de dibujar tipografias que reconoce el sistema o el navegador, es decir, que estén instaladas en el sistema o precargadas por el navegador. En el caso de no cumplir uno de estos casos, el texto se mostrará con otra tipografía «suplente» del sistema.</p>
+        <div class="seccionB">
+            <p>Ingresando a <a href="https://fonts.google.com/?preview.layout=grid" ><b>Google Font</b></a> podemos precargar tipografias de la web mediante dos metodos: </p>
+            <p><b style="color: rgb(179, 119, 234);">@import</b> propiedad CSS que importa hojas de estilos externas dentro de &lt;<span class="doger">style</span>&gt; o <span class="amarillo">CSS</span> su velocidad de carga es mas lenta porque carga despues de que el navegador haya cargado el css principal y tambien cada @import porque genera una solicitud adicional al servidor, lo que puede aumentar el tiempo de carga. </p>
+            <p>&lt;<b class="doger">link</b>&gt; con esta etiqueta tambein se importan hojas de estilo externas pero dentro del &lt;<span class="doger">head</span>&gt;. Los archivos cargan de forma paralela con el documento y se puede manipular con JavaScript.</p>
+            <div class="notas">Se recomienda cargar maximo dos fuentes por proyecto e importarla siempre en la etiqueta head</div>
+        </div>
+
+        <!-- FONT-SIZE -->
+        <h3 class="sky">font-size</h3>
+        <p>Es otra propiedad muy utilizada con las tipografias que permite indicar el tamaño que tendra la fuente que vamos a utilizar. El tamaño puede indicarse de las siguientes 3 maneras:</p>
+        
+        <table class="tabla"  style="width: 100%;">
+            <tr>
+                <th>Tipo de valor</th> 
+                <th>Valor</th> 
+                <th>Ejemplos</th>
+            </tr>
+
+            <tr>
+                <td>Medidas Absolutos</td>     
+                <td>
+                    <span class="orange">xx-small</span> |
+                    <span class="orange">x-small</span> |
+                    <span class="orange">small</span> |
+                    <span class="orange">medium</span> |
+                    <span class="orange">large</span> |
+                    <span class="orange">x-large</span> |
+                    <span class="orange">xx-large</span> 
+                </td>
+                <td>
+                    <span style="font-size: xx-small;">David</span>
+                    <span style="font-size: x-small;"> David</span>
+                    <span style="font-size: small;">   David</span>
+                    <span style="font-size: medium;">  David</span>
+                    <span style="font-size: large;">   David</span>
+                    <span style="font-size: x-large;"> David</span>
+                    <span style="font-size: xx-large;">David</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Medidas Relativas</td> 
+                <td>
+                    <span class="orange">smaller</span> | 
+                    <span class="orange">larger</span> 
+                </td>
+                <td>
+                    <span style="font-size: smaller;">Sharon</span>
+                    <span style="font-size: larger;">Sharon</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Tamaño</td> 
+                <td>Se indica con unidades como px / rem .etc</td> 
+                <td>
+                    <span class="sky">font-size</span>:
+                    <span class="verde">10px</span>
+                </td>
+            </tr>
+        </table>
+
+        <!-- FONT-STYLE -->
+        <h3 class="sky">font-style</h3>
+        <p>La propiedad font-style en CSS se utiliza para definir el estilo de una fuente, específicamente si el texto debe mostrarse en normal, cursiva (italic) o oblicua (oblique). Es una de las propiedades clásicas de tipografía en CSS y afecta directamente la apariencia del texto.</p>
+        <p>
+            Es una propiedad heredable, lo que significa que los elementos hijos pueden recibir el mismo estilo si no se redefine.
+            Aunque italic y oblique parecen similares, la diferencia es que italic usa un diseño tipográfico específico, mientras que oblique simplemente inclina el texto.
+        </p>
+        <table class="tabla tablaValores">
+            <tr><th>Valor</th> <th>Descripcion con ejemplo</th></tr>
+            <tr>
+                <td>normal</td>  
+                <td><span style="font-style: normal;"> Texto normal (tambien llamado roman). Es el valor por defecto</span></td></tr>
+            <tr>
+                <td>italic</td>  
+                <td><span style="font-style: italic;"> Aplica cursiva si esta disponible en la fuente , inclinando ligeramente el texto</span></td></tr>
+            <tr>
+                <td>oblique</td> 
+                <td>
+                    <span style="font-style: oblique;">
+                    Tambien cursiva pero generada artificialmente, cuando no existe una versión cursiva nativa.
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+        <!-- FONT WEIGHT -->
+        <h3 class="sky">font-weight</h3>
+        <p>(Peso de la fuente) define el grosor de la tipografia , es ideal para hacer los textos mas notables o aplicarles <b>negrita</b> pero con distintas medidas de la misma. hay tres formas de definirlas: </p>
+        <table class="tabla" style="width: 100%;">
+            <tr><th>Valor</th> <th>Descripcion</th> <th>Ejemplo</th></tr>
+            <tr>
+                <td>
+                    <span class="orange">normal</span> (400)  <br>
+                    <span class="orange">bold</span> (700) 
+                </td>
+                <td>Peso absoluto (predefinido). valor por defecto <span class="orange">normal</span></td>
+                <td>
+                    <span style="font-weight: normal;">Texto normal</span> |
+                    <span style="font-weight: bold;">Texto bold</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="orange">bolder</span> |
+                    <span class="orange">lighter</span>
+                </td>
+                <td>Peso relativo al actual (mas pequeño / mas grande)</td>
+                <td>
+                    <span style="font-weight: lighter;">Texto lighter</span> |
+                    <span style="font-weight: bolder;">Texto bolder</span> 
+                </td>
+            </tr>
+            <tr>
+                <td class="centrarTexto"><span class="orange">100 .. 900</span></td>
+                <td colspan="2" class="centrarTexto">Peso especifico (numero con el peso concreto)</td>
+            </tr>        
+        </table>
+   
+        <div class="seccionB" id="cont-font-weight">
+            <p style="font-weight: 100;">H <span>100</span></p>
+            <p style="font-weight: 200;">H <span>200</span></p>
+            <p style="font-weight: 300;">H <span>300</span></p>
+            <p style="font-weight: 400;">H <span>400</span></p>
+            <p style="font-weight: 500;">H <span>500</span></p>
+            <p style="font-weight: 600;">H <span>600</span></p>
+            <p style="font-weight: 700;">H <span>700</span></p>
+            <p style="font-weight: 800;">H <span>800</span></p>
+            <p style="font-weight: 900;">H <span>900</span></p>
+        </div>
+
+        <div class="notas">Algunas tipografias solo aceptan determinados pesos, en Google font se pueden ver al seleccionarlas.</div>
+
+        <!-- LINE-HEIGHT -->
+        <h3 class="sky">line-height</h3>
+        <p>La propiedad "altuta de linea" en CSS controla la altura de cada línea de texto dentro de un elemento. En otras palabras, define el espaciado vertical entre líneas, lo que afecta directamente la legibilidad y la estética del contenido.</p>
+        <p>Tiene un valor inicial: normal (el navegador calcula una altura adecuada según la fuente), y tiene herencia a elementos hijos si no se redefinen.</p>
+        <table class="tabla tablaValores" style="margin-bottom: 20px;">
+            <tr>
+                <th>Valor</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>normal</td>
+                <td>Usa el valor por defecto del navegador.</td>
+            </tr>
+            <tr>
+                <td style="color: var(--verde);">Numero</td>
+                <td>Multiplica el tamaño de la fuente, ejemplo: line-height: 1.5; significa que la altura de línea es 1.5 veces el tamaño de la fuente.</td>
+            </tr>
+            <tr>
+                <td>Longitud</td>
+                <td>Define una altura fija en unidades absolutas. (ejemplo: 30px)</td>
+            </tr>
+            <tr>
+                <td>Porcentaje</td>
+                <td>Se calcula en relación al tamaño de la fuente del elemento. (ejemplo: 20%)</td>
+            </tr>
+        </table>
+        <p class="notas" style="width: 80%; margin: auto;">Un valor numérico sin unidad es preferido en diseño responsivo, porque escala automáticamente con el tamaño de la fuente.</p>
+
+    </section>
+</body>
+</html>

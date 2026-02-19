@@ -1,0 +1,29 @@
+/*________________________________TIPO DE FUENTES */
+#time {font-family: 'Times New Roman'; } 
+#helvetica {font-family: 'Helvetica' ;}
+#sanvito {font-family: 'Sanvito';}
+#critter {font-family: 'Critter';}
+#courier {font-family: 'Courier New';}
+
+#georgia {font-family: georgia;}
+#verdana {font-family: verdana;}
+#corsiva {font-family: corsiva;}
+#cottonwood {font-family: cottonwood;}
+#roboto {font-family: 'roboto mono';}
+
+/* font-weight */
+#cont-font-weight{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "inter" ,sans-serif;
+}
+#cont-font-weight p{
+    display: flex;
+    flex-direction: column;
+    font-size: 5rem;
+    margin: 0;
+}
+#cont-font-weight span{
+    font-size: 2rem;
+    color: var(--orange);
+}

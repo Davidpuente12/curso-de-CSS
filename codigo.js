@@ -38,13 +38,6 @@
     }
 
 
-                            //UNIDADES DE MEDIDA
-
-function mostrarRelativoPorcentaje() {
-    const seccion = document.getElementById("relativoPorcentaje")
-    seccion.style.display = (seccion.style.display == "none") ? "block" : "none"
-}
-
 //FLEXBOX
 function displayInlineFlex(){
     const seccion = document.getElementById("contentFlexDireccion")

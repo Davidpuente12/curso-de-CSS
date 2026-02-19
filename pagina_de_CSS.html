@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de CSS</title>
     <link rel="stylesheet" href="estilo.css">
+    <!-- FUENTE DE GOOGLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
     
     <style>
@@ -23,8 +24,6 @@
         .tablaDeFlex th{background-color: rgb(19, 65, 163);}
         .tablaDeFlex tr:nth-child(odd){background-color: rgb(10, 10, 69);}
         .tablaDeFlex tr:nth-child(even){background-color: rgb(50, 50, 95);}
-
-        .notas{background-color: rgb(28, 56, 107); padding: 15px; border-left: 7px solid rgb(78, 78, 255); margin-top: 25px;}
 
         .BotonEjemplos{padding: 4px; background-color: transparent; border-radius: 10px; color: orange; font-weight: bold;}
     </style>
@@ -46,10 +45,11 @@
                 <li onclick="location.href='#tiposdedisplay'">Tipos de display</li>
                 <li onclick="location.href='#flexbox'">Flexbox y Css Grid</li>
                 <li onclick="location.href='#modelodecaja'">Modelo de caja</li>
-                <li onclick="location.href='#fuentes'">Tipos de Fuentes</li>
+                <li onclick="location.href='./Tipos-de-fuentes/fuentes.html'">Tipos de Fuentes</li>
+                <li onclick="location.href='./Control-de-texto/texto.html'">Control de texto</li>
                 <li onclick="location.href='#tiposdeposiones'">Tipos de Posicionamiento</li>  
                 <li onclick="location.href='./z-index/z-index.html'">Z-index</li>
-                <li onclick="location.href='#unidadesMedida'">Unidades de medida</li>
+                <li onclick="location.href='./Unidades_de_medida/unidades.html'">Unidades de medida</li>
                 <li onclick="location.href='#variables'">Variables Glovales</li>
                 <li onclick="location.href='#herencias'">Herencias</li>
                 <li onclick="location.href='#diseñoResponsivo'">Diseño Responsivo</li>
@@ -1260,153 +1260,6 @@
             La solución a esto es colocar un borde de color transparent (transparente) y del mismo tamaño que el otro borde. Esto hará que el elemento se mantenga en su tamaño total, lo único que cambia es el color.
         </div>
     </section>
-
-    <section id="fuentes"> <!-- Tipos de fuentes -->
-        <h2 class="sticky">Fuentes y Tipografias</h2>
-        
-        <p>En CSS, las fuentes se refieren al estilo tipográfico que se aplica al texto en una página web. Esto incluye el tipo de letra, su tamaño, grosor, inclinación y otras características visuales que afectan la legibilidad y la estética del contenido.</p>
-        <table class="tablaDeFlex" style="width: 70%;">
-            <caption>🔤 Propiedades principales de fuentes en CSS</caption>
-            <tr><th>Propiedad</th> <th>Funcion</th></tr>
-            <tr><td><span class="sky">font-family</span></td> <td>Define la familia tipografica</td></tr>
-            <tr><td><span class="sky">font-size</span></td> <td>Establece el tamaño del texto</td></tr>
-            <tr><td><span class="sky">font-weight</span></td> <td>Controla el grosor</td></tr>
-            <tr><td><span class="sky">font-style</span></td> <td>Aplica estilos como cursiva o inclinada</td></tr>
-            <tr><td><span class="sky">font-height</span></td> <td>Ajusta el espacio entre lineas</td></tr>
-            <tr><td><span class="sky">letter-spacing</span></td> <td>Modifica el espacio entre letras</td></tr>
-            <tr><td><span class="sky">text-transform</span></td> <td>Cambia el formato del texto.</td></tr>
-        </table>
-
-        <p><b class="sky">font-family</b> esta propiedad sirve para seleccionar una familia tipografica concreta. Es recomendable establecer una lista de tipografias, de esta forma el navegador busca la primera fuente en nuestro sistema, si no esta instalada pasa a buscar la siguiente y asi susesivamente. Se recomienda especificar al menos 2 o 3 tipografias alternativas.</p>
-        <div class="seccionB centrar">
-            <code>
-                <span class="amarillo">.container</span> { 
-                <br><span class="sky">font-family</span>: <span class="orange">Vegur</span>, <span class="orange">'PT Sans'</span>, <span class="orange">Verdana</span>, <span class="orange">sans-serif</span> ;
-                <br> }
-            </code>
-            <div class="notas">Nota: esta ultima no suele ser una tipografia especifica , sino una palabra clave de "fuentes seguras" con la que se designa una categoria de tipografias. indicando al navegador que debe buscar una tipografia instalada en el sistema.  </div>
-        </div>
-
-        <table class="tablaDeFlex"  id="tablaFuentes">
-            <caption>Fuentes seguras</caption>
-            <tr><th>Fuente</th> <th>Descripcions</th> <th colspan="2">Fuentes de Ejemplo</th></tr>
-            <tr><td><span class="orange">serif</span></td>       <td>Estilo formal o clasico con acabado en las puntas</td> <td><p id="time">Time New Roman</p></td>   <td><p id="georgia">Georgia</p></td></tr>
-            <tr><td><span class="orange">sans-serif</span></td>  <td>Estilo sin acabado en las puntas </td> <td><p id="helvetica">Helvetica</p></td>   <td><p id="verdana">Verdana</p></td></tr>
-            <tr><td><span class="orange">cursive</span></td>     <td>Estilos cursivos</td> <td><p id="sanvito">Sanvito</p></td>       <td><p id="corsiva">Corsiva</p></td></tr>
-            <tr><td><span class="orange">fantasy</span></td>     <td>Estilos fantasia</td> <td><p id="critter">Critter</p></td>       <td><p id="cottonwood">Cottonwood</p></td></tr>
-            <tr><td><span class="orange">monospace</span></td>   <td>Estilos con espaciados</td> <td><p id="courier">Courier New</p></td>   <td><p id="roboto">Roboto Mono</p></td></tr>
-        </table>
-              
-        <p><b>Fuentes desconocidas</b> los navegadores solo son capaces de dibujar tipografias que reconoce el sistema o el navegador, es decir, que estén instaladas en el sistema o precargadas por el navegador. En el caso de no cumplir uno de estos casos, el texto se mostrará con otra tipografía «suplente» del sistema.</p>
-        <div class="seccionB">
-            <p>Ingresando a <a href="https://fonts.google.com/?preview.layout=grid" ><b>Google Font</b></a> podemos precargar tipografias de la web mediante dos metodos: </p>
-            <p><b style="color: rgb(179, 119, 234);">@import</b> propiedad CSS que importa hojas de estilos externas dentro de &lt;<span class="doger">style</span>&gt; o <span class="amarillo">CSS</span> su velocidad de carga es mas lenta porque carga despues de que el navegador haya cargado el css principal y tambien cada @import porque genera una solicitud adicional al servidor, lo que puede aumentar el tiempo de carga. </p>
-            <p>&lt;<b class="doger">link</b>&gt; con esta etiqueta tambein se importan hojas de estilo externas pero dentro del &lt;<span class="doger">head</span>&gt;. Los archivos cargan de forma paralela con el documento y se puede manipular con JavaScript.</p>
-            <div class="notas">Se recomienda cargar maximo dos fuentes por proyecto e importarla siempre en la etiqueta head</div>
-        </div>
-
-        <p><b class="sky">font-size</b> es otra propiedad muy utilizada con las tipografias que permite indicar el tamaño que tendra la fuente que vamos a utilizar. El tamaño puede indicarse de las siguientes 3 maneras:</p>
-        <table class="tablaDeFlex">
-            <tr><th>Tipo de valor</th> <th>Valor</th> <th>Ejemplos</th></tr>
-            <tr>
-                <td>Medidas Absolutos</td>     
-                <td>
-                    <span class="orange">xx-small</span> |
-                    <span class="orange">x-small</span> |
-                    <span class="orange">small</span> |
-                    <span class="orange">medium</span> |
-                    <span class="orange">large</span> |
-                    <span class="orange">x-large</span> |
-                    <span class="orange">xx-large</span> 
-                </td>
-                <td>
-                    <span style="font-size: xx-small;">David</span>
-                    <span style="font-size: x-small;"> David</span>
-                    <span style="font-size: small;">   David</span>
-                    <span style="font-size: medium;">  David</span>
-                    <span style="font-size: large;">   David</span>
-                    <span style="font-size: x-large;"> David</span>
-                    <span style="font-size: xx-large;">David</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Medidas Relativas</td> 
-                <td>
-                    <span class="orange">smaller</span> | 
-                    <span class="orange">larger</span> 
-                </td>
-                <td>
-                    <span style="font-size: smaller;">Sharon</span>
-                    <span style="font-size: larger;">Sharon</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Tamaño</td> 
-                <td>Se indica con unidades como px / rem .etc</td> 
-                <td>
-                    <span class="sky">font-size</span>:
-                    <span class="verde">10px</span>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="3" class="notas" style="padding: 10px;">Las medidas relativas lo son respecto al tamaño actual de fuente</td>
-            </tr>
-        </table>
-
-        <p><b class="sky">font-style</b> esta propiedad sirve para definir el estilo del texto. puede tomar los siguientes valores:</p>
-        <table class="tablaDeFlex">
-            <tr><th>Valor</th> <th>Descripcion con ejemplo</th></tr>
-            <tr><td><span class="orange">normal</span></td>  <td><span style="font-style: normal;"> Texto normal . (valor por defecto)</span></td></tr>
-            <tr><td><span class="orange">italic</span></td>  <td><span style="font-style: italic;"> Aplica cursiva si esta disponible en la fuente , inclinando ligeramente el texto</span></td></tr>
-            <tr><td><span class="orange">oblique</span></td> <td><span style="font-style: oblique;"> Tambien cursiva pero generada artificialmente</span></td></tr>
-        </table>
-
-        <p><b class="sky">font-weight</b> (peso de la fuente) define el grosor de la tipografia , es ideal para hacer los textos mas notables o aplicarles <b>negrita</b> pero con distintas medidas de la misma. hay tres formas de definirlas: </p>
-        <table class="tablaDeFlex">
-            <tr><th>Valor</th> <th>Descripcion</th> <th>Ejemplo</th></tr>
-            <tr>
-                <td>
-                    <span class="orange">normal</span> (400) |
-                    <span class="orange">bold</span> (700) 
-                </td>
-                <td>Peso absoluto (predefinido). valor por defecto <span class="orange">normal</span></td>
-                <td>
-                    <span style="font-weight: normal;">Texto normal</span> |
-                    <span style="font-weight: bold;">Texto bold</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span class="orange">bolder</span> |
-                    <span class="orange">lighter</span>
-                </td>
-                <td>Peso relativo al actual (mas pequeño / mas grande)</td>
-                <td>
-                    <span style="font-weight: lighter;">Texto lighter</span> |
-                    <span style="font-weight: bolder;">Texto bolder</span> 
-                </td>
-            </tr>
-            <tr>
-                <td class="centrarTexto"><span class="orange">100 | 200 | 300 | 400 | 500 <br> 600 | 700 | 800 | 900</span></td>
-                <td colspan="2" class="centrarTexto">Peso especifico (numero con el peso concreto)</td>
-            </tr>        
-        </table>
-   
-            <div class="seccionB" id="cont-font-weight">
-                <span style="font-weight: 100;">H</span>
-                <span style="font-weight: 200;">H</span>
-                <span style="font-weight: 300;">H</span>
-                <span style="font-weight: 400;">H</span>
-                <span style="font-weight: 500;">H</span>
-                <span style="font-weight: 600;">H</span>
-                <span style="font-weight: 700;">H</span>
-                <span style="font-weight: 800;">H</span>
-                <span style="font-weight: 900;">H</span>
-            </div>
-
-            <div class="notas">Algunas tipografias solo aceptan determinados pesos, en Google font se pueden ver al seleccionarlas.</div>
-
-    </section>
     
     <section id="tiposdeposiones"> <!-- Tipos de posicionamiento -->
         <h2 class="sticky">Tipos de Posicionamiento</h2>
@@ -1457,109 +1310,6 @@
         <p><b>Posición fija</b> La posición fixed consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar donde quedara fijo en la pantalla al hacer scroll; donde las propiedades de posición sí pueden ser establecidas.</p>
         <p><b>Posición variable fija</b> La posición sticky consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar mientras su contenedor sea visible; donde las propiedades de posición sí pueden ser establecidas. Eso significa que permite que un elemento se comporte como relative hasta que se alcance un determinado punto de desplazamiento, momento en el cual se "pega" a su posición y actúa como fixed. Es útil para mantener elementos visibles mientras el usuario hace scroll.</p>
     </section>    
-
-    <section>
-
-        <h2 class="sticky">Propiedades CSS más utilizadas en diseño web</h2>
-        <img src="https://static.platzi.com/media/articlases/Images/frontend_developer28.png" alt="">
-        <a href="https://cssreference.io/">etiquetas existentes</a>
-        <p>Propiedades de textos</p>
-        <p><b>font-size</b> establece un tamaño de fuente.</p>
-        <p><b>font-weight</b> establece el resaltado del texto, con valores de 100 a 900 en intervalos de 100; donde 100 es delgada y 900 es negrita.</p>
-        <p><b>font-family</b> establece el tipo de fuente.</p>
-        <p><b>text-align</b> establece la posición del texto: right, left, center y justify.</p>
-        <p><b>color</b> establece el color del texto.</p>
-    </section>
-
-    <section id="unidadesMedida"> <!-- Unidades de Medida -->
-        <h2 class="sticky">Unidades de Medida en CSS: Absolutas y Relativas</h2>
-        <p>Las unidades de medida definen el tamaño, el espacio, la posición y otros aspectos visuales de los elementos, se dividen en dos grandes categorías: unidades absolutas y unidades relativas. Las medidas absolutas no cambian dependiendo del medio de visualización; por ejemplo, 18 píxeles seguirán siendo 18 píxeles. Por otro lado, las medidas relativas, como porcentajes o unidades em y rem, se ajustan al entorno en el que se visualizan.</p>
-        
-        <p><b>Qué son las medidas absolutas</b> Las medidas absolutas son aquellos parámetros fijos que no cambian sin importar el medio en que se visualice la página web. La unidad absoluta más utilizada son los píxeles px, 🧠 Las unidades absolutas no son recomendables para diseño web responsivo, ya que no se adaptan a diferentes pantallas.</p>
-        <table class="tabla">
-            <tr><th>Unidad</th><th>Nombre</th>               <th>Equivalencia</th></tr>
-            <tr><td>px</td>    <td>Píxeles</td>              <td>1 px = 1 punto en pantalla</td></tr>
-            <tr><td>cm</td>    <td>Centímetros</td>          <td>1 cm = 37.8 px</td></tr>
-            <tr><td>mm</td>    <td>Milímetros</td>           <td>1 mm = 3.78 px</td></tr>
-            <tr><td>Q</td>     <td>Cuartos de milímetros</td><td>1 Q = 15.12 px</td></tr>
-            <tr><td>in</td>    <td>Pulgadas</td>             <td>1 in = 96 px</td></tr>
-            <tr><td>pc</td>    <td>Picas</td>                <td>1 pc = 16 px</td></tr>
-            <tr><td>pt</td>    <td>Puntos Tipograficos</td>  <td>1 pt = 1.33 px</td></tr>
-        </table>
-
-            <p><b>Qué son las medidas relativas</b> a diferencia de las absolutas, las medidas relativas ajustan su tamaño basado en el contexto del objeto padre o del tamaño de la pantalla, lo que las hace altamente flexibles y recomendadas para diseños adaptativos. A continuacion algunas de las mas comunes:</p>
-        <table class="tabla">
-            <tr><th>Unidad</th> <th>Depende de</th></tr>
-            <tr><td>%</td>      <td>tamaño en relación al contenedor padre. <button onclick="mostrarRelativoPorcentaje()" class="BotonEjemplos">Ver Ejemplo 👇</button></td></tr>
-            <tr><td>em</td>     <td>tamaño de fuente del elemento padre.</td></tr>
-            <tr><td>rem</td>    <td>tamaño de fuente del elemento raíz del documento HTML.</td></tr>
-            <tr><td>vw</td>     <td>1vw = 1% del ancho del navegador</td></tr>
-            <tr><td>vh</td>     <td>1vh = 1% del alto del navegador</td></tr>           
-            <tr><td>vmin</td>   <td>1vmin = 1% del alto o ancho (el mínimo)</td></tr>
-            <tr><td>vmax</td>   <td>1vmax = 1% del alto o ancho (el máximo)</td></tr>
-            <tr><td>max-width / max heigth</td> <td>Establece un limite maximo al elemento</td></tr>
-            <tr><td>min-width / min heigth</td> <td>Establece un limite minimo al elemento</td></tr>
-        </table>
-
-        <div class="seccionB" id="relativoPorcentaje" style="display: none;">
-            <p> <b class="amarillo">.padre{</b> <b class="sky">width</b>: <b class="verde">200px</b>; <b class="sky">height</b>: <b class="verde">200px</b>; <b class="amarillo">}</b>
-            <br><b class="amarillo">.hijo{</b> <b class="sky">width</b>: <b class="verde">50%</b>; <b class="sky">height</b>: <b class="verde">50%</b>; <b class="amarillo">}</b> </p>
-            <div>
-                <div></div>
-            </div>
-            <p>En este caso, el elemento padre <b>.padre</b> tendrá un tamaño de 200px. Su hijo, el elemento <b>.hijo</b> tiene un tamaño de ancho de 50%, o lo que es lo mismo, la mitad del tamaño de su padre: 100px. Por otro lado, si el elemento <b>.padre</b> no tuviera una propiedad width definida, su elemento hijo tendría valor 0.</p>
-        </div>
-
-        <h3>Unidades relativas a la fuente</h3>
-        <div class="seccionB"> <!-- unidad em -->
-            <p>La Unidad <b class="verde">em</b> (elemento) buscara el tamaño de fuente del elemento padre inmediato, si no esta definido seguira buscando hasta llegar al elemento raiz &lt;<b class="doger">HTML</b>&gt; que por defecto esta establecido por el navegador en la tipografía (tamaño de la fuente) en 16px. A no ser que lo establezcamos manualmente </p>
-            
-            <div id="ejemploEm" class="centrarTexto">
-                <p>tamaño de <b class="verde">1em</b> (1 * 16 = 16px) </p>
-                <p>tamaño de <b class="verde">1.5em</b> (1.5 * 16 = 24px)</p> 
-                <p>tamaño de <b class="verde">2em</b> (2 * 16 = 32px)</p>
-                <p>tamaño de <b class="verde">2.5em</b> (2.5 * 16 = 40px)</p>
-            </div>
-        </div>
-
-        <div class="seccionB"> <!-- unidad rem -->
-            <p>En la Unidad <b class="verde">rem</b> la letra (r) significa "root"(raiz), por lo tanto buscara el tamaño del elemento raiz &lt;<b class="doger">HTML</b>&gt; o la pseudoclase <b class="amarillo">:root</b> por defecto en 16px. permitiendonos trabajar con multiplos del tamaño base y establecer el tamaño de texto general con <b class="sky">font-size</b>. </p>
-            
-            <p><b class="amarillo">:root{</b> <b class="sky">font-size</b>: <b class="verde">20px</b>; <b class="amarillo"> }</b> </p>
-            <div id="ejemploRem" class="centrarTexto">
-                <p>tamaño de <b class="verde">1rem</b> (1 * 20 = 20px) </p>
-                <p>tamaño de <b class="verde">1.5rem</b> (1.5 * 20 = 30px)</p> 
-                <p>tamaño de <b class="verde">2rem</b> (2 * 20 = 40px)</p>
-            </div>
-
-            <div class="notas"><b>Notas</b>: los navegadores tienen una opción para cambiar el tamaño del texto. con medidas absolutas, el tamaño de la letra no cambiará en diferentes tamaños de pantalla, por lo que será un problema para el usuario. Con medidas relativas, el tamaño cambiará con respecto a la fuente del elemento raíz &lt;<b class="doger">html</b>&gt; (16px) con la medida <b class="verde">rem</b>.  para que no sea confuso al utilizar valores altos. cambiaremos el valor del elemento de la raíz para que la medida <b class="verde">rem</b> sea igual a <b class="verde">10px</b>. cambiando el valor de la propiedad <b class="sky">font-size</b> a <b class="verde">62.5%</b> entonces (el 62.5% de 16px son 10px). Con este cambio, la medida <b class="verde">rem</b> será igual a 10px, ahora los puedes utilizar sin problema y tus textos cambiarán según la pantalla del usuario.</div>
-        </div>
-
-        <h3>Unidades relativas al viewport</h3> <!-- Unidades del viewport -->
-        <div class="seccionB">
-            <p>La unidad <b class="verde">vw</b> (viewport width) es un tipo de unidad que hace referencia al ancho del viewport (región visible de la página en el navegador). Por ejemplo, si definimos 50vw, estamos indicando un 50% del ancho actual del navegador. Esto nos permite utilizar tamaños que dependan de las dimensiones de la ventana del navegador.</p>
-            <p>La unidad <b class="verde">vh</b> (viewport height) hace referencia de la misma forma al alto del viewport. Si con la unidad vw podemos hacer referencia al ancho, con vh hacemos referencia al alto.</p>
-            <hr>
-            <p>La unidad <b class="verde">vmin</b> (viewport min) permite devolvernos la cantidad más pequeña entre el valor de <b class="verde">vw</b> y de <b class="verde">vh</b>. De esta forma, si queremos el tamaño mínimo de estos dos, no tenemos que controlarlo, simplemente utilizamos la unidad vmin.</p>
-            <p>La unidad <b class="verde">vmax</b> permite hacer lo mismo, pero con el valor máximo. Esto puede ser útil en algunas situaciones donde quieres flexibilidad con ciertos diseños, y no necesitas estar haciendo cálculos previos para saber cuál es el valor más pequeño o el valor más grande en una pantalla.</p>
-            <h3>Pantalla de 300x500px (Ancho/Alto)</h3>
-            <p><b class="amarillo">.container{</b> <b class="sky">width</b>: <b class="verde">50vmin</b>; <b class="sky">height</b>: <b class="verde">50vmin</b>; <b class="amarillo"> }</b>&emsp;&emsp;&emsp;<b class="amarillo">.container{</b> <b class="sky">width</b>: <b class="verde">50vmax</b>; <b class="sky">height</b>: <b class="verde">50vmax</b>; <b class="amarillo"> }</b></p>
-            
-            <div id="contenedorFlex">
-                <div class="contenedorVminmax">
-                    <div id="ejemploVmin">50% del viewport minimo</div>
-                    <p>Aqui <b class="sky">width</b> y <b class="sky">height</b> toman el valor minimo de la pantalla (300x500). viewport min = 300px al<b class="verde"> 50%</b> para formar un <b style="background: indigo;">cuadro de 150px</b> </p>
-                </div>
-                <div class="contenedorVminmax">
-                    <div id="ejemploVmax">50% del viewport maximo</div>
-                    <p>Aqui <b class="sky">width</b> y <b class="sky">height</b> toman el valor maximo de la pantalla (300x500). viewport max = 500px al <b class="verde"> 50%</b> para formar un <b style="background: indigo;">cuadro de 250px</b> </p>
-                </div>    
-            </div>
-
-        </div>
-    
-        <div class="notas"><b>Nota</b>: cuando se especifican valores de unidades iguales a 0, como por ejemplo 0px, 0em o 0%, podemos omitir las unidades y escribir simplemente 0, ya que las unidades son redundantes y no son necesarias.</div>        
-    </section>
 
     <section>
         <h2 class="sticky">Media Queries y Diseño Responsivo en CSS</h2>

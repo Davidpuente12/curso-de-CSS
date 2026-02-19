@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/estilo.css">
+    <link rel="stylesheet" href="/Unidades_de_medida/unidades.css">
+
+    <style>
+        .margenIz{margin-left: 25px;}
+        .margenTop{margin-top: 100px;}
+        .BotonEjemplos{padding: 4px; background-color: transparent; border-radius: 10px; color: orange; font-weight: bold;}
+        .notas{background-color: rgb(28, 56, 107); padding: 15px; border-left: 7px solid rgb(78, 78, 255); margin-top: 25px;}
+    </style>
+</head>
+<body>
+    <section id="unidadesMedida"> 
+        <h2 class="sticky">Unidades de Medida</h2>
+        <p>Las unidades de medida definen el tamaño, el espacio, la posición y otros aspectos visuales de los elementos, se dividen en dos grandes categorías: unidades absolutas y unidades relativas. Las medidas absolutas no cambian dependiendo del medio de visualización; por ejemplo, 18 píxeles seguirán siendo 18 píxeles. Por otro lado, las medidas relativas, como porcentajes o unidades em y rem, se ajustan al entorno en el que se visualizan.</p>
+        
+        <h4>Medidas absolutas</h4>
+        <p>Las medidas absolutas son aquellos parámetros fijos que no cambian sin importar el medio en que se visualice la página web. La unidad absoluta más utilizada son los píxeles px, las unidades absolutas no son recomendables para diseño web responsivo, ya que no se adaptan a diferentes pantallas.</p>
+        <table class="tabla">
+            <tr><th>Unidad</th><th>Nombre</th>               <th>Equivalencia</th></tr>
+            <tr><td>px</td>    <td>Píxeles</td>              <td>1 px = 1 punto en pantalla</td></tr>
+            <tr><td>cm</td>    <td>Centímetros</td>          <td>1 cm = 37.8 px</td></tr>
+            <tr><td>mm</td>    <td>Milímetros</td>           <td>1 mm = 3.78 px</td></tr>
+            <tr><td>Q</td>     <td>Cuartos de milímetros</td><td>1 Q = 15.12 px</td></tr>
+            <tr><td>in</td>    <td>Pulgadas</td>             <td>1 in = 96 px</td></tr>
+            <tr><td>pc</td>    <td>Picas</td>                <td>1 pc = 16 px</td></tr>
+            <tr><td>pt</td>    <td>Puntos Tipograficos</td>  <td>1 pt = 1.33 px</td></tr>
+        </table>
+
+        <h4>Medidas relativas</h4>
+        <p>A diferencia de las absolutas, las medidas relativas ajustan su tamaño basado en el contexto del objeto padre o del tamaño de la pantalla, lo que las hace altamente flexibles y recomendadas para diseños adaptativos. A continuacion algunas de las mas comunes:</p>
+        <table class="tabla">
+            <tr><th>Unidad</th> <th>Depende de</th></tr>
+            <tr><td>%</td>      <td>tamaño en relación al contenedor padre.</td></tr>
+            <tr><td>em</td>     <td>tamaño de fuente del elemento padre.</td></tr>
+            <tr><td>rem</td>    <td>tamaño de fuente del elemento raíz del documento HTML.</td></tr>
+            <tr><td>vw</td>     <td>1vw = 1% del ancho del navegador</td></tr>
+            <tr><td>vh</td>     <td>1vh = 1% del alto del navegador</td></tr>           
+            <tr><td>vmin</td>   <td>1vmin = 1% del alto o ancho (el mínimo)</td></tr>
+            <tr><td>vmax</td>   <td>1vmax = 1% del alto o ancho (el máximo)</td></tr>
+            <tr><td>max-width / max heigth</td> <td>Establece un limite maximo al elemento</td></tr>
+            <tr><td>min-width / min heigth</td> <td>Establece un limite minimo al elemento</td></tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+            <div>
+                <p> 
+                    <b class="amarillo">.padre{</b> <br>
+                    &emsp; <b class="sky">width</b>: <b class="verde">200px</b>; <br>
+                    &emsp; <b class="sky">height</b>: <b class="verde">200px</b>; <br>
+                    <b class="amarillo">}</b> <br>
+
+                    <b class="amarillo">.hijo{</b> <br>
+                    &emsp; <b class="sky">width</b>: <b class="verde">50%</b>; <br>
+                    &emsp; <b class="sky">height</b>: <b class="verde">50%</b>; <br>
+                    <b class="amarillo">}</b> 
+                </p>
+            </div>
+
+            <div>
+                <div id="container-porcentajes">
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>En este caso, el elemento padre <b>.padre</b> tendrá un tamaño de 200px. Su hijo, el elemento <b>.hijo</b> tiene un tamaño de ancho de 50%, o lo que es lo mismo, la mitad del tamaño de su padre: 100px. Por otro lado, si el elemento <b>.padre</b> no tuviera una propiedad width definida, su elemento hijo tendría valor 0.</p>
+
+        <div class="seccionB">
+            <h4 style="text-align: center;">Unidades relativas a la fuente</h4>
+            <p>La Unidad <b class="verde">em</b> (elemento) buscara el tamaño de fuente del elemento padre inmediato, si no esta definido seguira buscando hasta llegar al elemento raiz &lt;<span class="doger">HTML</span>&gt; que por defecto esta establecido por el navegador en la tipografía (tamaño de la fuente) en 16px. A no ser que lo establezcamos manualmente.</p>
+            <p>En la Unidad <b class="verde">rem</b> la letra (r) significa "root"(raiz), por lo tanto buscara el tamaño del elemento raiz &lt;<b class="doger">HTML</b>&gt; o la pseudoclase <b class="amarillo">:root</b> por defecto en 16px. permitiendonos trabajar con multiplos del tamaño base y establecer el tamaño de texto general con <b class="sky">font-size</b>. </p>
+        </div>
+
+        <div class="notas"><b>Notas</b>: los navegadores tienen una opción para cambiar el tamaño del texto. con medidas absolutas, el tamaño de la letra no cambiará en diferentes tamaños de pantalla, por lo que será un problema para el usuario. Con medidas relativas, el tamaño cambiará con respecto a la fuente del elemento raíz &lt;<b class="doger">html</b>&gt; (16px) con la medida <b class="verde">rem</b>.  para que no sea confuso al utilizar valores altos. cambiaremos el valor del elemento de la raíz para que la medida <b class="verde">rem</b> sea igual a <b class="verde">10px</b>. cambiando el valor de la propiedad <b class="sky">font-size</b> a <b class="verde">62.5%</b> entonces (el 62.5% de 16px son 10px). Con este cambio, la medida <b class="verde">rem</b> será igual a 10px, ahora los puedes utilizar sin problema y tus textos cambiarán según la pantalla del usuario.</div>
+        
+        <!-- codigo -->
+        <div class="controls-consola">
+            <span>Ejecutar</span>
+            <button onclick="ejecutarUnidades('em')">Unidad em</button>
+            <button onclick="ejecutarUnidades('rem')">Unidad rem</button>
+        </div>
+        <div class="codigo" style="height: 250px;">
+            <div id="codigo-unidades-de-fuente">
+                <p>
+                    <b class="amarillo">#container-em</b>{ <br>
+                    &emsp; <b class="sky">font-size</b>: <b class="verde">16px</b>; <br>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.itemUno</b>{font-size: 1em;} <br>
+                    <b class="amarillo">.itemDos</b>{font-size: 1.5em;} <br>
+                    <b class="amarillo">.itemTres</b>{font-size: 2em;} 
+                </p>
+            </div>
+
+            <div id="pagina-unidades-de-fuente" style="width: 900px;">
+                <div id="container-em" class="centrarTexto">
+                    <p>tamaño de <b class="verde">1em</b> (1 * 16 = 16px) </p>
+                    <p>tamaño de <b class="verde">1.5em</b> (1.5 * 16 = 24px)</p> 
+                    <p>tamaño de <b class="verde">2em</b> (2 * 16 = 32px)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unidades del viewport -->
+        <h4>Unidades relativas al viewport</h4> 
+        <div class="seccionB">
+            <p>La unidad <b class="verde">vw</b> (viewport width) es un tipo de unidad que hace referencia al ancho del viewport (región visible de la página en el navegador). Por ejemplo, si definimos 50vw, estamos indicando un 50% del ancho actual del navegador. Esto nos permite utilizar tamaños que dependan de las dimensiones de la ventana del navegador.</p>
+            <p>La unidad <b class="verde">vh</b> (viewport height) hace referencia de la misma forma al alto del viewport. Si con la unidad vw podemos hacer referencia al ancho, con vh hacemos referencia al alto.</p>
+
+            <p>La unidad <b class="verde">vmin</b> (viewport min) permite devolvernos la cantidad más pequeña entre el valor de <b class="verde">vw</b> y de <b class="verde">vh</b>. De esta forma, si queremos el tamaño mínimo de estos dos, no tenemos que controlarlo, simplemente utilizamos la unidad vmin.</p>
+            <p>La unidad <b class="verde">vmax</b> permite hacer lo mismo, pero con el valor máximo. Esto puede ser útil en algunas situaciones donde quieres flexibilidad con ciertos diseños, y no necesitas estar haciendo cálculos previos para saber cuál es el valor más pequeño o el valor más grande en una pantalla.</p>
+        </div>
+
+        <!-- codigo -->
+        <div class="codigo margenTop">
+            <div>
+                <p>
+                    <b class="amarillo">#container-vh-vw</b>{
+                    <div class="margenIz">
+                        <b class="sky">width</b>: <b class="verde">300px</b>; <br>
+                        <b class="sky">height</b>: <b class="verde">500px</b>;
+                    </div>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.Vmin</b>{ <br>
+                    &emsp; <b class="sky">width</b>: <b class="verde">50vmin</b>; <br>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.Vmax</b>{ <br>
+                    &emsp; <b class="sky">width</b>: <b class="verde">250vmax</b>; <br>
+                    }
+                </p>
+            </div>
+
+            <div>
+                <div id="container-vh-vw">
+                    <div class="Vmin">50% del viewport minimo</div>
+                   
+                    <div class="Vmax">50% del viewport maximo</div>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            Aqui <b class="amarillo">Vmin</b>
+            <b class="sky">width</b> y 
+            <b class="sky">height</b> 
+            toman el valor minimo de la pantalla (300x500). viewport min = 300px al
+            <b class="verde"> 50%</b> para formar un cuadro de 150px. 
+        </p>
+
+        <p>
+            Aqui <b class="amarillo">Vmax</b>
+            <b class="sky">width</b> y 
+            <b class="sky">height</b> 
+            toman el valor maximo de la pantalla (300x500). viewport max = 500px al 
+            <b class="verde"> 50%</b> para formar un cuadro de 250px.
+        </p>
+
+        <div class="notas"><b>Nota</b>: cuando se especifican valores de unidades iguales a 0, como por ejemplo 0px, 0em o 0%, podemos omitir las unidades y escribir simplemente 0, ya que las unidades son redundantes y no son necesarias.</div>        
+    </section>
+
+    <script src="/Unidades_de_medida/unidades.js"></script>
+</body>
+</html>
