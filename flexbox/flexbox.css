@@ -1,0 +1,123 @@
+.border-none button{
+    border-bottom: none;
+}
+
+/* FLEX-DIRECTION  */
+#contentFlexDireccion{
+    height: 340px;
+    display: flex;
+}
+.item{
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 5px;
+} 
+.item1{background: rgb(221, 66, 66);}
+.item2{background: rgb(228, 158, 78);}
+.item3{background: rgb(225, 228, 78);}
+.item4{background: rgb(78, 228, 118);}
+.item5{background: rgb(78, 165, 228);}
+
+/* FLEX-WRAP */
+#contentFlexWrap{
+    min-width: 400px;
+    display: flex;
+    gap: 5px;
+}
+.itemwrap{
+    width: 100px; 
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #2069fc;
+} 
+
+
+/* JUSTIFY & ALIGN */
+#contentJustify{
+    background-color: #1f1f1f;
+    display: flex;
+    gap: 15px;
+    height: 300px;
+    align-items: flex-start;
+}
+.itemJustify{
+    width: 100px; 
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(96, 0, 165);
+}
+.itemJustify p{
+    border-bottom: 1px solid;
+    width: 100%;
+    text-align: center;
+}
+.itemJustify:nth-child(1) p{margin-top: 100px;}
+.itemJustify:nth-child(2) p{margin-top: 50px;}
+.itemJustify:nth-child(3) p{margin: 20px auto;}
+.itemJustify:nth-child(4) p{margin: 5px auto;}
+
+.itemJustify:nth-child(5){background-color: rgb(0, 255, 170); justify-self: auto;}
+
+
+/* ALIGN-CONTENT */
+#align-content{
+    background-color: #1f1f1f;
+    display: flex;
+    gap: 15px;
+    height: 500px;
+    flex-wrap: wrap;
+    align-content: start;
+}
+.itemAling{
+    width: 100px; 
+    height: 100px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(96, 0, 165);
+    display: flex;
+    justify-content: center;
+}
+
+/* ORDER */
+#contenOrder{
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background-color: #1f1f1f;
+}
+.itemOrder{
+    width: 100%;
+    text-align: center;
+}
+.order1{background-color: #24e0ed; order: 1;}
+.order2{background-color: #35e398; order: 3;}
+.order3{background-color: #353ee3; order: 4;}
+.order4{background-color: #e3a935; order: 5;}
+.order5{background-color: #e37235; order: 7;}
+
+/* PROPIEDADES FLEXIBLES */
+#content-propiedades-flexibles{
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background-color: #1f1f1f;
+}
+.itemFlexibles{
+    height: 40px;
+    flex-basis: 200px;
+    background-color:darkblue;
+}
+.itemFlexibles:hover{
+    background-color: #fc1d00;
+    flex-grow: 1;
+    transition: flex 0.7s;
+}
+
+

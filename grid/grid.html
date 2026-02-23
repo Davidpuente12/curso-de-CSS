@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <section>
+        <h2>Qué es grid</h2>
+        <p>
+            Grid consiste en el ordenamiento de elementos hijos en dos ejes, como si fuera 
+            una cuadrícula o tabla. El elemento padre o contenedor deberá contener la propiedad y valor
+            <b class="sky">display</b>:<b class="orange">"grid"</b> y debes definir las 
+            medidas de las columnas y de las filas. A partir de aquí, ya puedes ordenar 
+            los hijos según sea necesario.
+        </p>
+
+        <table class="tabla tablaValores" style="width: 100%;">
+            <tr>
+                <th>Valor de display</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>grid</td>
+                <td>Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</td>
+            </tr>
+            <tr>
+                <td>inline-grid</td>
+                <td>Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</td>
+            </tr>
+        </table>
+
+        <p><b>Filas y columnas en grid:</b> la forma principal de definir una cuadrícula es indicar el tamaño de sus filas y sus columnas de forma explícita. Para ello, sólo tenemos que usar las propiedades CSS grid-template-columns y grid-template-rows</p>
+        <table class="tablaPropiedades">
+            <tr>
+                <th>Propiedad</th>
+                <th>Valor</th>
+                <th>Descripcion</th>
+            </tr>
+
+            <tr>
+                <td>grid-template-column</td>
+                <td>[<b class="orange">colum 1</b>][<b class="orange">colum 2</b>]</td>
+                <td>Establece el tamaño de cada columna.</td>
+            </tr>
+            <tr>
+                <td>grid-template-rows</td>
+                <td>[<b class="orange">fila 1</b>][<b class="orange">fila 2</b>]</td>
+                <td>Establece el tamaño de cada fila.</td>
+            </tr>
+            <tr>
+                <td>grid-template</td>
+                <td>[<b class="orange">rows</b>]/[<b class="orange">columns</b>]</td>
+                <td>Propiedad de atajo para filas y columnas.</td>
+            </tr>
+        </table>
+
+        <h4 class="orange">Valores especiales</h4>
+        <p><b>Unidad especial</b> <b class="orange">fr</b> (fraccion restante) es exclusiva de Grid: representa una fracción del espacio disponible del contenedor. Por ejemplo, 1fr 1fr reparte el espacio en dos partes iguales; al añadir una tercera 1fr, tendrás tres columnas. Con cuatro elementos, se forma un grid dos por dos automáticamente.</p>
+
+        <p><b>funcion</b> <b class="amarillo">repeat()</b> se usa en grid para evitar repetir valores, simplificando la definicion de columnas: repeat(3, 1fr) crea tres columnas iguales, seria lo mismo que: 1fr 1fr 1fr.</p>
+        <div class="sintaxis">
+            <b class="amarillo">repeat</b>(
+            <b>veces</b>,
+            <b>tamaño</b>
+            )
+            =
+            <b class="amarillo">repeat</b>(
+            <b class="verde">4</b>,
+            <b class="verde">1fr</b>
+            )
+        </div>
+
+        <!-- grid-template-column -->
+        <h3 class="sky">grid-template-column</h3>
+        <p>La propiedad grid-template-columns se usa dentro de un contenedor con display: grid para definir cuántas columnas tendrá la cuadrícula y qué tamaño de ancho ocupará cada una. Valores que usa: (px, %, fr) unidades fijas, relativas o proporcionales. </p> 
+        
+        <h3 class="sky">grid-template-rows</h3>
+        <p>La propiedad grid-template-rows se usa dentro de un contenedor con display: grid para definir cuántas filas tendrá la cuadrícula y qué tamaño de alto ocupará cada una. Valores que usa: (px, %, fr) unidades fijas, relativas o proporcionales. </p>
+
+
+        <!-- codigo -->
+        <div class="codigo" style="margin-top: 100px;">
+            <div id="content-codigo">
+                <p>
+                    <b class="amarillo">.content</b>{ 
+                    <b class="sky">display</b>: <b class="orange">grid</b> } 
+                </p>
+                <!-- pixeles -->
+                <p>
+                    <b class="amarillo">.pixeles</b>{ <br>
+                    &emsp; <b class="sky">grid-template-columns</b>: <b class="verde">100px 250px</b>; <br>
+                    &emsp; <b class="sky">grid-template-rows</b>: <b class="verde">250px 100px</b>; <br>
+                    }
+                    <button class="btn-ejecutar">ejecutar</button>
+                </p>
+
+                <!-- fracciones -->
+                <p>
+                    <b class="amarillo">.fracciones</b>{ <br>
+                    &emsp; <b class="sky">grid-template-columns</b>: <b class="verde">2.5fr 1fr</b>; <br>
+                    &emsp; <b class="sky">grid-template-rows</b>: <b class="verde">2.5fr 1fr</b>; <br>
+                    }
+                    <button class="btn-ejecutar">ejecutar</button>
+                </p>
+
+                <!-- repeat -->
+                 <p>
+                    <b class="amarillo">.repeat</b>{ <br>
+                    &emsp; <b class="sky">grid-template-columns</b>:
+                    <b class="amarillo">repeat</b>(<b class="verde">4, 1fr</b>); <br>
+
+                    &emsp; <b class="sky">grid-template-rows</b>: 
+                    <b class="amarillo">repeat</b>(<b class="verde">4, 1fr</b>); <br>
+                    }
+                    <button class="btn-ejecutar">ejecutar</button>
+                </p>
+            </div>
+
+            <div id="content-grid">
+                <div class="item-grid">celda uno</div>
+                <div class="item-grid">celda dos</div>
+                <div class="item-grid">celda tres</div>
+                <div class="item-grid">celda cuatro</div>     
+            </div>
+        </div>
+
+        <p>Ahora, ten en cuenta que corre de nuestra cuenta vigilar que el número de elementos hijos en el grid es el que debería. Dependiendo del número de elementos hijos que tenga definido el contenedor grid en su HTML, tendremos una cuadrícula de 2x2 elementos (4 ítems), 2x3 elementos (6 ítems), 2x4 elementos (8 ítems) y así sucesivamente.</p>
+    </section>
+
+    <script src="grid.js"></script>
+</body>
+</html>

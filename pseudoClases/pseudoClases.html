@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Clases</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="pseudoClases.css">
+</head>
+<body>    
+    <section>
+        <h2>Pseudo clases y Pseudo elementos</h2>
+        <p>Existen otros tipos de selectores, además de los selectores básicos y combinadores, capaces de cambiar un estado o añadir algo más al elemento. Estos son denominados pseudoclases y pseudoelementos.</p>
+        
+        <h2 class="amarillo">Pseudo Clases</h2>
+        <p>
+            Son palabras clave que se añaden a los selectores para definir un 
+            estado especial de un elemento. Existen múltiples pseudoclases, así 
+            que para entenderlas mejor, las categorizamos en las siguientes secciones.
+        </p>
+
+        <div class="sintaxis">
+            <b class="amarillo">selector :pseudoclase</b> { 
+            <b class="sky">propiedad</b>: 
+            <b class="orange">valor</b>; } 
+        </div>
+        
+        <h3>Pseudo clases de Interaccion</h3>
+        <p>
+            Las pseudo-clases de interacción en CSS son aquellas que permiten aplicar 
+            estilos en función del estado dinámico de un elemento cuando el usuario 
+            interactúa con él. Es decir, cambian la apariencia de un elemento según 
+            acciones como pasar el cursor, hacer clic, enfocar con el teclado o visitar 
+            un enlace.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th style="width: 150px;">Pseudo clase</th>
+                <th>Funcion</th>
+            </tr>
+            <!-- body -->
+            <tr>
+                <td><b class="amarillo">:hover</b></td>
+                <td>Aplica estilos a un elemento cuando el cursor está encima de el.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:active</b></td>
+                <td>Aplica estilos a un elemento cuando se hace clic sobre él. Se usa principalmente en botones y enlaces.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:focus</b></td>
+                <td>Cambia el estilo de un campo de entrada al hacerle click.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:focus-within</b></td>
+                <td>Cambia el estilo del elemento que contiene el input al hacer click sobre el.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:focus-visible</b></td>
+            </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+            <div style="height: 220px;">
+                <p style="margin-top: 0;">
+                    <b class="amarillo">input:focus</b>{ <br>
+                    &emsp; <b class="sky">color</b>: rgb(254, 85, 51); <br>
+                    &emsp; <b class="sky">background</b>: #383838; <br> } 
+                </p>
+                <p>
+                    <b class="amarillo">div:focus-within</b>{
+                    <b class="sky">background</b>:rgb(254, 85, 51);} <br>
+                </p>
+                <p>
+                    <b class="amarillo">button:hover</b>{
+                    <b class="sky">font-size</b>: 2rem;} <br>
+                </p>
+                <p>
+                    <b class="amarillo">button:active</b>{
+                    <b class="sky">color</b>: rgb(0, 98, 255);} 
+                </p>
+            </div>
+
+            <div>
+                <label for="label-ejemplofocus">Nombre</label>
+                <input 
+                    type="text" 
+                    class="elemento-ejemplofocus" 
+                    id="label-ejemplofocus" 
+                    value="Hacer Click"> 
+
+                <div id="focuswithin">
+                    <label for="label-ejemplofocusWithin">Apellido</label>
+                    <input 
+                        type="text" 
+                        id="label-ejemplofocusWithin" 
+                        value="Hacer Click" 
+                        class="elemento-ejemplofocus">   
+                </div>
+                <button id="elemento-ejemplo-hoverYactive">Enviar</button> 
+            </div>           
+        </div>
+    
+        <h3 class="">Pseudo clases de Estructura</h3> 
+        <p>
+            Las pseudo-clases de estructura en CSS son aquellas que permiten seleccionar 
+            elementos en función de su posición o relación dentro del árbol del 
+            documento (DOM). Permitiendo aplicar estilos basados en su orden, tipo o 
+            jerarquía. En otras palabras, no dependen de atributos o clases que 
+            tú definas, sino de cómo están organizados los elementos en el HTML.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th>Pseudo clase</th>
+                <th>Funcion</th>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:first-child</b></td>
+                <td>Selecciona el primer hijo de un elemento padre.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:last-child</b></td>
+                <td>Selecciona el ultimo hijo de un elemento.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:nth-child(n)</b></td>
+                <td>
+                    Selecciona el hijo en la posición (n).<br>
+                    <span class="amarillo">(n)</span> selecciona todos los elementos. <br>
+                    <span class="amarillo">(odd)</span> posiciones impares <br>
+                    <span class="amarillo">(even)</span> posiciones pares <br>
+                    <span class="amarillo">(3n)</span> posiciones cada tres elementos <br>
+                    <span class="amarillo">(3n+2)</span> cada tres iniciando en dos <br>
+                    <span class="amarillo">(-n+3)</span> los primeros 3 elementos
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:nth-last-child(n)</b></td>
+                <td>Selecciona el hijo en la posición n contando desde el final.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:only-child</b></td>
+                <td>Selecciona un elemento que es el único hijo de su padre.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:nth-of-type(n)</b></td>
+                <td>Selecciona el elemento de un tipo específico en la posición n.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:first-of-type</b></td>
+                <td>Selecciona el primer elemento de un tipo específico.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:last-of-type</b></td>
+                <td>Selecciona el ultimo elemento de un tipo específico.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:only-of-type</b></td>
+                <td>Selecciona un elemento que es el único de su tipo dentro del padre.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:empty</b></td>
+                <td>Selecciona elementos que no tienen hijos (ni texto ni otros nodos).</td>
+            </tr>
+        </table>
+
+        <!-- codigo  -->
+        <div class="codigo"> 
+            <div>
+                <button onclick="pseudoClases('childn')">:nth-child(5)</button> 
+                <button onclick="pseudoClases('odd')">:nth-child(odd)</button> 
+                <button onclick="pseudoClases('even')">:nth-child(even)</button> 
+                <button onclick="pseudoClases('tresn')">:nth-child(3n)</button>
+                <button onclick="pseudoClases('dosn')">:nth-child(3n+2)</button>
+                <button onclick="pseudoClases('menostres')">:nth-child(-n+3)</button>
+                <button onclick="pseudoClases('todos')">:nth-child(n)</button>
+                <button onclick="pseudoClases('firstchild')">:first-child</button>
+                <button onclick="pseudoClases('lastchild')">:last-child</button>
+                <button onclick="pseudoClases('nthoftype')">:nth-of-type(n)</button>
+                <button onclick="pseudoClases('onlychild')">:onlychild</button>
+            </div>
+
+            <div id="Elementos">     
+                <p>&lt;p&gt;</p> 
+                <p>&lt;p&gt;</p> 
+                <p>&lt;p&gt;</p> 
+                <p>&lt;p&gt;</p> 
+                <p>&lt;p&gt;</p>  
+                <p>&lt;p&gt;</p>  
+                <div>
+                    &lt;div&gt;
+                    <p>&lt;p&gt;</p> 
+                    &lt;div&gt;
+                </div> 
+            </div>
+            
+        </div>   
+        
+        <h3 class="">Pseudo clases de Enlaces</h3> 
+        <p>
+            Las pseudo-clases de enlaces en CSS son aquellas que permiten aplicar estilos
+            a los enlaces dependiendo de su estado de navegación. Se usan para diferenciar 
+            cómo se ve un enlace antes de ser visitado, después de ser visitado.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th style="width: 130px;">Pseudo Clase</th>
+                <th>Funcion</th>
+            </tr>
+
+            <!-- body -->
+            <tr>
+                <td><b class="amarillo">:visited</b></td>
+                <td>Se usa para aplicar estilos a los enlaces &lt;a&gt; que ya han sido visitados por el usuario.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:link</b></td>
+                <td>Se usa para aplicar estilos a enlaces que no han sido visitados.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:target</b></td>
+                <td>Se usa para aplicar estilos a elementos que son llamados por su id desde un ancor.</td> 
+            </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+            <div>
+                <p style="margin-top: 0;">
+                    <b class="amarillo">enlace:link</b>{<b class="sky">color</b>: #0057c1;} <br>
+                    <b class="amarillo">enlace:visited</b>{<b class="sky">color</b>: #e4750d;} <br><br>
+
+                    <b class="amarillo">div:target</b>{ <br>
+                    &emsp; <b class="sky">display</b>: block; <br>
+                    &emsp; <b class="sky">background</b>: #e4750d; <br>
+                    }
+                </p>
+            </div>
+            
+            <div>
+                <a href="#46" class="ejemplo-enlace">Ingresa aqui</a>
+                <a href="#div-target" class="ejemplo-enlace">Ingresa aqui</a>
+                <div id="div-target">Seccion :target</div> 
+            </div>
+        </div>
+
+        <h3 class="">Pseudo clases de Formularios</h3>
+        <p>
+            Son reglas especiales que permiten aplicar estilos a los elementos de un 
+            formulario según su estado o condición. Son muy útiles para mejorar la 
+            experiencia del usuario, ya que cambian la apariencia de inputs, selects, 
+            botones, etc., dependiendo de cómo se estén usando.
+        </p>
+
+        <table class="tabla">
+            <tr>
+                <th style="width: 150px;">Pseudo clase</th>
+                <th>Funcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">:checked</b></td>
+                <td>
+                    se usa para aplicar estilos a elemento que estan marcados o 
+                    seleccionados como &lt;input&gt; del tipo checkbox, radio y tambien 
+                    se puede usar en los elementos de opcion &lt;option&gt; de 
+                    una lista &lt;select&gt; que se encuentren seleccionados.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:disabled</b></td>
+                <td>
+                    Selecciona elementos del formulario que esten desactivados,
+                    (que tengan el atributo <span class="sky">disabled</span>).
+                    &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;button&gt;.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:enabled</b></td>
+                <td>
+                    Selecciona elementos del formulario que esten activados.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:read-only</b></td>
+                <td>
+                    selecciona aquellos elementos &lt;input&gt; de un formulario 
+                    que están marcados con el atributo de sólo lectura
+                    <span class="sky">readonly</span>.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:read-write</b></td>
+                <td>Selecciona los elementos que son editables por el usuario, sean campos de texto &lt;input> o &lt;textarea>.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:required</b></td>
+                <td>
+                    Permite estilizar un campo cuando es obligatorio, o sea, si tiene el atributo 
+                    <span class="sky">required</span>.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:optional</b></td>
+                <td>Define estilos cuando el campo es opcional (por defecto, todos los campos, que no utilizan el atributo required).</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:valid</b></td>
+                <td>
+                    Define estilos cuando los campos cumplen la validación HTML5, como
+                    que se implementan con el atributo <span class="sky">pattern</span>
+                    y sus expresiones regulares.
+                </td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:invalid</b></td>
+                <td>Define estilos cuando los campos no cumplen la validación HTML5.</td>
+            </tr>
+        </table>
+        
+        <!-- codigo -->
+        <div class="codigo">
+            <div>
+                <b class="amarillo">input:enabled</b>{ <br>
+                &emsp; <b class="sky">background</b>: verde; <br>
+                &emsp; <b class="sky">cursor</b>: pointer; <br>
+                } <br>
+
+                <b class="amarillo">input:read-only</b>{ <br>
+                &emsp; <b class="sky">background</b>: azul; <br>
+                } <br>
+
+                <b class="amarillo">input:disabled</b>{ <br>
+                &emsp; <b class="sky">background</b>: verde; <br>
+                &emsp; cursor: not-allowed; <br>
+                } <br>
+
+                <b class="amarillo">input:required</b>{ <br>
+                &emsp; <b class="sky">border</b>: 2px solid red; <br>
+                } <br>
+
+                <b class="amarillo">input:checked</b> + <b class="amarillo">label</b>{ <br>
+                &emsp; <b class="sky">color</b>: azul-marine; <br>
+                } <br>
+
+                <b class="amarillo">option:checked</b>{ <br>
+                &emsp; <b class="sky">color</b>: azul; <br>
+                &emsp; <b class="sky">background</b>: negro; <br>
+                }
+            </div>
+
+            <div id="inputs-pseudoclases-formularios">
+                <p>Nombre
+                    <input type="text" class="Elemento-PCF" required>
+                </p>
+
+                <p>Apellido 
+                    <input type="text" class="Elemento-PCF">
+                </p>
+
+                <p>ID 
+                    <input type="text" class="Elemento-PCF" value="Solo lectura" readonly>
+                </p>
+
+                <p>Apodo 
+                    <input type="text" class="Elemento-PCF" value="Deshabilitado" disabled>
+                </p>
+                
+                <input type="checkbox" id="Input-checkbox" class="Elemento-PCF"> 
+                <label for="Input-checkbox">Estudiante</label> <br>
+                
+                <input type="radio" id="Input-radio" class="Elemento-PCF" name="programacion">
+                <label for="Input-radio">Principiante</label> <br>
+
+                <input type="radio" id="Input-radio" class="Elemento-PCF" name="programacion">
+                <label for="Input-radio">Avanzado</label> <br><br>
+
+                <select>
+                    <option class="Elemento-option">html</option>
+                    <option class="Elemento-option">css</option>
+                    <option class="Elemento-option">JavaScript</option>
+                </select>
+                
+            </div>
+        </div>
+        
+        <h3 class="">Otras Pseudo clases</h3>
+
+        <!-- codigo -->
+        <div class="codigo">
+            <div>
+                <b class="amarillo">:not()</b>
+                <p> Aplica un estilo a todos los elementos, excepto al elemento que se indique entre los parentesis.</p>
+                <ul id="ejemplonot">
+                    <li>Aplicar</li> 
+                    <li>Aplicar</li> 
+                    <li class="no">NO</li> 
+                    <li>Aplicar</li> 
+                    <li class="no">NO</li>
+                </ul>
+            </div>   
+
+            <div><b class="amarillo">:empty</b></div> 
+            <div><b class="amarillo">:rot</b></div> 
+        </div>
+
+        <!-- pseudos elementos -->
+        <h2 class="amarillo">Pseudo Elementos</h2>
+        <p>los 
+            son una herramienta que permite aplicar estilos a partes específicas de un 
+            elemento HTML sin necesidad de modificar el contenido directamente en el 
+            código. No alteran el DOM real, solo afectan la representación visual.
+            Se escriben con doble dos puntos (::).
+        </p>
+        
+        <div class="seccionB centrarTexto">
+            <b>Sintaxis</b> 
+            <span class="amarillo">selector :pseudo-elemento</span> { 
+            <span class="sky">propiedad</span>: 
+            <span class="orange">valor</span>;} 
+        </div>
+        
+        <table class="tabla">
+            <tr>
+                <th style="width: 200px;">Pseudo Elemento</th>
+                <th>Funcion</th>
+            </tr>
+
+            <tr>
+                <td><b class="amarillo">::before</b> </td>
+                <td>Sirve para agregar un contenido antes del elemento. El contenido es agregado mediante la propiedad content de CSS.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">::after</b></td>
+                <td>Sirve para agregar un contenido después del elemento. El contenido es agregado mediante la propiedad content.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">::first-letter</b></td>
+                <td>Sirve para añadir estilos a la primera letra del texto de cualquier elemento.</td>
+            </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+            <div>
+                <p style="margin-top: 0;">
+                    <b class="amarillo">p::before</b>{<b class="sky">content</b>: <b class="orange">"*"</b>;} 
+                    <button onclick="ejecutarPseudoElementos('before')">::before</button>
+                </p>
+                <p>
+                    <b class="amarillo">p::after</b>{<b class="sky">content</b>: <b class="orange">":&#41;"</b>;} 
+                    <button onclick="ejecutarPseudoElementos('after')">::after</button>
+                </p>
+                <p>
+                    <b class="amarillo">p::first-letter</b>{<b class="sky">color</b>: doger;}
+                    <button onclick="ejecutarPseudoElementos('first-letter')">::first-letter</button>
+                </p>
+            </div>
+
+            <div id="ejemplo-pseudo-elementos"> 
+                <p> Hola </p>
+                <p> Hola </p>
+                <p> Hola </p>
+                <p> Hola </p>
+                <p> Hola </p>
+            </div>
+        </div>
+    </section> 
+
+    <script src="pseudoClases.js"></script>
+</body>
+</html>

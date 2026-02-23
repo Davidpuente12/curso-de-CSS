@@ -1,0 +1,75 @@
+.margen-titulos{
+    margin-top: 40px;
+}
+
+.tabla-verde td:nth-child(1){
+    color: var(--verde);
+}
+
+#modeloCaja{
+    color: black;
+    margin: 60px;
+}
+#divMargin{
+    background-color: rgb(255, 218, 188);
+    width: 500px;
+    height: 200px;
+    margin: auto;
+}
+#divBorder{
+    background-color: rgb(255, 237, 152);
+    width: 440px;
+    height:150px ;
+    margin: auto;
+}
+#divPadding{
+    background: rgb(137, 247, 204); 
+    width: 380px; 
+    height: 105px; 
+    margin: auto;
+}
+#contenido{
+    background-color: rgb(151, 237, 255);
+    width: 340px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BORDER   */
+#tiposDeLinea{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 50px 0;
+    background-color: rgb(24, 22, 22);
+    border-radius: 5px;
+}
+#tiposDeLinea div{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+}
+#tiposDeLinea :nth-child(1){border: none;}
+#tiposDeLinea :nth-child(2){border: solid 5px red;}
+#tiposDeLinea :nth-child(3){border: dashed 5px rgb(255, 119, 0);}
+#tiposDeLinea :nth-child(4){border: dotted 5px yellow;}
+#tiposDeLinea :nth-child(5){border: double 8px greenyellow;}
+#tiposDeLinea :nth-child(6){border: groove 8px green;}
+#tiposDeLinea :nth-child(7){border: ridge 8px turquoise;}
+#tiposDeLinea :nth-child(8){border: inset 8px blue;}
+#tiposDeLinea :nth-child(9){border: outset 8px fuchsia;}
+
+#bordesPorLado{
+    width: 130px;
+    height: 130px;
+    border-left: 3px solid yellow;
+    border-top: 6px dashed blue;
+    border-right: 9px double red;
+    border-bottom: 12px dotted white;
+}

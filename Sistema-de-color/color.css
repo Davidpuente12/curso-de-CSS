@@ -1,0 +1,21 @@
+#item-sistema-colores{
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+}
+
+.rgb{
+    background-color: rgb(200,50,50);
+}
+.rgba{
+    background-color: rgba(255, 50, 50, 0.5);
+}
+.hexa{
+    background-color: #00aa00;
+}
+.hsl{
+    background-color: hsl(200, 100%, 50%);
+}
+.color{
+    background-color: yellow;
+}

@@ -5,6 +5,7 @@ const codigo = document.getElementById('codigo-control-texto')
 const clasesTextAlign = ["left","right","center","justify"]
 const clasesTextTransform = ["uppercase","lowercase","capitalize"]
 const clasesTextDecoration = ["underline","overline","line-through"]
+const clasesTextShadow = ["shadow","shadow-blur"]
 
 function textAling(tipo){
     clasesTextAlign.forEach(clase => {
@@ -24,6 +25,14 @@ function textTransform(tipo){
 
 function textDecoration(tipo){
     clasesTextDecoration.forEach(clase => {
+        if(tipo === clase){
+            pagina.className = clase
+        }
+    })
+}
+
+function textShadow(tipo){
+    clasesTextShadow.forEach(clase => {
         if(tipo === clase){
             pagina.className = clase
         }
@@ -124,6 +133,31 @@ function controlDeTexto(tipo){
             <button
                 onclick="textDecoration('line-through')">
                 <b class="orange">line-through</b>
+            </button>; }
+        </p>
+        `
+    }
+    else if(tipo === "text-shadow"){
+        codigo.innerHTML = `
+        <p>
+            <b class="amarillo">p</b>{
+            <b class="sky">text-shadow</b>: 
+            <button
+                onclick="textShadow('shadow')">
+                <b class="verde">2px</b>
+                <b class="verde">2px</b>
+                <b style="background: #3885ff;">#3885ff</b>
+            </button>; }
+        </p>
+        <p>
+            <b class="amarillo">p</b>{
+            <b class="sky">text-shadow</b>: 
+            <button
+                onclick="textShadow('shadow-blur')">
+                <b class="verde">8px</b>
+                <b class="verde">8px</b>
+                <b class="verde">5px</b>
+                <b style="background: #3885ff;">#3885ff</b>
             </button>; }
         </p>
         `

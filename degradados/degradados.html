@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degradados</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="degradado.css">
+</head>
+<body>
+    <section>
+        <h2>Degradados</h2>
+        <p>Los degradados son una forma de generar transiciones suaves entre dos o más colores directamente en el navegador, sin necesidad de usar imágenes externas. Se consideran un tipo especial de <image> y se pueden aplicar en cualquier lugar donde normalmente usarías una imagen, como fondos de elementos.</p>
+    
+        <table class="tabla color-tabla" style="width: 90%;">
+            <tr>
+            <th>Tipo</th>
+            <th>Función</th>
+            <th>Descripción</th>
+            </tr>
+            
+            <tr>
+                <td>Lineal</td>
+                <td>linear-gradient()</td>
+                <td>Crea una transición de colores en línea recta (horizontal, vertical o diagonal).</td>
+            </tr>
+            <tr>
+            <td>Radial</td>
+            <td>radial-gradient()</td>
+            <td>Genera un degradado circular o elíptico desde un punto central hacia afuera.</td>
+            </tr>
+            <tr>
+            <td>Cónico</td>
+            <td>conic-gradient()</td>
+            <td>Produce un degradado en forma de cono, girando alrededor de un punto central.</td>
+            </tr>
+            <tr>
+            <td>Lineal repetido</td>
+            <td>repeating-linear-gradient()</td>
+            <td>Similar al lineal, pero repite el patrón indefinidamente.</td>
+            </tr>
+            <tr>
+            <td>Radial repetido</td>
+            <td>repeating-radial-gradient()</td>
+            <td>Similar al radial, pero repite el patrón en círculos concéntricos.</td>
+            </tr>
+            <tr>
+            <td>Cónico repetido</td>
+            <td>repeating-conic-gradient()</td>
+            <td>Similar al cónico, pero repite el patrón en torno al centro.</td>
+            </tr>
+        </table>
+
+        <!-- LINEAR-GRADIENT -->
+        <h3 class="amarillo">linear-gradient()</h3>
+        <p>Es una función que sirve para crear un degradado lineal, es decir, una transición progresiva entre dos o más colores a lo largo de una línea recta. Es muy flexible y se puede personalizar en dirección, ángulo y número de colores.</p>
+        <div class="seccionB">
+            <code class="sky">background</code>:
+            <code class="amarillo">linear-gradient</code>( 
+            <code class="orange">direction</code>, 
+            <code class="orange">color uno</code>,
+            <code class="orange">color dos</code>, ... )
+        </div>
+
+        <p><b class="orange">direction</b> define hacia dónde se extiende la transición de colores. Como la “línea guía” sobre la que se dibuja el degradado. Formas de definir la dirección:</p>
+        <ul>
+            <li>
+                <b>1. palabras claves</b>: <br>
+                to right = de izquierda a derecha. <br>
+                to bottom = de arriba hacia abajo. <br>
+                to top = de abajo hacia arriba. <br>
+                to left = de derecha a izquierda. 
+                  
+            </li>
+            <li class="notas">También puedes combinar: to top right (diagonal desde abajo-izquierda hacia arriba-derecha).</li>
+            
+            <li>
+                <b>2. Angulos</b>: Se mide en grados, donde 0deg apunta hacia arriba. El ángulo aumenta en sentido horario. <br>
+                90deg → hacia la derecha. <br>
+                180deg → hacia abajo. <br>
+                270deg → hacia la izquierda. <br>
+            </li>
+            <li class="notas">También puedes usar turn: 0.25turn equivale a 90deg.</li>
+
+            <li><b>3. Por defecto (sin direccion)</b> Si no especificas nada, el degradado va de arriba hacia abajo</li>
+        </ul>
+        <p><b class="orange">color</b> se necesitan al menos dos colores, se pueden añadir más, y cada uno puede tener una posición opcional (porcentaje o valor absoluto). Se pueden usar valores RGBA o transparent para efectos de superposición.</p>
+    
+        <!-- RADIAL-GRADIENT -->
+        <h3 class="amarillo">radial-gradient()</h3>
+        <p>Es una función que crea un degradado que se expande en círculos o elipses desde un punto central hacia afuera. Es diferente al lineal porque no sigue una línea recta, sino que se distribuye en forma radial.</p>
+        <div class="seccionB">
+            <code class="sky">background</code>:
+            <code class="amarillo">radial-gradient</code>( 
+            <code class="orange">forma tamaño y posición</code>, 
+            <code class="orange">color uno</code>,
+            <code class="orange">color dos</code>, ... )
+        </div>
+
+        <p><b class="orange">Forma</b> define la forma en la que se dibujara el gradiente.</p>
+        <ul>
+            <li><b class="orange">circle</b> degradado circular.</li>
+            <li><b class="orange">ellipse</b> degradado eliptico (por defecto).</li>
+        </ul>
+
+        <table class="tabla tablaValores">
+            <tr>
+                <th style="width: 200px;">Valor</th>
+                <th>Descripción</th>
+            </tr>
+        
+            <tr>
+                <td>Tamaños:</td>
+                <td> controla hasta dónde se extiende el degradado.</td>
+            </tr>
+            <tr>
+                <td>closest-side</td>
+                <td>Se detiene en el lado más cercano del contenedor.</td>
+            </tr>
+            <tr>
+                <td>farthest-side</td>
+                <td>Se extiende hasta el lado más lejano del contenedor.</td>
+            </tr>
+            <tr>
+                <td>closest-corner</td>
+                <td>Se detiene en la esquina más cercana del contenedor.</td>
+            </tr>
+            <tr>
+                <td>farthest-corner</td>
+                <td>Se extiende hasta la esquina más lejana del contenedor (valor por defecto).</td>
+            </tr>
+        </table>
+
+        <p><b class="orange">posicion</b> define el centro desde donde comienza el degradado.</p>
+        <ul>
+            <li><b>Palabras clave:</b> at center, at top left, at bottom right.</li>
+            <li><b>Coordenadas:</b> at 30% 70% (posición relativa dentro del contenedor).</li>
+        </ul>
+
+        <p><b class="orange">colores</b> se necesitan al menos dos colores, y ademas permiten definir posiciones (en % o valores abosolutos).</p>
+
+
+        <!-- codigo -->
+        <div class="controls-consola">
+            <button onclick="ejecutarGradientes('linear-gradient')">linear-gradient</button>
+            <button onclick="ejecutarGradientes('radial-gradient')">radial-gradient</button>
+        </div>
+        <div class="codigo">
+            <div id="codigo-gradientes">
+                <p>
+                    <b class="amarillo">.linear-simple</b>{ <br>
+                    &emsp; <b class="sky">background</b>: 
+                    <b class="amarillo2">linear-gradient</b>(
+                    <span style="background: #3498db;">#3498db</span>,
+                    <span style="background: #9b59b6;">#9b59b6</span> 
+                    ); <br>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.linear-direction</b>{ <br>
+                    &emsp; <b class="sky">background</b>: 
+                    <b class="amarillo2">linear-gradient</b>( <br> &emsp; &emsp; 
+                    to <b class="orange">right</b>,
+                    <span style="background: #e74c3c;">#e74c3c</span>,
+                    <span style="background: #f39c12;">#f39c12</span> <br>
+                    &emsp; ); <br>
+                    }
+                </p>
+
+                <p>
+                    <b class="amarillo">.linear-diagonal</b>{ <br>
+                    &emsp; <b class="sky">background</b>: 
+                    <b class="amarillo2">linear-gradient</b>( <br> &emsp; &emsp; 
+                    to <b class="orange">bottom right</b>, 
+                    <span style="background: #2ecc71;">#2ecc71</span>,
+                    <span style="background: #3498db;">#3498db</span> <br>
+                    &emsp; ); <br>
+                    }
+                </p>
+            </div>
+
+            <div id="pagina-of-gradients">
+                <div class="content-for-gradient linear-simple"></div>
+                <div class="content-for-gradient linear-direction"></div>
+                <div class="content-for-gradient linear-diagonal"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="degradados.js"></script>
+</body>
+</html>

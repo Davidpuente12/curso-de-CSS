@@ -1,0 +1,36 @@
+/* boton del codigo */
+#content-codigo p{
+    position: relative;
+}
+.btn-ejecutar{
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+#content-grid{
+    display: grid; 
+    gap: 10px;
+    width: 400px;
+    height: 400px; 
+}
+.item-grid{
+    background: var(--doger);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} 
+
+.pixeles{
+    grid-template-columns: 100px 250px;
+    grid-template-rows: 250px 100px;
+}
+.fracciones{
+    grid-template-columns: 2.5fr 1fr; 
+    grid-template-rows: 2.5fr 1fr;
+}
+.repeat{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}

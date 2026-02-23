@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+    <section> 
+        <h2>Flexbox y CSS Grid</h2>
+        <p>El display flex y grid son formas de visualización de elementos recientes y cada uno tienen sus propias características para crear interfaces de manera efectiva, a partir de un contenedor padre que dotará a los elementos hijos de superpoderes del posicionamiento. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" >Guia de flexbox</a></p>
+        
+        <p><b>Qué es Flexbox?</b> consiste en el ordenamiento de elementos hijos en un solo eje, por defecto horizontalmente. El elemento padre o contenedor deberá contener la propiedad display con el valor flex. A partir de aquí, ya puedes ordenar los hijos según sea necesario.</p>
+        <table class="tabla">
+            <tr><th>Valor</th> <th>Descripcion</th></tr>
+            <tr><td><b class="orange">flex</b></td>        <td>Contenedor en bloque, similar a block (ocupa todo el ancho del padre).</td></tr>
+            <tr><td><b class="orange">inline-flex</b></td> <td>Contenedor en línea, similar a inline-block (ocupa solo el contenido).</td></tr>
+        </table>
+
+        <!-- Direccion -->
+        <div> 
+            <h3 class="sky">flex-direction</h3>
+            <p>Es una propiedad que sirve para modificar la direccion del eje principal del contenedor para que se oriente en horizontal (valor por defecto) o en vertical. Además, también podemos incluir el sufijo <SPAN class="orange">reverse</SPAN> para indicar que coloque los ítems en orden inverso.</p>
+            <table class="tabla tablaValores">
+                <tr><th>Valor</th><th>Descripcion</th></tr>
+                <tr><td>row</td>            <td>Eje principal en dirección horizontal.</td></tr>
+                <tr><td>row-reverse</td>    <td>Eje principal en dirección horizontal invertida.</td></tr>
+                <tr><td>column</td>         <td>Eje principal en dirección vertical.</td></tr>
+                <tr><td>column-reverse</td> <td>Eje principal en dirección vertical invertida.</td></tr>
+            </table>
+
+            <!-- codigo --> 
+            <div class="controls-consola"> 
+                <button class="sky">flex-direction</button>
+            </div>
+            
+            <div class="codigo" >
+                <div>
+                    <p>
+                        <b class="amarillo">.content</b>{ <br>
+                        &emsp; <b class="sky">display</b>: <b class="orange">flex</b>; <br>
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.row</b>{ 
+                        <b class="sky">flex-direction</b>: 
+                        <button 
+                            onclick="flexDirection('row')">
+                            <b class="orange">row</b>
+                        </button> 
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.column</b>{ 
+                        <b class="sky">flex-direction</b>: 
+                        <button 
+                            onclick="flexDirection('column')">
+                            <b class="orange">column</b>
+                        </button> 
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.row-reverse</b>{ 
+                        <b class="sky">flex-direction</b>: 
+                        <button 
+                            onclick="flexDirection('row-reverse')">
+                            <b class="orange">row-reverse</b>
+                        </button> 
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.column-reverse</b>{ 
+                        <b class="sky">flex-direction</b>: 
+                        <button 
+                            onclick="flexDirection('column-reverse')">
+                            <b class="orange">column-reverse</b>
+                        </button> 
+                        }
+                    </p>
+                </div>
+
+                <div id="contentFlexDireccion">
+                    <div class="item item1">1</div>
+                    <div class="item item2">2</div>
+                    <div class="item item3">3</div>
+                    <div class="item item4">4</div>
+                    <div class="item item5">5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desborde Multilinea -->
+        <div> 
+            <h3>Desborde multilinea</h3>
+            <p>En general, flex se suele utilizar para estructuras de una sola dimensión, es decir, contenedores que sólo van en una dirección. Sin embargo, existe una propiedad denominada flex-wrap con la que podemos especificar un comportamiento especial de nuestro contenedor padre.</p>
+            
+            <h3 class="sky">flex-wrap</h3>
+            <p>Es una propiedad que nos permite hacer que nuestro contenedor flex se desborde, convirtiéndose en un contenedor flex multilínea. Si un elemento no cabe dentro de nuestro contenedor flex, por defecto, los elementos se harán más pequeños (pues son flexibles). Con esta propiedad haremos que el contenedor crezca y se adapte a los elementos.</p>
+            
+            <table class="tabla">
+                <tr><th>Valor</th><th>Descripcion</th></tr>
+                <tr><td><b class="orange">nowrap</b></td>       <td>Los ítems se ajustan para ocupar el tamaño del contenedor. (por defecto)</td></tr>
+                <tr><td><b class="orange">wrap</b></td>         <td>Establece los ítems en modo multilínea (permite que se desborde el contenedor).</td></tr>
+                <tr><td><b class="orange">wrap-reverse</b></td> <td>Establece los ítems en modo multilínea, pero en dirección inversa.</td></tr>
+            </table>
+
+            <h3 class="sky">flex-flow</h3>
+            <p> es una propiedad de atajo (short-hand) con la que podemos resumir los valores de las propiedades flex-direction y flex-wrap, especificándolas en una sola propiedad y ahorrándonos utilizar las propiedades concretas.</p>
+            <table class="tabla">
+                <tr><th>Valor</th><th>Descripcion</th></tr>
+                <tr><td><b class="orange">row wrap</b></td>      <td>Elementos en fila que hacen salto si no caben</td></tr>
+                <tr><td><b class="orange">row nowrap</b></td>    <td>Elementos en fila sin saltos</td></tr>
+                <tr><td><b class="orange">column wrap</b></td>   <td>Elementos en columna con saltos</td></tr>
+                <tr><td><b class="orange">column nowrap</b></td> <td>Elementos en columna sin saltos</td></tr>
+            </table>
+
+            <!-- codigo -->
+            <div class="controls-consola"> 
+                <button class="sky">flex-wrap</button>                 
+            </div>           
+            
+            <div class="codigo">
+                <div>
+                    <p>
+                        <b class="amarillo">.content</b>{ <br>
+                        &emsp; <b class="sky">display</b>: <b class="orange">flex</b>; <br>
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.nowrap</b>{ 
+                        <b class="sky">flex-wrap</b>: 
+                        <button 
+                            onclick="flexWrap('nowrap')">
+                            <b class="orange">nowrap</b>
+                        </button> 
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.wrap</b>{ 
+                        <b class="sky">flex-wrap</b>: 
+                        <button 
+                            onclick="flexWrap('wrap')">
+                            <b class="orange">wrap</b>
+                        </button> 
+                        }
+                    </p>
+                    <p>
+                        <b class="amarillo">.wrap-reverse</b>{ 
+                        <b class="sky">flex-wrap</b>: 
+                        <button 
+                            onclick="flexWrap('wrap-reverse')">
+                            <b class="orange">wrap-reverse</b>
+                        </button> 
+                        }
+                    </p>
+                </div>
+
+                <div id="contentFlexWrap">
+                    <div class="itemwrap">1</div>
+                    <div class="itemwrap">2</div>
+                    <div class="itemwrap">3</div>
+                    <div class="itemwrap">4</div>
+                    <div class="itemwrap">5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Propiedades para espacios -->
+        <div> 
+            <h3>Propiedades para Espacios</h3>
+            <h3 class="sky">gap</h3>
+            <p> (brecha) determina la separación entre los elementos dentro de un contenedor con display: flex, grid, o inline-flex. Esto evita la necesidad de estar utilizando padding o margin en los elementos hijos, que suele traer muchas complicaciones.</p>
+            
+            <table class="tabla tablaPropiedades">
+                <tr>
+                    <th style="width: 150px;">Propiedad</th> 
+                    <th>Valor</th> 
+                    <th>Descripcion</th>
+                </tr>
+
+                <tr>
+                    <td>gap</td>         
+                    <td><span class="orange">tamaño | tamaño</span></td>  
+                    <td>
+                        Si se define uno aplica el tamaño del hueco en ambos ejes, con ambos
+                        el primero aplica los tamaños para el hueco del eje X y el segundo al eje Y.
+                    </td>
+                </tr>
+                <tr><td>row-gap</td>     <td><span class="orange">tamaño</span></td>  <td>Espacio entre filas (sólo funciona con flex-direction: column)</td></tr>
+                <tr><td>column-gap</td>  <td><span class="orange">tamaño</span></td>  <td>Espacio entre columnas (sólo funciona con flex-direction: row)</td></tr>
+            </table>
+        </div>
+
+        <!-- Propiedades de alineacion -->
+        <div> 
+            <h3>Propiedades de alineación</h3> 
+
+            <h3 class="sky">justify-content</h3>
+            <p>Esta propiedad sirve para colocar los ítems de un contenedor mediante una disposición concreta a lo largo del eje principal (por defecto, en horizontal). Los valores que puede tomar esta propiedad son los siguientes:</p>
+            <table class="tabla tablaValores">
+                <tr>
+                    <th style="width: 150px;">Valor</th>      
+                    <th>Descripcion</th>
+                </tr>
+
+                <tr><td>start</td>          <td>Agrupa los items al inicio del eje princial (Comienzo)</td></tr>
+                <tr><td>end</td>            <td>Agrupa los items al final del eje principal (Final)</td></tr>
+                <tr><td>center</td>         <td>Agrupa los items al centro del eje principal (Center)</td></tr>
+                <tr><td>space-between</td>  <td>Distribuye los items dejando espacio entre ellos (Espacio entre)</td></tr>
+                <tr><td>space-around</td>   <td>Distribuye los items dejando espacio alrededor de ellos (Espacio alrededor)</td></tr>
+                <tr><td>space-evenly</td>   <td>Distribuye los items con un espacio igual alrededor de ellos (Espacio Uniforme)</td></tr>
+            </table>
+
+            <h3 class="sky">aling-items</h3>
+            <p>Es otra propiedad importante que se encarga de alinear los ítems en el eje secundario del contenedor (por defecto para el eje vertical). Los valores que puede tomar align-items son los siguientes:</p>
+            <table class="tabla">
+                <tr><th>Valor</th>          <th>Descripcion</th></tr>
+
+                <tr><td><span class="orange">start</span></td>     <td>Agrupa los items al inicio del eje secundario (Comienzo)</td></tr>
+                <tr><td><span class="orange">end</span></td>       <td>Agrupa los items al final del eje secundario (Final)</td></tr>
+                <tr><td><span class="orange">center</span></td>    <td>Agrupa los items al centro del eje secundario (Center)</td></tr>
+                <tr><td><span class="orange">stretch</span></td>   <td>(Estirar) Alinea los items estirandolos hasta que cubran el alto del contenedor. (Valor por defecto) </td></tr>
+                <tr><td><span class="orange">baseline</span></td>  <td>Alinea los items en el contenedor segun la base del contenido de los items del contenedor (base)</td></tr>
+            </table>
+
+            <h3 class="sky">align-self</h3>
+            <p>Esta propiedad  actúa exactamente igual que align-items, sin embargo es la primera propiedad de flex que vemos que se utiliza sobre un ítem hijo específico y no sobre el elemento padre contenedor. nos permite cambiar el comportamiento de align-items y sobreescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto.</p>
+            <table class="tabla">
+                <tr><th>Valor</th>          <th>Descripcion</th></tr>
+                <tr><td><span class="orange">auto</span></td> <td>Hereda el valor de align-items del padre (si no se ha definido, es stretch).</td></tr>
+                <tr> <td colspan="2">Tiene los mismos valores de align-items</td></tr>
+            </table>
+
+
+            <!-- Botones para contenedor justify, align: item/self -->        
+            <div class="controls-consola border-none"> 
+                <span class="sky">justify-content</span>: 
+                <button onclick="start()"><b class="orange">start</b></button> 
+                <button onclick="center()"><b class="orange">center</b></button> 
+                <button onclick="end()"><b class="orange">end</b></button>  
+                <button onclick="spaceBetween()"><b class="orange">space-between</b></button> 
+                <button onclick="spaceAround()"><b class="orange">space-around</b></button> 
+                <button onclick="spaceEvenly()"><b class="orange">space-evenly</b></button>  
+            <br>
+                <span class="sky">aling-items</span>: 
+                <button onclick="startColumn()"><b class="orange">start</b></button> 
+                <button onclick="centerColumn()"><b class="orange">center</b></button> 
+                <button onclick="endColumn()"><b class="orange">end</b></button> 
+                <button onclick="stretch()"><b class="orange">stretch</b></button> 
+                <button onclick="baseline()"><b class="orange">baseline</b></button>  
+            <br>
+                <span class="sky">aling-self</span>: 
+                <button onclick="startSelf()"><b class="orange">start</b></button> 
+                <button onclick="centerSelf()"><b class="orange">center</b></button> 
+                <button onclick="endSelf()"><b class="orange">end</b></button> 
+                <button onclick="stretchSelf()"><b class="orange">stretch</b></button> 
+                <button onclick="baselineSelf()"><b class="orange">baseline</b></button> 
+                <button onclick="autoSelf()"><b class="orange">auto</b></button>  
+            </div>
+            
+            <div id="contentJustify">
+                <div class="itemJustify"><p>1</p></div>
+                <div class="itemJustify"><p>2</p></div>
+                <div class="itemJustify"><p>3</p></div>
+                <div class="itemJustify"><p>4</p></div>
+                <div class="itemJustify" id="itemAlingSelf"><p>5</p></div>
+            </div>
+
+            <div class="notas">
+                Nota: stretch funciona solo cuando los items no tienen definido el height
+            </div>
+
+            <!-- ALIGN-CONTENT  -->
+            <h3 class="sky">align-content</h3>
+            <p>Esta propiedad nos servira cuando estemos tratando con un contenedor flex multilinea creado mediante flex-wrap. mediante align-content podemos alinear cada una de las lineas del contenedor multilinea.</p>
+            <table class="tabla tablaValores">
+                <tr><th>Valor</th>      <th>Descripcion</th></tr>
+
+                <tr><td>start</td>          <td>Agrupa los items al inicio del eje princial (Comienzo)</td></tr>
+                <tr><td>end</td>            <td>Agrupa los items al final del eje principal (Final)</td></tr>
+                <tr><td>center</td>         <td>Agrupa los items al centro del eje principal (Center)</td></tr>
+                <tr><td>space-between</td>  <td>Distribuye los items desde el inicio hasta el final (Espacio entre)</td></tr>
+                <tr><td>space-around</td>   <td>Distribuye los items dejando espacio alrededor de ellos (Espacio alrededor)</td></tr>
+                <tr><td>stretch</td>        <td>Estira los items para ocupar de forma equitativa todo el espacio (Estirar)</td></tr>
+            </table>
+
+            <h3 class="sky">place-content</h3>
+            <p>Es una propiedad de "atajo" con la que se pueden establecer los valores de las propiedades align-content y justify-content de una sola vez, especificando asi ambos ejes (horizontal y vertical). Util cuando hay multiples filas. Tambien se pueden especificar cada valor por separado.</p>
+
+            <div class="sintaxis">
+                <span class="sky">place-content</span>: <span class="orange">start end</span> (align-content y justify-content)
+            </div>
+            
+            <table class="tabla tablaValores">
+                <tr><th>Valor</th>     <th>Descripcion</th></tr>
+
+                <tr><td>start</td>     <td>Alinea arriba y a la Izquierda (Comienzo)</td></tr>
+                <tr><td>end</td>       <td>Alinea abajo y a la derecha (Final)</td></tr>
+                <tr><td>center</td>    <td>Centra tanto vertical como horizontalmente (Center)</td></tr>
+                <tr><td>space-between</td>   <td>Distribuye con espacio entre filas/columnas</td></tr>
+                <tr><td>stretch</td>  <td>Estira para llenar el espacio disponible</td></tr>
+            </table>
+
+            <!-- Botones para contenedor align-content -->
+            <div class="controls-consola border-none"> 
+                <span class="sky">flex-flow</span>: 
+                <button onclick="rowWrap1()"><b class="orange">row wrap</b></button> 
+                <button onclick="columnWrap1()"><b class="orange">column wrap</b></button> 
+                <br>                   
+                <span class="sky">justify-content</span>: 
+                <button onclick="start1()"><b class="orange">start</b></button> 
+                <button onclick="center1()"><b class="orange">center</b></button> 
+                <button onclick="end1()"><b class="orange">end</b></button>  
+                <button onclick="spaceBetween1()"><b class="orange">space-between</b></button> 
+                <button onclick="spaceAround1()"><b class="orange">space-around</b></button> 
+                <button onclick="spaceEvenly1()"><b class="orange">space-evenly</b></button> 
+                <br>
+                <span class="sky">aling-content</span>: 
+                <button onclick="startWrap()"><b class="orange">start</b></button> 
+                <button onclick="centerWrap()"><b class="orange">center</b></button> 
+                <button onclick="endWrap()"><b class="orange">end</b></button> 
+                <button onclick="spaceBetweenWrap()"><b class="orange">space-between</b></button> 
+                <button onclick="spaceAroundWrap()"><b class="orange">space-around</b></button> 
+                <button onclick="spaceEvenlyWrap()"><b class="orange">space-evenly</b></button> 
+                <button onclick="stretchWrap()"><b class="orange">stretch</b></button> 
+            </div>
+            
+            <div id="align-content">
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+                <div class="itemAling"></div>
+            </div>
+
+        </div>
+
+        <!-- Orden de los elementos -->
+        <div> 
+            <h2>Orden de los elementos</h2>
+
+            <h3 class="sky">order</h3>
+            <p>Es una propiedad mediante la cual podemos modificar y establecer un orden de los elementos mediante números. Por defecto, todos los elementos hijos de un contenedor flex tienen establecido un order por defecto al valor 0, aunque no se especifique de forma explícita. Si indicamos una propiedad order con un valor numérico diferente, irá recolocando los ítems según dicho número, colocando antes los elementos con un número order más pequeño (incluso valores negativos) y después los elementos con números más altos.</p>
+
+            <!-- Botones para contenedor align-content -->
+            <div class="controls-consola"> 
+                <b class="sky">order</b>: 
+                <button onclick="order1()"><b class="verde">0</b></button> 
+                <button onclick="order2()"><b class="verde">2</b></button> 
+                <button onclick="order3()"><b class="verde">4</b></button> 
+                <button onclick="order4()"><b class="verde">6</b></button> 
+                <button onclick="order5()"><b class="verde">8</b></button> 
+            </div>     
+           
+            <div id="contenOrder">
+                <div class="itemOrder order1"><p>order: 1</p></div>
+                <div class="itemOrder order2"><p>order: 3</p></div>
+                <div class="itemOrder order3"><p>mover</p></div>
+                <div class="itemOrder order4"><p>order: 5</p></div>
+                <div class="itemOrder order5"><p>order: 7</p></div>
+            </div>
+
+        </div> 
+
+        <!-- Propiedades de flexibilidad -->
+        <div> 
+            <h2>Propiedades de flexibilidad</h2>
+            <p>Las siguientes propiedades nos permiten dotar de flexibilidad a los elementos hijos de un contenedor flex:</p>
+            <table class="tabla">
+                <tr><th>Propiedad</th> <th>Valor</th> <th>Descripcion</th></tr>
+                <tr><td><span class="sky">flex-basis</span></td> <td><span class="orange">content</span> | <span class="verde">tamaño</span>  </td> <td>Tamaño base de los ítems antes de aplicar una variación.</td></tr>
+                <tr><td><span class="sky">flex-grow</span></td> <td>0 | numero</td> <td>Número que indica el factor de crecimiento del ítem.</td></tr>
+                <tr><td><span class="sky">flex-shrink</span></td> <td>1 | numero</td> <td>Número que indica el factor de decrecimiento del ítem.</td></tr>
+                <tr><td colspan="3" style="text-align: center;">Atajo: Propiedad <span class="sky">flex</span></td></tr>
+                <tr><td><span class="sky">flex</span> (1 parametro)</td> <td><span class="orange">none</span> | basis | grow</td> <td>Establece un tamaño base o un factor de crecimiento.</td></tr>
+                <tr><td><span class="sky">flex</span> (2 parametros)</td> <td>grow | shrink</td> <td>Establece un factor de crecimiento y un factor de decrecimiento.</td></tr>
+                <tr><td><span class="sky">flex</span> (3 parametros)</td> <td>grow | shrink | basis</td> <td>Establece un factor de crecimiento, decrecimiento y el tamaño base.</td></tr>
+                <tr><td colspan="3"> <div class="notas">la palabra clave <span class="orange">none</span> es equivalente a 0 0 auto.</div> </td></tr>
+            </table>
+            
+            <h4 class="sky">flex-basis</h4>
+            <p>Es una propiedad que define el tamaño base o inicial por defecto de los ítems antes de aplicarle repartir su espacio. Se suele aplicar un tamaño específico (unidades, porcentajes, etc...), pero también se puede aplicar la palabra clave content que ajusta automáticamente el tamaño al contenido del elemento. Este es el valor por defecto de la propiedad.</p>
+            
+            <h4 class="sky">flex-grow</h4>
+            <p> Indica el factor de crecimiento del item, este crecera hasta que la suma de todos los items ocupen en 100% del contenedor padre. mientras el resto de items tendra el tamaño base definido por <span class="sky">flex-basis</span> o <span class="sky">width</span>.</p>
+            
+            <h4 class="sky">flex-shrink</h4>
+            <p>Por otro lado, esta propiedad hace lo opuesto a flex-grow, aplica un factor de decrecimiento mientras los otros items tengan el tamaño definido. util cuando dicho tamaño sobrepasa su contenedor.</p>
+
+            <!-- Botones para contenedor de propiedades flexibles -->
+            <div class="controls-consola"> 
+                <span class="sky">flex-basis</span>: 
+                <button onclick="contentBasis()"><b class="orange">content</b></button> 
+                <button onclick="tamañoBasis()"><b class="verde">200px</b></button> 
+                <button onclick="tamañoBasis2()"><b class="verde">500px</b></button> 
+                <br>                  
+                <span class="sky">flex-grow</span>: 
+                <button onclick="numeroGrow1()"><b class="verde">1</b></button>  
+                <span>(elemento 1)</span>
+                <button onclick="numeroGrow2()"><b class="verde">2</b></button>  
+                <span>(elemento 2)</span>
+                <button onclick="numeroGrow3()"><b class="verde">3</b></button>  
+                <span>(elemento 3)</span>
+                <br>               
+                <span class="sky">flex-shrink</span>: 
+                <button onclick="numeroShrink()"><b class="verde">5</b></button>  
+                <span>(elemento 1)</span>
+            </div>  
+          
+            <div id="content-propiedades-flexibles">
+                <div class="itemFlexibles elemento1">Elemento uno</div>
+                <div class="itemFlexibles elemento2">Elemento dos</div>
+                <div class="itemFlexibles elemento3">Elemento tres </div>
+            </div>
+            
+            <div class="notas">Nota: <span class="sky">flex-basis</span> actua como <span class="sky">width</span> pero si invertimos el eje con <span class="sky">flex-direction</span> actuara como <span class="sky">height</span></div>
+            <div class="notas" style="margin-top: 10px;">Nota: <span class="sky">flex-grow</span> actua cuando hay un tamaño definido en los items, si hay dos items con esta propiedad, crecera mas el que tenga el numero mayor; tambien con <span class="amarillo">:hover</span> se obtienen animaciones.</div>
+
+        </div>
+    </section>
+
+    <script src="flexbox.js"></script>
+</body>
+</html>

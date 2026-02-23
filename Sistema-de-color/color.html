@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de color</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+    <section>
+        <h2 class="sticky">Sistema de colores</h2>
+        <p>
+            En CSS, el sistema de colores se refiere a las distintas formas que tenemos para definir colores en nuestras hojas de estilo. No es un único sistema, sino varios métodos que puedes usar según lo que necesites.
+            El sistema de colores es flexible: puedes elegir entre nombres simples, valores hexadecimales, RGB/RGBA, HSL/HSLA o incluso colores del sistema.
+        </p>
+
+        <h3>Formatos de color</h3>
+        <p>
+            Los formatos de color son las distintas maneras de expresar un color dentro de las reglas de estilo. Cada formato tiene ventajas según el contexto: precisión, legibilidad, compatibilidad o facilidad para manipular tonos.
+            Cada uno controla rojo, verde y azul con una lógica distinta, pero todos sirven para definir el mismo resultado: un color en pantalla.
+            (<b style="color: rgb(255, 43, 43);">RED</b><b style="color: green;">GREEN</b><b style="color: rgb(36, 117, 248);">BLUE</b> )
+        </p>
+    
+        <h4 class="doger">RGB</h4>
+        <p>
+            Es el modelo de luz aditiva. La mezcla de luz roja, verde y azul crea todos los demás colores.
+            (rgb(<b style="color: rgb(255, 43, 43);">R</b><b style="color: green;">G</b><b style="color: rgb(36, 117, 248);">B</b>)): 
+            tres valores del 0 al 255 por canal. 0 apaga el canal, 255 lo lleva al máximo. <br><br>
+
+            Permite ajustar la opacidad mediante el formato RGBA: (a = alfa) 0-1 para transparencia. 1 es sólido; 0, totalmente transparente.
+        </p>
+
+        <h4 class="doger">Hexadecimal</h4>
+        <p>
+            Es una notación compacta de los mismos valores RGB, pero usando el sistema de base 16.
+            Usa el formato (#<b style="color: rgb(255, 43, 43);">RR</b><b style="color: green;">GG</b><b style="color: rgb(36, 117, 248);">BB</b>). 
+            Cada par de caracteres (00 a FF) representa la intensidad de un canal de color.
+
+            valores 0-9 y A-F. Dos dígitos por canal. Empieza con numeral. 000000 es negro. FFFFFF es blanco.
+        </p>
+
+        <h4 class="doger">HSL</h4>
+        <p>
+            (hsl(h, s%, l%)) Describe el color de una manera más intuitiva, basada en cómo lo percibe el ojo humano.
+            <ul>
+                <li>Hue (Matiz o Tono) en grados 0-360</li>
+                <li>Saturation (Saturación) 0-100 % donde 0 da grises y 100 da el color puro.</li>
+                <li>Lightness (Luminosidad o Brillo) 0-100 % donde 0 es negro, 50 color normal, 100 blanco.</li>
+            </ul>
+        </p>
+
+        <h4 class="doger">Nombres de color</h4>
+        <p>147 nombres estándar reconocidos por navegadores. Simples pero limitados.</p>
+    
+        <!-- codigo -->
+        <div class="codigo"> 
+            <div>
+                <p>
+                    <b class="amarillo">.rgb</b>{ 
+                    <b class="sky">background-color</b>: 
+                    <button
+                        onclick="sistemaColores('rgb')"
+                        >rgb(200,50,50)
+                    </button>;}
+                </p>
+                <p>
+                    <b class="amarillo">.rgba</b>{ 
+                    <b class="sky">background-color</b>: 
+                    <button
+                        onclick="sistemaColores('rgba')"
+                        >rgba(255, 50, 50, 0.5)
+                    </button>;}
+                </p>
+                <p>
+                    <b class="amarillo">.hexa</b>{ 
+                    <b class="sky">background-color</b>: 
+                    <button
+                        onclick="sistemaColores('hexa')"
+                        >#00aa00
+                    </button>;}
+                </p>
+                <p>
+                    <b class="amarillo">.hsl</b>{ 
+                    <b class="sky">background-color</b>: 
+                    <button
+                        onclick="sistemaColores('hsl')"
+                        >hsl(200, 100%, 50%)
+                    </button>;}
+                </p>
+                <p>
+                    <b class="amarillo">.color</b>{ 
+                    <b class="sky">background-color</b>: 
+                    <button
+                        onclick="sistemaColores('color')"
+                        >yellow
+                    </button>;}
+                </p>
+            </div>
+
+            <div>
+                <div id="item-sistema-colores"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="color.js"></script>
+</body>
+</html>

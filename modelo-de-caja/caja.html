@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de caja</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="caja.css">
+</head>
+<body>
+    <section>
+        <h2 class="sticky">Modelo de caja</h2>
+        <p>El modelo de caja se compone de cuatro elementos: margin, border, padding y contenido. Si entras a las herramientas de desarrollador de tu navegador y señalas un elemento HTML, en la sección de estilos te aparecerá una vista parecida a la siguiente imagen, este es el modelo de caja del elemento señalado.</p>
+        
+        <h3>Contenido del elemento HTML</h3>
+        <p> es todo lo que está dentro del elemento. Este tiene medidas establecidas por las propiedades width y height, que representan la anchura y la altura, respectivamente. Si imaginamos una caja, este valor sería todo lo que decidas colocar dentro.</p>                 
+        
+        <div id="modeloCaja">
+            <div id="divMargin"><span>Margin</span>     
+                <div id="divBorder"><span>Border</span>
+                    <div id="divPadding"><span>Padding</span>                         
+                        <div id="contenido"><span>Contenido</span></div>
+                    </div>      
+                </div>                     
+            </div>    
+        </div>
+
+        <!-- margin -->
+        <div class="bubsecciones">             
+            <h3 class="sky margen-titulos">margin</h3>
+            <p>Propiedad  define el espacio exterior de un elemento, es decir, la distancia entre ese elemento y los que lo rodean. Es como el "aire" que separa una caja de otras cajas en la página. tiene subpropiedades para definir cada lado por separado, o podemos definir todas los valores en una sola propiedad.</p>
+            <table class="tabla tabla-verde">
+                <tr><th>Ejemplo</th><th>Significado</th></tr>
+                <tr><td>10px;</td>           <td>Todos los lados</td></tr>
+                <tr><td>10px 20px;</td>      <td>10px arriba/abajo, 20px izquierda/derecha</td></tr>
+                <tr><td>10px 15px 5px;</td>  <td>Arriba, izquierda/derecha, abajo</td></tr>
+                <tr><td>10px 15px 5px 0;</td><td>Arriba, derecha, abajo, izquierda (en sentido horario)</td></tr>
+                <tr><td style="color: var(--orange)">auto</td>            <td>centra horizontalmente un elemento con ancho definido.</td></tr>
+                <tr><td>0</td>               <td>Elimina el margen.</td></tr>
+                <tr><td>%</td>               <td>relativo al ancho del contenedor padre.</td></tr>
+            </table>
+
+            <div class="sintaxis">
+                <b class="amarillo">div {</b> 
+                <b class="sky">margin-top</b>: 
+                <b class="verde">10px</b> ; 
+                <b class="sky">margin-bottom</b>: 
+                <b class="verde">15px</b> ; 
+                <b class="sky">margin-left</b>: 
+                <b class="verde">20px</b> ; 
+                <b class="sky">margin-right</b>: 
+                <b class="verde">10px</b> 
+                <b class="amarillo">}</b>;
+            </div>
+            
+            <p><b>⚠️ Colapso de márgenes verticales</b> Cuando dos elementos tienen márgenes verticales consecutivos, el navegador no los suma, sino que usa el mayor de los dos. Esto se llama colapso de márgenes. al cambiar el display este comportamiento desaparece. Además, en flexbox y grid no ocurre el colapso de márgenes.</p>
+            <p><b>🧩 Valores por defecto:</b> el navegador establece valores iniciales a algunas propiedades CSS, este es el caso de margin y padding. Una buena práctica es utilizar el selector universal para restablecer estos valores a 0. <b>( * margin: 0;padding: 0; ) </b></p>
+        </div>
+
+        <!-- bordes -->
+        <div class="bubsecciones"> 
+            <h3 class="sky margen-titulos">border</h3>
+            <p>
+                Es una propiedad que se utiliza para definir el borde de un elemento HTML. Puedes controlar su ancho, estilo y color, y también puedes aplicarlo a lados específicos (superior, derecho, inferior, izquierdo). 
+                tiene sus propiedades para definir estilos por separado, pero tambien se definen todos en la propiedad.
+            </p>
+            <!-- sintaxis -->
+            <div class="sintaxis">
+                <span class="amarillo">Selector</span>{ 
+                <span class="sky">border</span>: 
+                <span class="verde">2px</span> 
+                <span class="orange">solid black</span> }
+            </div>
+
+            <table class="tabla tablaPropiedades">
+                <tr>
+                    <th>Subppropiedad</th>
+                    <th>Descripcion</th> 
+                    <th>Ejemplo</th> 
+                </tr>
+
+                <tr>
+                    <td>border-width</td>
+                    <td>Grosor del borde</td> 
+                    <td>2px</td> 
+                </tr>
+                <tr> 
+                    <td>border-style</td>
+                    <td>Tipo de linea</td> 
+                    <td>solid</td> 
+                </tr>
+                <tr>
+                    <td>border-color</td>
+                    <td>Color del borde</td> 
+                    <td>black</td> 
+                </tr>
+            </table>
+            
+            <div id="tiposDeLinea">
+                <div>none</div>
+                <div>solid</div>
+                <div>dashed</div>
+                <div>dotted</div>
+                <div>double</div>
+                <div>groove</div>
+                <div>ridge</div>
+                <div>inset</div>
+                <div>outset</div>
+            </div>
+
+            <!-- codigo -->
+            <div class="codigo">
+                <div>
+                    <p>
+                        <span class="sky">border-top</span>: <span class="verde">3px</span> <span class="orange">solid yellow</span> <br>
+                        <span class="sky">border-right</span>: <span class="verde">6px</span> <span class="orange">dashed blue</span> <br>
+                        <span class="sky">border-bottom</span>: <span class="verde">9px</span> <span class="orange">double red</span> <br>
+                        <span class="sky">border-left</span>: <span class="verde">12px</span> <span class="orange">dotted white</span> <br>
+                    </p>
+                </div>
+                <div>
+                    <div id="bordesPorLado"></div>
+                </div>
+            </div>
+
+            <!-- box-shadow -->
+            <h3 class="sky">box-shadow</h3>
+            <p>La propiedad box-shadow se utiliza para añadir sombras alrededor del marco de un elemento, creando la ilusión de profundidad o elevación. Es muy versátil porque permite definir sombras externas o internas, se puede añadir desenfoque, expansion y color. </p>
+            <p>La sombra se dibuja en relación al caja del elemento (border-box). Si el elemento tiene border-radius, la sombra sigue la misma curva en las esquinas. Se pueden aplicar múltiples sombras separadas por comas, que se apilan en orden (la primera definida queda arriba).</p>
+            <div>
+                <b class="sky">box-shadow</b>:
+                <b class="orange">offset-x</b>&ensp;
+                <b class="orange">offset-y</b>&ensp;
+                <b class="orange">blur-radius</b>&ensp;
+                <b class="orange">spread-radius</b>&ensp;
+                <b class="orange">color</b>&ensp;
+                <b class="orange">inset</b>;
+            </div>
+
+            <ul>
+                <li><b class="orange">offset-x</b> desplazamiento horizontal de la sombra (positivo = derecha, negativo = izquierda).</li>
+                <li><b class="orange">offset-y</b> desplazamiento vertical (positivo = abajo, negativo = arriba).</li>
+                <li><b class="orange">blur-radius</b> (opcional) controla el desenfoque, cuanto mayor es el valor, mas difusa sera la sombra.</li>
+                <li><b class="orange">spread-radius</b> (opcional) controla la expansion (positivo = sombra mas grande, negativo = mas pequeña).</li>
+                <li><b class="orange">color</b> (opcional) color de la sombra (puede ser con transparencia).</li>
+                <li><b class="orange">inset</b> (opcional) convierte la sombra en interna (dentro del elemento).</li>
+            </ul>
+
+            <!-- border-radius -->
+            <h3 class="sky">border-radius</h3>
+            <p>
+                Se utiliza para redondear las esquinas del borde exterior de un elemento en una página web. Es muy común en botones, tarjetas, imágenes y contenedores para darles un aspecto más suave y moderno.
+                Puede aplicarse con valores en longitud (px, em, rem) o en porcentaje (%).
+            </p>
+            <div>
+                <b class="sky">border-radius</b>:
+                <b class="verde">radio (px, em, rem, %)</b>
+            </div>
+            <table class="tabla tabla-verde">
+                <tr><th>Ejemplo</th><th>Significado</th></tr>
+                <tr><td>10px</td>           <td>Todos los lados</td></tr>
+                <tr><td>10px 20px</td>      <td>10px arriba/abajo, 20px izquierda/derecha</td></tr>
+                <tr><td>10px 15px 5px</td>  <td>Arriba, izquierda/derecha, abajo</td></tr>
+                <tr><td>10px 15px 5px 0</td><td>Arriba, derecha, abajo, izquierda (en sentido horario)</td></tr>
+            </table>
+
+        </div>
+
+        <!-- padding -->
+        <div class="bubsecciones"> 
+            <h3 class="sky margen-titulos">padding</h3>
+            <p>
+                Define el espacio interno entre el contenido de un elemento y su borde. Es como el "relleno" que empuja el contenido hacia adentro, creando espacio dentro del contenedor. Puedes usar padding con 1 a 4 valores.
+                tiene subpropiedades para definir cada lado por separado, o se pueden definir todos en la propiedad.
+            </p>
+
+            <!-- sintaxis -->
+            <div class="sintaxis">
+                <b class="amarillo">div {</b> 
+                <b class="sky">padding-top</b>: 
+                <b class="verde">10px</b> ; 
+                <b class="sky">padding-bottom</b>: 
+                <b class="verde">15px</b> ; 
+                <b class="sky">padding-left</b>: 
+                <b class="verde">20px</b> ; 
+                <b class="sky">padding-right</b>: 
+                <b class="verde">10px</b> 
+                <b class="amarillo">}</b>; 
+            </div>
+            
+            <table class="tabla tabla-verde">
+                <tr><th>Ejemplo</th><th>Significado</th></tr>
+                <tr><td>10px;</td>           <td>Todos los lados</td></tr>
+                <tr><td>10px 20px;</td>      <td>10px arriba/abajo, 20px izquierda/derecha</td></tr>
+                <tr><td>10px 15px 5px;</td>  <td>Arriba, izquierda/derecha, abajo</td></tr>
+                <tr><td>10px 15px 5px 0;</td><td>Arriba, derecha, abajo, izquierda (en sentido horario)</td></tr>
+            </table>
+            
+        </div>
+
+        <!-- Box-sizing -->
+        <div class="bubsecciones"> 
+            <h3 style="text-align: center;" class="margen-titulos">Tamaño total de elementos</h3>
+            <p>El tamaño total del elemento está determinado por la suma de los valores de las propiedades border padding y widtho height, dependiendo del eje. La propiedad margin no está incluida en este cálculo.Por ejemplo, definimos los siguientes estilos:</p>
+            
+            <!-- sintaxis -->
+            <div class="sintaxis"> 
+                <b class="amarillo">div {</b> 
+                <b class="sky">width</b>: <b class="verde">150px</b> ; 
+                <b class="sky">height</b>: <b class="verde">150px</b> ; 
+                <b class="sky">padding</b>: <b class="verde">20px</b> ; 
+                <b class="sky">border</b>: <b class="verde">10px</b> <b class="orange">solid gray</b> ; 
+                <b class="sky">margin</b>: <b class="verde">30px</b> 
+                <b class="amarillo">}</b>; 
+            </div>
+            
+            <figure>
+                <img src="https://static.platzi.com/media/articlases/Images/frontend_developer22.png" alt="tamaño total" width="900">
+                <p style="margin-bottom: 0;">El tamaño total del elemento será de 210px en ambos ejes, donde la suma fue: 150 (altura/anchura) + 20 x 2 (padding ambos lados) + 10 x 2 (borde ambos lados). Si lo evaluamos en las herramientas del desarrollador mostrará su tamaño como 210x210.</p>
+            </figure >
+                  
+            <h3 class="sky">box-sizing</h3>
+            <p>Propiedad  establece cómo se calculará el width y el height si incluyen bordes y espacios internos. Como buena práctica, se lo coloca en el selector universal, para que todos los elementos sigan esta tendencia. <b>* {box-sizing: border-box;}</b></p>
+            
+            <table class="tabla tablaValores">
+                <tr>
+                    <th style="width: 120px;">Valores</th>
+                    <th>Descripcion</th>
+                </tr>
+                <tr>
+                    <td>content-box</td>
+                    <td>(valor por defecto): El ancho y alto sólo incluyen el contenido, excluyendo el padding y el borde. Esto significa que si añades padding o borde, se sumarán al tamaño total del elemento.</td>
+                </tr>
+                <tr>
+                    <td>border-box</td>
+                    <td>El tamaño total del elemento será igual al especificado en el width y height, provocando que las medidas del contenido cambien con respecto a los bordes y espacios internos.</td>
+                </tr>
+            </table>
+
+            <figure class="centrar" style="width: 800px;">
+                <img src="https://static.platzi.com/media/articlases/Images/frontend_developer23.png" alt="">
+                <p style="margin-bottom: 0;">El tamaño total del elemento será de 150px en ambos ejes, donde se calcularon las medidas del contenido para que la suma total sea lo especificado en el width y height. Si evaluamos este elemento en las herramientas del desarrollador mostrará su tamaño total como 150x150.</p>
+            </figure>
+        </div>
+    </section>
+</body>
+</html>

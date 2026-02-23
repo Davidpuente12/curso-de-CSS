@@ -1,0 +1,119 @@
+#colorSeccionPseudo{background: #272727;color: white;}
+
+/* Pseudo clases de Interaccion */
+#elemento-ejemplo-hoverYactive{
+    padding: 8px;
+    font-size: 1.5rem;
+    margin: 10px 0 0 150px;
+    font-weight: bold;
+    color: rgb(254, 85, 51);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.elemento-ejemplofocus{
+    margin: 10px ; 
+    padding: 8px; 
+    width: 150px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#elemento-ejemplo-hoverYactive:hover{font-size: 2rem;}
+#elemento-ejemplo-hoverYactive:active{color: rgb(0, 98, 255);}
+
+.elemento-ejemplofocus:focus{color: rgb(254, 85, 51); background: #383838;}
+#focuswithin:focus-within{background:rgb(254, 85, 51);}    
+
+/* Pseudo clases de estructura */
+#Elementos p, #Elementos div{
+    border: 1px solid white;
+    width: 60px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.childn :nth-child(5){background: rgb(4, 26, 82);}
+.odd :nth-child(odd){background: rgb(4, 26, 82);}
+.even :nth-child(even){background: rgb(4, 26, 82);}
+.tresn :nth-child(3n){background: rgb(4, 26, 82);}
+.dosn :nth-child(3n+2){background: rgb(4, 26, 82);}
+.menostres :nth-child(-n+3){background: rgb(4, 26, 82);}
+.todos :nth-child(n){background: rgb(4, 26, 82);}
+.firstchild :first-child{background: rgb(4, 26, 82);}
+.lastchild :last-child{background: rgb(4, 26, 82);}
+.nthoftype p:nth-of-type(n){background: rgb(4, 26, 82);}
+.onlychild :only-child{background: rgb(4, 26, 82);}
+
+/* Pseudo clases de enlaces */
+.ejemplo-enlace{
+    display: block;
+    margin: 0 auto 20px;
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgb(13, 5, 244);
+}
+#div-target{   
+    display: none;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.ejemplo-enlace:link{color: #0057c1;}
+.ejemplo-enlace:visited{color: #e4750d;}
+#div-target:target{
+    display: block;
+    background: #e4750d;
+}
+
+/* Pseudo clases de Formularios */
+#inputs-pseudoclases-formularios input{padding: 5px;}
+#inputs-pseudoclases-formularios select{
+    width: 150px;
+    padding: 5px;
+}
+
+.Elemento-PCF:checked + label{
+    color: aquamarine;
+    font-weight: bold;
+}
+.Elemento-option:checked{
+    color: #0995ec;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: #353432;
+}
+
+.Elemento-PCF:enabled{
+    background-color: #d0facd;
+    cursor: pointer;
+}
+.Elemento-PCF:read-only{
+    background-color: #5ab0f6;
+    font-size: 1.5rem;
+}
+.Elemento-PCF:disabled{
+    background-color: #f6695a;
+    cursor: not-allowed;
+}
+.Elemento-PCF:required{
+    border: 2px solid red;
+}
+
+
+
+#ejemplonot :not(.no){
+    color: rgb(0, 255, 145);
+    font-weight: bold;
+}
+
+/* Pseudo Elementos */
+.before::before{
+    content: "*";
+    color: red;
+}
+.after::after{
+    content: ":)"; 
+    color: rgb(42, 84, 255);
+}
+.first-letter::first-letter{color: var(--doger);}

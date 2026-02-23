@@ -38,3 +38,11 @@
 .indent{
     text-indent: 4rem;
 }
+
+/* SOMBRA TEXTO */
+.shadow{
+    text-shadow: 2px 2px #3885ff;
+}
+.shadow-blur{
+    text-shadow: 8px 8px 5px #3885ff;
+}

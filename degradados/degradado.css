@@ -1,0 +1,33 @@
+.color-tabla td:nth-child(2){
+    color: var(--amarillo);
+    font-weight: bold;
+}
+
+/* LINEAR GRADIENT */
+.content-for-gradient{
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: gray;
+}
+
+.linear-simple{
+    background: linear-gradient(#3498db, #9b59b6);
+}
+.linear-direction{
+    background: linear-gradient(to right, #e74c3c, #f39c12);
+}
+.linear-diagonal{
+    background: linear-gradient(to bottom right, #2ecc71, #3498db);
+}
+
+/* RADIAL GRADIENT */
+.radial-simple{
+    background: radial-gradient(circle, #1CB5E0, #000851);
+}
+.radial-position{
+    background: radial-gradient(at top left, #d53369, #daae51);
+}
+.radial-multiple{
+    background: radial-gradient(circle at 60% 40%, #ff6b6b  0%, #feca57  40%, #48dbfb  100%);
+}

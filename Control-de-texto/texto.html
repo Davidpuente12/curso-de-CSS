@@ -132,11 +132,30 @@
         <p>La propiedad "identar texto" en CSS se utiliza para definir la sangría de la primera línea de un bloque de texto. Es decir, controla cuánto espacio en blanco se coloca antes de que empiece la primera línea de un párrafo u otro elemento de bloque.</p>
         <p>Solo afecta la primera linea de un bloque de texto, su valor inicial es 0. los valores permitidos son: longitud fija (px) o relativa (rem,em), porcentajes (%), Negativos (-2em , la primera linea se mueve hacia la izquierda.)</p>
 
+        <!-- text-shadow -->
+        <h3 class="sky">text-shadow</h3>
+        <p>se utiliza para aplicar sombras al texto, creando efectos de profundidad, brillo, desenfoque o contorno alrededor de las letras. Cada sombra se dibuja siguiendo la silueta de las letras, incluso en sus contornos internos (como en la “o” o la “e”).</p>
+        <p>La sombra se dibuja en relación a cada glifo del texto (no al contenedor). Puedes crear efectos como neón, relieve, contorno o glow combinando varias sombras.</p>
+        <div class="seccionB">
+            <b class="sky">text-shadow</b>:
+            <b class="orange">offset-x</b>&ensp;
+            <b class="orange">offset-y</b>&ensp;
+            <b class="orange">blur-radius</b>&ensp;
+            <b class="orange">color</b>;
+        </div>
+        <ul>
+            <li><b class="orange">offset-x</b> desplazamiento horizontal de la sombra (positivo = derecha, negativo = izquierda).</li>
+            <li><b class="orange">offset-y</b> desplazamiento vertical (positivo = abajo, negativo = arriba)</li>
+            <li><b class="orange">blur-radius</b> (opcional) controla el desenfoque. Si es 0, la sombra es nítida.</li>
+            <li><b class="orange">color</b> (opcional) color de la sombra (puede incluir transparencia).</li>
+        </ul>
+
         <!-- codigo -->
         <div class="controls-consola">
             <button onclick="controlDeTexto('text-align')">text-align</button>
             <button onclick="controlDeTexto('text-transform')">text-transform</button>
             <button onclick="controlDeTexto('text-decoration')">text-decoration</button>
+            <button onclick="controlDeTexto('text-shadow')">text-shadow</button>
             <button onclick="controlDeTexto('text-indent')">text-indent</button>
         </div>
         <div class="codigo">
@@ -175,7 +194,7 @@
                 </p>
             </div>
 
-            <div style="width: 900px;" id="pagina-control-texto">
+            <div style="width: 800px;" id="pagina-control-texto">
                 Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos para diseños para probar el arte visual antes de insertar el texto final. Su uso en algunos editores de texto muy conocidos en la actualidad ha dado al texto lorem ipsum nueva popularidad.
             </div>
         </div>
