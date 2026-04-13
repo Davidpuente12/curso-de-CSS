@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIPOS DE DISPLAY</title>
+    <link rel="stylesheet" href="../estilo.css" />
+    <style>
+      #btn-modal,
+      #btn-closed-modal {
+        margin-left: 30px;
+        font-size: 1.7rem;
+        width: 100px;
+        padding: 5px;
+        background-color: #555;
+        border-radius: 5px;
+        border: 1px transparent solid;
+        color: white;
+        cursor: pointer;
+      }
+      #btn-modal:hover,
+      #btn-closed-modal:hover {
+        border: 1px rgb(0, 110, 255) solid;
+        box-shadow: 0 0 10px rgb(0, 110, 255);
+      }
+
+      #content-modal {
+        position: fixed;
+        top: 0;
+        height: 100%;
+        background-color: rgba(1, 1, 1, 0.4);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      #content-modal.active {
+        display: flex;
+      }
+      #modal {
+        background-color: #151515;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        display: flex;
+        width: 40%;
+        padding: 40px;
+        border-radius: 15px;
+        animation: modalSlideIn 0.5s ease-out;
+      }
+
+      @keyframes modalSlideIn {
+        from {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="head">
+        <span id="button-temas"></span>
+      </div>
+      <div id="head-logo">
+        <h1>Tipos de Display</h1>
+      </div>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li onclick="location.href = '#declaracion'">Declaraciones</li>
+          <li onclick="location.href = '#selectores'">Selectores</li>
+          <li onclick="location.href = '#Scombinados'">
+            Selectores Conbinados
+          </li>
+          <li onclick="location.href = './pseudoclases/pseudoClases.html'">
+            Pseudo clases y elementos
+          </li>
+          <li onclick="location.href = '#cascada'">Cascada y especificidad</li>
+          <li onclick="location.href = './tipos-de-display/display.html'">
+            Tipos de display
+          </li>
+          <li onclick="location.href = './flexbox/flexbox.html'">Flexbox</li>
+          <li onclick="location.href = './grid/grid.html'">Grid</li>
+          <li onclick="location.href = './modelo-de-caja/caja.html'">
+            Modelo de caja
+          </li>
+          <li onclick="location.href = './Tipos-de-fuentes/fuentes.html'">
+            Tipos de Fuentes
+          </li>
+          <li onclick="location.href = './Control-de-texto/texto.html'">
+            Control de texto
+          </li>
+          <li onclick="location.href = './Sistema-de-color/color.html'">
+            Sistema de color
+          </li>
+          <li onclick="location.href = './degradados/degradados.html'">
+            Degradados
+          </li>
+          <li onclick="location.href = '#tiposdeposiones'">
+            Tipos de Posicionamiento
+          </li>
+          <li onclick="location.href = './z-index/z-index.html'">Z-index</li>
+          <li onclick="location.href = './Unidades_de_medida/unidades.html'">
+            Unidades de medida
+          </li>
+          <li onclick="location.href = '#variables'">Variables Glovales</li>
+          <li onclick="location.href = '#herencias'">Herencias</li>
+          <li onclick="location.href = './diseño-responsivo/responsivo.html'">
+            Diseño Responsivo
+          </li>
+          <li
+            onclick="
+              location.href =
+                './Transformaciones_Y_Transiciones/transformaciones.html'
+            "
+          >
+            Transformaciones
+          </li>
+          <li onclick="location.href = './animaciones/index.html'">
+            Animaciones
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h3 class="sky">display</h3>
+        <p>
+          Esta propiedad establece el tipo de visualización de los elementos
+          HTML sin afectar el flujo normal de los elementos. Existen etiquetas
+          que por defecto su display ya está determinado, como la etiqueta
+          &lt;<span class="doger">div</span>&gt; que tiene display block,
+          &lt;<span class="doger">span</span>&gt; tiene display inline y
+          &lt;<span class="doger">button</span>&gt; tiene display inline-block.
+        </p>
+        <p>
+          Aqui encontraras todos los tipos de visualizacion en elementos
+          <a href="https://htmlreference.io/">HTML Reference type</a>
+        </p>
+
+        <table class="tabla">
+          <tr>
+            <th><b>Tipo</b></th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td><span class="orange">Inline</span></td>
+            <td>
+              Se coloca a continuación del otro (en horizontal). Ignora
+              dimensiones.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">block</span></td>
+            <td>Se coloca encima de otro (en vertical).</td>
+          </tr>
+          <tr>
+            <td><span class="orange">inline-block</span></td>
+            <td>
+              Híbrido en línea-bloque. Actúa como un elemento en línea, pero
+              obedece dimensiones.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">flex</span></td>
+            <td>
+              Contenedor en bloque, similar a block (ocupa todo el ancho del
+              padre).
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">inline-flex</span></td>
+            <td>
+              Contenedor en línea, similar a inline-block (ocupa solo el
+              contenido).
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">grid</span></td>
+            <td>
+              Utiliza cuadrículas o rejillas con el modelo de cajas Grid CSS.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">inline grid</span></td>
+            <td>
+              La versión en línea (ocupa sólo su contenido) del modelo de cajas
+              Grid CSS.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">list-item</span></td>
+            <td>
+              Actúa como un ítem de una lista. Es el comportamiento de etiquetas
+              como &lt;li&gt;.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">table</span></td>
+            <td>
+              Actúa como una tabla. Es el comportamiento de etiquetas como
+              &lt;table&gt;.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">table-cell</span></td>
+            <td>
+              Actúa como la celda de una tabla. Es el comportamiento de
+              etiquetas como &lt;th&gt; o &lt;td&gt;.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">table-row</span></td>
+            <td>
+              Actúa como la fila de una tabla. Es el comportamiento de etiquetas
+              como &lt;tr&gt;.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">contents</span></td>
+            <td>
+              Ignora la caja del elemento. Útil para mantener Grid/Flex aún
+              teniendo un wrapper intermedio.
+            </td>
+          </tr>
+          <tr>
+            <td><span class="orange">none</span></td>
+            <td>
+              No dibuja en el navegador el contenido del elemento ni sus hijos.
+            </td>
+          </tr>
+        </table>
+
+        <h4>Visualización en bloque</h4>
+        <p>
+          El <b class="sky">display</b> <b class="orange">block</b> establece
+          que un elemento ocupará todo el espacio disponible por defecto y el
+          siguiente elemento a este se situará por debajo.Es posible añadir
+          medidas de anchura width y altura height a estos a elementos.También
+          es posible agregar todas las propiedades del modelo de caja
+        </p>
+        <div class="displayColor seccionB">
+          <p>Elemento de bloque</p>
+          <p style="width: 50%; height: 50px">
+            Elemento de bloque con width y height
+          </p>
+        </div>
+
+        <h4>Visualización en línea</h4>
+        <p>
+          El <b class="sky">display</b> <b class="orange">inline</b> establece
+          que un elemento ocupará el espacio del contenido del mismo y el
+          siguiente elemento se situará a la derecha. No es posible añadir
+          medidas de anchura width y altura height a estos a elementos. También,
+          no es posible agregar todas las propiedades del modelo de caja,
+          únicamente funcionará la propiedad margin en el eje horizontal
+        </p>
+        <div class="displayColor seccionB">
+          <span>elemento en linea</span>
+          <span>elemento en linea</span>
+          <span>elemento en linea</span>
+        </div>
+
+        <h4>Visualización de bloque y línea</h4>
+        <p>
+          El <b class="sky">display</b>
+          <b class="orange">inline-block</b> combina las ventajas de bloque de
+          colocar medidas al elemento y propiedades del modelo de caja
+          correctamente; con las ventajas de inline de colocar un elemento
+          seguido de otro en el mismo espacio. Si el elemento excede el
+          contenido total, se coloca en la siguiente línea por debajo.
+        </p>
+        <div>
+          <ul id="displayInlineBlock" class="displayColor seccionB">
+            <li>inline-block</li>
+            <li>inline-block</li>
+            <li>inline-block</li>
+            <li>inline-block</li>
+          </ul>
+        </div>
+
+        <h4>Visualización nula</h4>
+        <p>
+          El <b class="sky">display</b> <b class="orange">none</b> desactiva la
+          visualización de un elemento, como si el elemento no existiera.
+        </p>
+      </section>
+
+      <!-- modales -->
+      <section>
+        <h3>Modales</h3>
+        <p>
+          Un “modal” es una ventana emergente que aparece sobre el contenido
+          principal de una aplicación o página web y bloquea la interacción con
+          el resto de la interfaz hasta que el usuario la cierre o complete la
+          acción solicitada. Es muy usado en diseño web y UX para mostrar
+          mensajes importantes, formularios, confirmaciones o alertas
+        </p>
+
+        <ul>
+          <li>
+            <strong>Superposición:</strong> se muestra encima del contenido
+            existente, oscureciendo o deshabilitando el fondo.
+          </li>
+          <li>
+            <strong>Interacción bloqueada:</strong> el usuario no puede
+            interactuar con la página hasta cerrar el modal.
+          </li>
+          <li>
+            <strong>Propósito claro:</strong> se utiliza para acciones críticas
+            como confirmar una operación, mostrar un formulario, o dar
+            información urgente.
+          </li>
+          <li>
+            <strong>Cierre controlado:</strong> normalmente incluye un botón de
+            cerrar, una “X” en la esquina, o se cierra al hacer clic fuera de la
+            ventana.
+          </li>
+        </ul>
+
+        <div class="seccionB" style="text-align: center">
+          Click para abrir modal
+          <button id="btn-modal">Modal</button>
+        </div>
+
+        <div
+          class="subsecciones"
+          style="font-family: monospace; line-height: 1.1; font-size: 1.7rem"
+        >
+          <div>
+            <p>
+              <b class="golden">#content-modal</b> { <br />
+              &emsp; <b class="sky">position</b>: <b class="orange">fixed</b>;
+              <br />
+              &emsp; <b class="sky">top</b>: 0; <br />
+              &emsp; <b class="sky">height</b>: 100%; <br />
+              &emsp; background-color: rgba(1, 1, 1, 0.4); <br />
+              &emsp; <b class="sky">display</b>: <b class="orange">none</b>;
+              <br />
+              &emsp; justify-content: center; <br />
+              &emsp; align-items: center; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">#content-modal.active</b> { <br />
+              &emsp; <b class="sky">display</b>: <b class="orange">flex</b>;
+              <br />
+              }
+            </p>
+            <p>
+              <b class="golden">#modal</b> { <br />
+              &emsp; background-color: #151515; <br />
+              &emsp; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); <br />
+              &emsp; display: flex; <br />
+              &emsp; width: 40%; <br />
+              &emsp; padding: 40px; <br />
+              &emsp; border-radius: 15px; <br />
+              &emsp; <b class="sky">animation</b>: modalSlideIn 0.5s ease-out;
+              <br />
+              }
+            </p>
+
+            <p>
+              <b class="morado">@keyframes</b> modalSlideIn { <br />
+              &emsp; from { <br />
+              &emsp; &emsp; transform: translateY(-100px); <br />
+              &emsp; &emsp; opacity: 0; <br />
+              &emsp; } <br />
+              &emsp; to { <br />
+              &emsp; &emsp; transform: translateY(0); <br />
+              &emsp; &emsp; opacity: 1; <br />
+              &emsp; } <br />
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- //Modal -->
+    <section id="content-modal">
+      <div id="modal">
+        Presiona salir para salir de este modal
+        <button id="btn-closed-modal">Cerrar</button>
+      </div>
+    </section>
+
+    <script src="../codigo.js"></script>
+
+    <!-- codigo modal -->
+    <script>
+      // abrir modal
+      document.getElementById("btn-modal").addEventListener("click", () => {
+        document.getElementById("content-modal").classList.add("active");
+      });
+
+      // cerrar modal
+      document
+        .getElementById("btn-closed-modal")
+        .addEventListener("click", () => {
+          document.getElementById("content-modal").classList.remove("active");
+        });
+    </script>
+  </body>
+</html>

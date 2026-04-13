@@ -25,25 +25,69 @@
 #focuswithin:focus-within{background:rgb(254, 85, 51);}    
 
 /* Pseudo clases de estructura */
-#Elementos p, #Elementos div{
+#Elementos p, #Elementos div, #Elementos span, #Elementos h3{
+    display: block;
     border: 1px solid white;
     width: 60px;
     margin: 10px;
-    padding: 10px;
-    font-size: 22px;
+    padding: 6px;
+    font-size: 1.8rem;
 }
 
-.childn :nth-child(5){background: rgb(4, 26, 82);}
+.botones-nth button{
+    color: var(--amarillo);
+    border: none;
+    box-shadow: 0 0 2px gray;
+    font-size: 1.7rem;
+}
+.botones-nth button:hover{
+    box-shadow: 0 0 2px white;
+}
+.botones-nth div p{
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 10px auto 1px;
+    font-size: 1.7rem;
+    color: gray;
+}
+
+/* nth-child(3) */
+.childn :nth-child(3){background: rgb(4, 26, 82);}
+.p-childn p:nth-child(3){background: rgb(4, 26, 82);}
+/* nth-child(odd) */
 .odd :nth-child(odd){background: rgb(4, 26, 82);}
+.p-odd p:nth-child(odd){background: rgb(4, 26, 82);}
+/* nth-child(even) */
 .even :nth-child(even){background: rgb(4, 26, 82);}
+.p-even p:nth-child(even){background: rgb(4, 26, 82);}
+/* nth-child(3n) */
 .tresn :nth-child(3n){background: rgb(4, 26, 82);}
+.p-tresn p:nth-child(3n){background: rgb(4, 26, 82);}
+/* nth-child(3n+2) */
 .dosn :nth-child(3n+2){background: rgb(4, 26, 82);}
+.p-dosn p:nth-child(3n+2){background: rgb(4, 26, 82);}
+/* nth-child(-n+3) */
 .menostres :nth-child(-n+3){background: rgb(4, 26, 82);}
+.p-menostres p:nth-child(-n+3){background: rgb(4, 26, 82);}
+/* nth-child(n) */
 .todos :nth-child(n){background: rgb(4, 26, 82);}
+.p-todos p:nth-child(n){background: rgb(4, 26, 82);}
+/* first-child */
 .firstchild :first-child{background: rgb(4, 26, 82);}
+.p-firstchild p:first-child{background: rgb(4, 26, 82);}
+/* last-child */
 .lastchild :last-child{background: rgb(4, 26, 82);}
-.nthoftype p:nth-of-type(n){background: rgb(4, 26, 82);}
+.p-lastchild p:last-child{background: rgb(4, 26, 82);}
+/* onlychild */
 .onlychild :only-child{background: rgb(4, 26, 82);}
+.p-onlychild span:only-child{background: rgb(4, 26, 82);}
+
+/* nth-of-type(n) */
+.nthoftype :nth-of-type(1){background: rgb(4, 26, 82);}
+.p-nthoftype p:nth-of-type(1){background: rgb(4, 26, 82);}
+
+/* has(p) */
+.has :has(p){background: rgb(4, 26, 82);}
 
 /* Pseudo clases de enlaces */
 .ejemplo-enlace{
@@ -117,3 +161,4 @@
     color: rgb(42, 84, 255);
 }
 .first-letter::first-letter{color: var(--doger);}
+

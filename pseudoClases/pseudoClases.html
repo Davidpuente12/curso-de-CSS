@@ -103,7 +103,7 @@
             </div>           
         </div>
     
-        <h3 class="">Pseudo clases de Estructura</h3> 
+        <h3>Pseudo clases de Estructura</h3> 
         <p>
             Las pseudo-clases de estructura en CSS son aquellas que permiten seleccionar 
             elementos en función de su posición o relación dentro del árbol del 
@@ -127,15 +127,7 @@
             </tr>
             <tr>
                 <td><b class="amarillo">:nth-child(n)</b></td>
-                <td>
-                    Selecciona el hijo en la posición (n).<br>
-                    <span class="amarillo">(n)</span> selecciona todos los elementos. <br>
-                    <span class="amarillo">(odd)</span> posiciones impares <br>
-                    <span class="amarillo">(even)</span> posiciones pares <br>
-                    <span class="amarillo">(3n)</span> posiciones cada tres elementos <br>
-                    <span class="amarillo">(3n+2)</span> cada tres iniciando en dos <br>
-                    <span class="amarillo">(-n+3)</span> los primeros 3 elementos
-                </td>
+                <td>Selecciona el hijo en la posición (n).</td>
             </tr>
             <tr>
                 <td><b class="amarillo">:nth-last-child(n)</b></td>
@@ -148,6 +140,10 @@
             <tr>
                 <td><b class="amarillo">:nth-of-type(n)</b></td>
                 <td>Selecciona el elemento de un tipo específico en la posición n.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:nth-last-of-type(n)</b></td>
+                <td>Selecciona el elemento de un tipo específico en la posición n contando desde el final.</td>
             </tr>
             <tr>
                 <td><b class="amarillo">:first-of-type</b></td>
@@ -165,38 +161,126 @@
                 <td><b class="amarillo">:empty</b></td>
                 <td>Selecciona elementos que no tienen hijos (ni texto ni otros nodos).</td>
             </tr>
+            <tr>
+                <td><b class="amarillo">:root</b></td>
+                <td>Selecciona el elemento raíz del documento, que es el elemento &lt;html&gt;.</td>
+            </tr>
+            <tr>
+                <td><b class="amarillo">:has</b></td>
+                <td>Selecciona elementos en función de si contiene un descendiente (hijo, nieto, etc.) que coincide con el selector especificado.</td>
+            </tr>
         </table>
 
+        <!-- nth-child -->
+        <div class="seccionB">
+            <h4 class="amarillo" style="margin-top: 10px;">:nth-child</h4>
+            <p>Esta pseudo-clase  es una de las más versátiles para seleccionar elementos en función de su posición dentro de un padre. Permite definir distintas formulas con patrones específicos para seleccionar elementos.</p>
+            <ul>
+                <li><span class="amarillo">:nth-child(n)</span> Selecciona todos los elementos.</li>
+                <li><span class="amarillo">:nth-child(odd)</span> Selecciona elementos en posiciones impares.</li>
+                <li><span class="amarillo">:nth-child(even)</span> Selecciona elementos en posiciones pares.</li>
+                <li><span class="amarillo">:nth-child(3n)</span> Selecciona elementos en posiciones múltiplos de 3.</li>
+                <li><span class="amarillo">:nth-child(An+B)</span> Selecciona elementos en función de una fórmula matemática, donde A es el número de elementos a saltar y B es el punto de inicio. Por ejemplo:</li>
+                <ul>
+                    <li><span class="amarillo">(3n+1)</span> seleccionará el primer elemento y luego cada tercer elemento después de ese (1, 4, 7).</li>
+                    <li><span class="amarillo">(-n+3)</span> Selecciona los tres primeros elementos (1, 2, 3).</li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- has -->
+        <div class="seccionB">
+            <h4 class="amarillo" style="margin-top: 10px;">:has()</h4>
+            <p>La pseudo clase HAS en CSS permite seleccionar un elemento padre basado en si contiene determinado elemento hijo. Esta característica es útil para aplicar estilos distintos a elementos según condiciones específicas, como la presencia o ausencia de cierto contenido interno.</p>
+            <p>Para usarla, escribimos el selector seguido de la pseudo clase :has() y dentro de los paréntesis especificamos el selector del elemento hijo.</p>
+        </div>
+
+        <!-- controls-consola -->
+        <div class="controls-consola btn-controls">
+            <span>Ejecutar</span>
+            <button>nth-child</button>
+            <button>nth-type</button>
+            <button>has</button>
+        </div>
         <!-- codigo  -->
         <div class="codigo"> 
-            <div>
-                <button onclick="pseudoClases('childn')">:nth-child(5)</button> 
-                <button onclick="pseudoClases('odd')">:nth-child(odd)</button> 
-                <button onclick="pseudoClases('even')">:nth-child(even)</button> 
-                <button onclick="pseudoClases('tresn')">:nth-child(3n)</button>
-                <button onclick="pseudoClases('dosn')">:nth-child(3n+2)</button>
-                <button onclick="pseudoClases('menostres')">:nth-child(-n+3)</button>
-                <button onclick="pseudoClases('todos')">:nth-child(n)</button>
-                <button onclick="pseudoClases('firstchild')">:first-child</button>
-                <button onclick="pseudoClases('lastchild')">:last-child</button>
-                <button onclick="pseudoClases('nthoftype')">:nth-of-type(n)</button>
-                <button onclick="pseudoClases('onlychild')">:onlychild</button>
+            <div id="codigo-nth" class="botones-nth botones-nth-child" >
+                <p>
+                    <b class="amarillo">:nth-child(<b class="verde">3</b>)</b>{
+                    <b class="sky">background</b>: blue;}
+                </p>
+                <div>
+                    <p>selecciona elemento # 3</p> 
+                    <button>:nth-child(3)</button> 
+                    <button>p:nth-child(3)</button> 
+                </div>
+                <div>
+                    <p>selecciona elementos impares</p> 
+                    <button>:nth-child(odd)</button> 
+                    <button>p:nth-child(odd)</button> 
+                </div>
+                <div>
+                    <p>selecciona elementos pares</p> 
+                    <button>:nth-child(even)</button> 
+                    <button>p:nth-child(even)</button> 
+                </div>
+                <div>
+                    <p>selecciona cada tercer elemento </p> 
+                    <button>:nth-child(3n)</button>
+                    <button>p:nth-child(3n)</button>
+                </div>
+                <div>
+                    <p>cada tercer elemento empezando por el segundo</p> 
+                    <button>:nth-child(3n+2)</button>
+                    <button>p:nth-child(3n+2)</button>
+                </div>
+                <div>
+                    <p>selecciona los primeros tres elementos</p> 
+                    <button>:nth-child(-n+3)</button>
+                    <button>p:nth-child(-n+3)</button>
+                </div>
+                <div>
+                    <p>selecciona todos los elementos</p> 
+                    <button>:nth-child(n)</button>
+                    <button>p:nth-child(n)</button>
+                </div>
+                <div>
+                    <p>selecciona el primer elemento</p> 
+                    <button>:first-child</button>
+                    <button>p:first-child</button>
+                </div>
+                <div>
+                    <p>selecciona el ultimo elemento</p> 
+                    <button>:last-child</button>
+                    <button>p:last-child</button>
+                </div>
+                <div>
+                    <p>selecciona el elemento que es hijo unico</p> 
+                    <button>:onlychild</button>
+                    <button>span:onlychild</button>
+                </div>
             </div>
 
             <div id="Elementos">     
+                <h3>&lt;h3&gt;</h3> 
                 <p>&lt;p&gt;</p> 
-                <p>&lt;p&gt;</p> 
-                <p>&lt;p&gt;</p> 
+                <div>&lt;div&gt;</div> 
                 <p>&lt;p&gt;</p> 
                 <p>&lt;p&gt;</p>  
-                <p>&lt;p&gt;</p>  
+                <span>span</span>  
                 <div>
                     &lt;div&gt;
                     <p>&lt;p&gt;</p> 
+                    <p>&lt;p&gt;</p> 
+                    <p>&lt;p&gt;</p> 
+                    &lt;div&gt;
+                </div> 
+                <div>
+                    &lt;div&gt;
+                    <span>span</span> 
                     &lt;div&gt;
                 </div> 
             </div>
-            
         </div>   
         
         <h3 class="">Pseudo clases de Enlaces</h3> 
@@ -248,7 +332,7 @@
             </div>
         </div>
 
-        <h3 class="">Pseudo clases de Formularios</h3>
+        <h3>Pseudo clases de Formularios</h3>
         <p>
             Son reglas especiales que permiten aplicar estilos a los elementos de un 
             formulario según su estado o condición. Son muy útiles para mejorar la 
@@ -388,13 +472,32 @@
             </div>
         </div>
         
-        <h3 class="">Otras Pseudo clases</h3>
+        <h3>Otras Pseudo clases</h3>
+        <div class="subsecciones">
+            <h4 class="amarillo" style="margin-top: 10px;">:is()</h4>
+            <p> La pseudoclase is permite agrupar diversos selectores para aplicar los mismos estilos simultáneamente. Para utilizarla, basta colocar :is() y enlistar en su interior los selectores que deseamos modificar.</p>
+            <div class="sintaxis">
+                <b class="amarillo">:is(section, article, aside) a </b> {
+                    <b class="sky">color</b>: red; }
+            </div>
+        </div>
+        <div class="seccionB">
+            <h4 class="amarillo" style="margin-top: 10px;">:not()</h4>
+            <p>Permite que el selector previo aplique estilos a todos los elementos, excepto al elemento que se indique en los parentesis de la pseudo clase :not(elemento).</p>
+        </div>
 
         <!-- codigo -->
         <div class="codigo">
             <div>
-                <b class="amarillo">:not()</b>
-                <p> Aplica un estilo a todos los elementos, excepto al elemento que se indique entre los parentesis.</p>
+                <p>
+                    <b class="amarillo">div :not(.no)</b>{ <br>
+                    &emsp; <b class="sky">color</b>: rgb(0, 255, 145); <br>
+                    &emsp; <b class="sky">font-weight</b>: bold; <br>
+                    }
+                </p>
+            </div>   
+            
+            <div>
                 <ul id="ejemplonot">
                     <li>Aplicar</li> 
                     <li>Aplicar</li> 
@@ -402,10 +505,7 @@
                     <li>Aplicar</li> 
                     <li class="no">NO</li>
                 </ul>
-            </div>   
-
-            <div><b class="amarillo">:empty</b></div> 
-            <div><b class="amarillo">:rot</b></div> 
+            </div> 
         </div>
 
         <!-- pseudos elementos -->

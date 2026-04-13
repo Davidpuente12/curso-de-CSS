@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
     
     <style>
-        /* MARGENES */
-        .margincero{margin: 0;}
-        .margenIz{margin-left: 25px;}
-        .margenTop{margin-top: 100px;}
-        .margenInf{margin-bottom: 50px;}
-
         .centrar{display: flex; flex-direction: column; margin: 30px auto;} 
         .centrarTexto{text-align: center;}
         .flex{display: flex;}
@@ -37,8 +31,13 @@
 <body>
     
     <header>
-        <h1>Lenguaje</h1>
-        <img src="img/css.png" alt="logo css">
+        <div id="head">
+            <span id="button-temas"></span>
+        </div>
+        <div id="head-logo">
+            <h1>Lenguaje</h1>
+            <img src="img/css.png" alt="logo css">
+        </div>
     </header>
 
     <aside>
@@ -49,7 +48,7 @@
                 <li onclick="location.href='#Scombinados'">Selectores Conbinados</li>
                 <li onclick="location.href='./pseudoclases/pseudoClases.html'">Pseudo clases y elementos</li>
                 <li onclick="location.href='#cascada'">Cascada y especificidad</li>
-                <li onclick="location.href='#tiposdedisplay'">Tipos de display</li>
+                <li onclick="location.href='./tipos-de-display/display.html'">Tipos de display</li>
                 <li onclick="location.href='./flexbox/flexbox.html'">Flexbox</li>
                 <li onclick="location.href='./grid/grid.html'">Grid</li>
                 <li onclick="location.href='./modelo-de-caja/caja.html'">Modelo de caja</li>
@@ -64,463 +63,382 @@
                 <li onclick="location.href='#herencias'">Herencias</li>
                 <li onclick="location.href='./diseño-responsivo/responsivo.html'">Diseño Responsivo</li>
                 <li onclick="location.href='./Transformaciones_Y_Transiciones/transformaciones.html'">Transformaciones</li>
+                <li onclick="location.href='./animaciones/index.html'">Animaciones</li>
+                <li onclick="location.href='./Background/background.html'">Background</li>
             </ul>
         </nav>
     </aside>
 
-    <!-- DECLARACION -->
-    <section id="declaracion"> 
-        <p>
-            CSS (Cascading Style Sheets) es un lenguaje de estilo utilizado para describir la
-            presentación de un documento HTML. Básicamente, permite diseñar y dar formato a 
-            una página web, controlando aspectos como colores, fuentes, espaciado, tamaños y 
-            diseño de los elementos.
-        </p>
+    <main>
+        <!-- DECLARACION -->
+        <section> 
+            <p>
+                CSS (Cascading Style Sheets) es un lenguaje de estilo utilizado para describir la
+                presentación de un documento HTML. Básicamente, permite diseñar y dar formato a 
+                una página web, controlando aspectos como colores, fuentes, espaciado, tamaños y 
+                diseño de los elementos.
+            </p>
 
-        <p>Existen tres formas de aplicar estilos: 1. como atributo inline en la propia etiqueta, 2. dentro de la etiqueta style en el head, 3. mediante una hoja de estilos externa enlazada con link. La recomendación práctica es trabajar con un archivo externo.</p>
+            <p>Existen tres formas de aplicar estilos: 1. como atributo inline en la propia etiqueta, 2. dentro de la etiqueta style en el head, 3. mediante una hoja de estilos externa enlazada con link. La recomendación práctica es trabajar con un archivo externo.</p>
 
-        <p>
-            <b>funciona separando el contenido y diseño</b> 
-            con html estructuramos la página, mientras que CSS se encarga de su apariencia, 
-            los estilos se aplican mediante selectores, propiedades y valores que pueden 
-            heredarse y aplicarse de manera jerárquica
-        </p>
-        
-        <h2>Declaraciónes</h2>
-        <p>
-            Una declaración de CSS es un bloque que especifica el conjunto de estilos que 
-            se añadirán a un elemento HTML. Su estructura contiene dos elementos principales:
-        </p>
-        
-        <ul>
-            <li><b class="amarillo">Selector:</b> define el elemento o conjunto de elementos a los cuales se añadirán los estilos.</li>
-            <div class="seccionB">
+            <p>
+                <b>funciona separando el contenido y diseño</b> 
+                con html estructuramos la página, mientras que CSS se encarga de su apariencia, 
+                los estilos se aplican mediante selectores, propiedades y valores que pueden 
+                heredarse y aplicarse de manera jerárquica
+            </p>
+            
+            <h3>Declaraciónes</h3>
+            <p>
+                Una declaración de CSS es un bloque que especifica el conjunto de estilos que 
+                se añadirán a un elemento HTML. Su estructura contiene dos elementos principales:
+            </p>
+            
+            <ul class="seccionB">
+                <li><b class="golden">Selector:</b> define el elemento o conjunto de elementos a los cuales se añadirán los estilos.</li>
                 <li><b class="sky">Propiedad:</b> es el nombre del estilo de CSS.</li>
                 <li><b class="orange">Valor:</b> es el valor que tomará la propiedad.</li>
-            </div>
-        </ul>
-        
-        <div> <p id="ejemploDeclaracion">
-            <b>section{</b> 
-            <b>margin</b>: 
-            <b>auto</b> 
-            <b>10px</b>; 
-            <b>}</b> </p>
-        </div> 
-        
-        <p><b>Propiedades iniciales de CSS</b> Antes de empezar con CSS utilizaremos algunas propiedades de CSS.</p>
-        <ul>
-            <li>color: establece el color del texto de un elemento.</li>
-            <li>background-color: establece un color de fondo al elemento.</li>
-            <li>font-size: establece el tamaño de la fuente.</li>
-            <li>width: establece la anchura de un elemento.</li>
-            <li>height: establece la altura de un elemento.</li>
-        </ul>
-        <p><b>Medidas iniciales</b> Estas son las medidas iniciales que debes conocer para establecer tamaños de elementos o de tipografía:</p>
-        <ul>
-            <li>px: establece una longitud de píxeles.</li>
-            <li>%: establece un porcentaje con respecto a una medida base.</li>
-        </ul>
-
-    </section>
-
-    <!-- SELECTOR -->
-    <section id="selectores">
-        <h2 class="sticky">Selectores básicos</h2>
-
-        <h4 class="amarillo">Selector de tipo</h4>
-        <p>Selecciona todos los elementos que coincidan con el nombre de la etiqueta HTML.</p>
-
-        <h4 class="amarillo">Selector de clase</h4>
-        <p>Selecciona todos los elementos que coincidan con las etiquetas HTML que contengan el atributo class. Para seleccionar estos elementos, se empieza por un punto . y seguido el valor exacto del atributo class de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
-        
-        <h4 class="amarillo">Selector de identificador único</h4>
-        <p>Selecciona el único elemento que coincida con la etiqueta HTML que contenga el atributo id. Solo puede existir un valor id para todo el documento.Para seleccionar el elemento, se empieza por el símbolo de hashtag # y seguido el valor exacto del atributo id de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
-
-        <h4 class="amarillo">Selector de atributo</h4>
-        <p>Selecciona los elementos que coincidan con la etiqueta HTML que contenga el atributo y valor especificado.Para seleccionar los elementos, se empieza por el nombre de la etiqueta, seguido de corchetes [] que contiene el atributo y valor especificado.</p>
-        
-        <h4 class="amarillo">Selector universal</h4>
-        <p>Selecciona todos los elementos del documento mediante un asterisco.</p>
-
-        <table>
-            <tr style="background-color: rgb(13, 13, 13);">
-                <th class="doger">HTML</th>
-                <th class="orange">CSS</th>
-            </tr>
-
-            <tr>
-                <td>&lt;<b class="doger">div</b>&gt;</td>
-                <td><b class="amarillo">div</b> &lcub; afecta todos los div del documento &rcub;</td>
-            </tr>
-            <tr>
-                <td>
-                    &lt;<b class="doger">div</b> 
-                    <b class="sky">class</b> =
-                    "<b class="orange">red</b>"&gt;
-                </td>
-                <td><b class="amarillo">.red</b> &lcub; afecta a los div con la clase &rcub;</td> 
-            </tr>
-            <tr>
-                <td>
-                    &lt;<b class="doger">button</b> 
-                    <b class="sky">id</b> =
-                    "<b class="orange">unico</b>"&gt;
-                </td>
-                <td><b class="amarillo">.unico</b> &lcub; afecta solo la etiqueta con el id unico &rcub;</td> 
-            </tr>
-            <!-- selector de atributo -->
-            <tr>
-                <td>
-                    &lt;<b class="doger">a</b>  
-                    <b class="sky">href</b> = 
-                    <b class="orange">"https://platzi.com"</b>&gt;
-                </td>
-                <td>
-                    <b class="amarillo">a</b>
-                    &lbrack;<b class="sky">href</b> = 
-                    <b class="orange">"https://platzi.com"</b>&rbrack; 
-                    &lcub; afecta solo los enlaces con el mismo valor &rcub;
-                </td>
-            </tr>
-            <!-- selector universal -->
-            <tr>
-                <td colspan="2"><b class="doger">*</b> &lcub; afecta a todos los elementos de la pagina.&rcub;</td>
-            </tr>
-        </table>
-
-    </section>
-
-    <!-- COMBINADOS -->
-    <section id="Scombinados">
-        <h2 class="sticky">Selectores combinados</h2>
-        
-        <div><!-- Combinador descendientes -->
-            <h4>Combinador de descendientes</h4>
-            <p>Selecciona todos los elementos del selector de la derecha (p) que son hijos del selector de la izquierda (div), independientemente de la profundidad de anidacion. Estos selectores están separados por un espacio.</p>
-            
-            <div class="sintaxis"> 
-                <b class="amarillo">div p{</b> afecta todos los hijos 
-                &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                <b class="amarillo">.container img{</b> Todos los hijos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
-            </div>
-        </div>
-
-        <div><!-- Combinador de hijo directo -->
-            <h4>Combinador de hijo directo</h4>
-            <p>Selecciona todos los elementos del selector de la derecha que son hijos directos del selector de la izquierda. Estos selectores están separados por >.</p>
-            
-            <div class="sintaxis"> 
-                <b class="amarillo">div > p{</b> todos los hijos directos &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                <b class="amarillo">.container > img{</b> Todos los hijos directos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
-            </div>
-        </div>
-
-        <div><!-- Combinador de elemento adyacente -->
-
-            <h4>Combinador de elemento adyacente</h4>
-            <p>Selecciona todos los elementos del selector de la derecha que están adyacente al selector de la izquierda. Estos selectores están separados por +. <b>elemento + adyacente {Elementos adyacentes}</b></p>
-            
-            <div class="sintaxis"> 
-                <b class="amarillo">div + p{</b> todos los &lt;<b class="doger">p</b>&gt; adyacentes a &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                <b class="amarillo">.container + img{</b> Todos los &lt;<b class="doger">img</b>&gt; adyacentes a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
-            </div>
-        
-            <p>Adyacente significa que comparten el mismo padre y está situado inmediatamente hacia abajo de otro elemento. Por ejemplo, en el siguiente código, &lt;div&gt; está adyacente a &lt;h1&gt; y &lt;p&gt; está adyacente a &lt;div&gt;. Sin embargo, &lt;h1&gt; no está adyacente a &lt;div&gt; y &lt;div&gt; no está adyacente a &lt;p&gt;. </p>
-        </div>
-
-        <div><!-- Combinador general de hermanos -->
-
-            <h4>Combinador general de hermanos</h4>
-            <p>Selecciona todos los elementos del selector de la derecha que son hermanos del selector de la izquierda. Estos selectores están separados por ~ (<kbd>Alt 126</kbd>) <b>elemento ~ hermanos</b>. Hermanos significa que comparten el mismo padre y están situados hacia abajo de otro elemento</p>
-            
-            <div class="sintaxis"> 
-                <b class="amarillo">div ~ p{</b> todos los 
-                &lt;<b class="doger">p</b>&gt; hermanos de &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                <b class="amarillo">.container ~ img{</b> Todos los 
-                &lt;<b class="doger">img</b>&gt; hermanos a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
-            </div>
-        </div>
-
-        <!-- codigo -->
-        <div class="codigo" style="margin-top: 100px;">
-            <div id="codigo-selectores">
-                <button>
-                    <b class="amarillo">section p</b> { 
-                    <b class="sky">color</b> = <b class="orange">"orange"</b> } 
-                </button>
-                <button>
-                    <b class="amarillo">section</b> &gt; <b class="amarillo">p</b> { 
-                    <b class="sky">color</b> = <b class="orange">"orange"</b> } 
-                </button>
-                <button>
-                    <b class="amarillo">section</b> 
-                    <b class="amarillo">h5</b> + <b class="amarillo">p</b> { 
-                    <b class="sky">color</b> = <b class="orange">"orange"</b> } 
-                </button>
-                <button>
-                    <b class="amarillo">section</b> 
-                    <b class="amarillo">div</b> ~ <b class="amarillo">p</b> { 
-                    <b class="sky">color</b> = <b class="orange">"orange"</b> } 
-                </button>
-            </div>
-
-            <div id="content-html" style="width: 500px;">
-                &lt;<b class="doger ">section</b>&gt; 
-
-                <h5> &lt;h5&gt; Soy un título hijo de div &lt;/h1&gt;</h5> 
-                <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
-                <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
-
-                <div>
-                    &emsp; &lt;<b class="doger">div</b>&gt; <br>
-                    <p style="margin-left: 50px;">
-                        &lt;p&gt; Soy un párrafo hijo de div &lt;/p&gt;
-                    </p> 
-                    &emsp; &lt;/<b class="doger">div</b>&gt; 
-                </div>
-                <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
-
-                &lt;/<b class="doger">section</b>&gt;
-            </div>  
-        </div>
-
-    </section>
-    
-    <!-- CASCADA -->
-     <section id="cascada"> 
-        <h2 class="sticky">Cascada y Especificidad</h2>
-        <p>La cascada es el concepto que determina qué estilos se colocan sobre otros, priorizando a aquellos que se encuentren más abajo del código. Recordarás que CSS es la abreviación de Cascade Style Sheets, que traducido es hojas de estilos en Cascada.</p>
-        <p><b>Importancia:</b> El navegador carga estilos de distintas fuentes. Primero aplica los estilos predeterminados del usuario (navegador), luego los estilos escritos por los desarrolladores, y por último aplica aquellos con la etiqueta <span class="doger">!important</span> al final de una declaración.</p>        
-
-        <h3>¿Qué es especificidad?</h3>
-        <p>La especificidad consiste en dar un valor a una regla CSS sobre qué tan específico es el estilo, esto para que los navegadores puedan saber qué estilos aplicar sobre otros, independientemente de dónde se encuentren en el código. El estilo se aplicará donde la especificidad sea mayor. Existen 6 tipos de especificidad con su respectivo valor, donde (uno) es la cantidad de estilos que lo contienen.</p>
-        <table class="tabla">
-            <tr><th>Selectores</th><th>Especificidad</th></tr>
-            <tr><td>!important</td><td>1,0,0,0,0</td></tr>
-            <tr><td>Inline styles (estilos en linea)</td><td>0,1,0,0,0</td></tr>
-            <tr><td>#id (identificadores)</td><td>0,0,1,0,0</td></tr>
-            <tr><td>.class (clases)</td><td>0,0,0,1,0</td></tr>
-            <tr><td>Etiquetas</td><td>0,0,0,0,1</td></tr>
-            <tr><td>* Selector Universal</td> <td>0,0,0,0,0</td></tr>
-        </table>
-
-        <h4 class="doger">!important</h4>
-        <p>La palabra reservada !important es un valor de toda propiedad CSS que provee una especificidad de 10000, por lo que se aplicará ante otros estilos. Esto es una mala práctica y no deberías utilizarlo.</p>
-        <div class="sintaxis">  
-            &lt;<b class="doger">h1</b> <b class="sky">style</b> = 
-            <b class="orange">"color: red;"</b> <b class="doger">!important</b>&gt;Especificidad = 10000
-            &lt;/<b class="doger">h1</b>&gt;  
-        </div>
-
-
-        <h4 class="sky">Estilos en línea</h4>
-        <p>Los estilos en línea son las propiedades CSS escritas en el HTML a través de la propiedad/atributo <span class="sky">style</span> de toda etiqueta. También es una mala práctica y debes evitarlo.</p> 
-        <div class="sintaxis">  
-            &lt;<b class="doger">h1</b> <b class="sky">style</b> = 
-            <b class="orange">"color: blue;"</b>&gt;Especificidad = 1000
-            &lt;/<b class="doger">h1</b>&gt;  
-        </div>
-
-        <h4 class="amarillo">Especificidad en selectores</h4>
-        <p>Los selectores de tipo ID son más específicos que las clases, atributos y pseudoclases. Estas últimas son más específicas que los elementos y pseudoelementos. El selector universal tiene una especificidad de 0. Los selectores combinadores suman la especificidad de cada selector basico. Si utilizas Visual Studio y mantienes el mouse sobre el selector, te mostrará la especificidad total.</p>
-        
-        <h4>¿Cómo afectan la especificidad y el orden de las reglas CSS?</h4>
-        <ul>
-            <li><b>Importancia:</b> Primero verifica si hay un estilo con !important.</li>
-            <li><b>Estilo Embebido:</b> Luego considera los estilos inline.</li>
-            <li><b>Especificidad:</b> Revisa las reglas según las características de especificidad (qué tan detallado es el selector).</li>
-            <li><b>Orden de declaración:</b> Las reglas declaradas más abajo en el archivo CSS tienen preferencia.</li>
-        </ul>    
-    </section>
-
-    <!-- TIPOS DE DISPLAY -->
-    <section id="tiposdedisplay"> 
-        <h2 class="sticky">Tipos de Display</h2>
-
-        <h3 class="sky">display</h3>
-        <p>Esta propiedad establece el tipo de visualización de los elementos HTML sin afectar el flujo normal de los elementos. Existen etiquetas que por defecto su display ya está determinado, como la etiqueta &lt;<span class="doger">div</span>&gt; que tiene display block, &lt;<span class="doger">span</span>&gt; tiene display inline y &lt;<span class="doger">button</span>&gt; tiene display inline-block.</p>
-        <p>Aqui encontraras todos los tipos de visualizacion en elementos <a href="https://htmlreference.io/" >HTML Reference type</a></p>
-        
-        <table class="tabla">
-            <tr><th><b>Tipo</b></th><th>Descripcion</th></tr>
-            <tr><td><span class="orange">Inline</span></td>       <td>Se coloca a continuación del otro (en horizontal). Ignora dimensiones.</td></tr>
-            <tr><td><span class="orange">block</span></td>        <td>Se coloca encima de otro (en vertical).</td></tr>
-            <tr><td><span class="orange">inline-block</span></td> <td>Híbrido en línea-bloque. Actúa como un elemento en línea, pero obedece dimensiones.</td></tr>
-            <tr><td><span class="orange">flex</span></td>         <td>Contenedor en bloque, similar a block (ocupa todo el ancho del padre).</td></tr>
-            <tr><td><span class="orange">inline-flex</span></td>  <td>Contenedor en línea, similar a inline-block (ocupa solo el contenido).</td></tr>
-            <tr><td><span class="orange">grid</span></td>         <td>Utiliza cuadrículas o rejillas con el modelo de cajas Grid CSS.</td></tr>
-            <tr><td><span class="orange">inline grid</span></td>  <td>La versión en línea (ocupa sólo su contenido) del modelo de cajas Grid CSS.</td></tr>
-            <tr><td><span class="orange">list-item</span></td>    <td>Actúa como un ítem de una lista. Es el comportamiento de etiquetas como &lt;li&gt;.</td></tr>
-            <tr><td><span class="orange">table</span></td>        <td>Actúa como una tabla. Es el comportamiento de etiquetas como &lt;table&gt;.</td></tr>
-            <tr><td><span class="orange">table-cell</span></td>   <td>Actúa como la celda de una tabla. Es el comportamiento de etiquetas como &lt;th&gt; o &lt;td&gt;.</td></tr>
-            <tr><td><span class="orange">table-row</span></td>    <td>Actúa como la fila de una tabla. Es el comportamiento de etiquetas como &lt;tr&gt;.</td></tr>
-            <tr><td><span class="orange">contents</span></td>     <td>Ignora la caja del elemento. Útil para mantener Grid/Flex aún teniendo un wrapper intermedio.</td></tr>
-            <tr><td><span class="orange">none</span></td>         <td>No dibuja en el navegador el contenido del elemento ni sus hijos.</td></tr>
-        </table>
-
-        <h4>Visualización en bloque</h4>
-        <p>El <b class="sky">display</b> <b class="orange">block</b> establece que un elemento ocupará todo el espacio disponible por defecto y el siguiente elemento a este se situará por debajo.Es posible añadir medidas de anchura width y altura height a estos a elementos.También es posible agregar todas las propiedades del modelo de caja </p>
-        <div class="displayColor seccionB">
-            <p>Elemento de bloque </p>
-            <p style="width: 50%; height: 50px;">Elemento de bloque con width y height</p>
-        </div>
-
-        <h4>Visualización en línea</h4>
-        <p>El <b class="sky">display</b> <b class="orange">inline</b> establece que un elemento ocupará el espacio del contenido del mismo y el siguiente elemento se situará a la derecha. No es posible añadir medidas de anchura width y altura height a estos a elementos. También, no es posible agregar todas las propiedades del modelo de caja, únicamente funcionará la propiedad margin en el eje horizontal</p>
-        <div class="displayColor seccionB">
-            <span>elemento en linea</span>
-            <span>elemento en linea</span>
-            <span>elemento en linea</span>
-        </div>
-        
-        <h4>Visualización de bloque y línea</h4>
-        <p>El <b class="sky">display</b> <b class="orange">inline-block</b> combina las ventajas de bloque de colocar medidas al elemento y propiedades del modelo de caja correctamente; con las ventajas de inline de colocar un elemento seguido de otro en el mismo espacio. Si el elemento excede el contenido total, se coloca en la siguiente línea por debajo.</p>
-        <div>
-            <ul id="displayInlineBlock" class="displayColor seccionB">
-                <li>inline-block</li>
-                <li>inline-block</li>
-                <li>inline-block</li>
-                <li>inline-block</li>
             </ul>
-        </div>
-
-        <h4>Visualización nula</h4>
-        <p>El <b class="sky">display</b> <b class="orange">none</b> desactiva la visualización de un elemento, como si el elemento no existiera.</p>
-        
-    </section>
-    
-    <!-- Tipos de posicionamiento -->
-    <section id="tiposdeposiones"> 
-        <h2 class="sticky">Tipos de Posicionamiento</h2>
-        <p>El posicionamiento en CSS consiste en cómo un elemento se situará, con respecto a su elemento padre y al flujo normal del documento. El flujo normal del documento es el orden de los elementos establecidos en el HTML.</p>
-        
-        <h3 class="sky">position</h3>
-        <p>
-            La propiedad position en CSS define cómo se posiciona un elemento en el flujo documento y cómo se comporta respecto a sus cordenadas, tiene 
-            subpropiedades de posicion: <b class="sky">top right bottom left</b>, estas sirven para mover el elemento con respecto a su padre.
-        </p>
-        
-        <table class="tablaValores">
-            <tr><th>Valor</th>    <th>Descripcion</th></tr>
-            <tr><td>static</td>   <td>Valor por defecto. El elemento se posiciona según el flujo normal del documento. No se aplican top, right, bottom, ni left.</td></tr>
-            <tr><td>relative</td> <td>El elemento se posiciona en relación a su posición original. Puedes moverlo con top, left, etc., sin sacarlo del flujo del documento.</td></tr>
-            <tr><td>absolute</td> <td>El elemento se posiciona respecto al contenedor más cercano que no tenga position: static. Se elimina del flujo del documento.</td></tr>
-            <tr><td>fixed</td>    <td>Similar a absolute, pero se posiciona respecto a la ventana del navegador. No se mueve al hacer scroll.</td></tr>
-            <tr><td>sticky</td>   <td>El elemento actúa como relative hasta que se alcanza un umbral de scroll, y luego se comporta como fixed. Ideal para encabezados pegajosos.</td></tr>
-        </table>
- 
-        <p><b>Posición estática</b> La posición static es el valor por defecto de todo elemento HTML, consiste en respetar el flujo normal del documento donde las propiedades de posición no pueden ser establecidas.</p>
-        <p><b>Posición relativa</b> mantiene el elemento dentro del flujo normal del documento, pero permite ajustar su posición usando top, left, right o bottom. El elemento sigue ocupando su espacio original en la pagina pero puedes modificar su ubicación. Es util para mover elementos sin alterar el diseño de otros.</p>
-        <p><b>Posición absoluta</b> consiste en quitar al elemento del flujo normal del documento, esto significa que el elemento se situa con respecto a su contenedor mas cercano que tenga una propiedad "position" distinta a static. Si no hay un contenedor con relative, absolute o fixed, el elemento se posiciona en relación con el &lt;html&gt;.</p>
-        <p><b>Posición fija</b> La posición fixed consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar donde quedara fijo en la pantalla al hacer scroll; donde las propiedades de posición sí pueden ser establecidas.</p>
-        <p><b>Posición variable fija</b> La posición sticky consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar mientras su contenedor sea visible; donde las propiedades de posición sí pueden ser establecidas. Eso significa que permite que un elemento se comporte como relative hasta que se alcance un determinado punto de desplazamiento, momento en el cual se "pega" a su posición y actúa como fixed. Es útil para mantener elementos visibles mientras el usuario hace scroll.</p>
-
-        <h4>Contenedor de elementos con posiciones relativa y absoluta</h4>
-        <div id="contenedor">
-            <div id="ejemplorelative">
-                <div id="ejemploabsolute"></div>
-            </div>
-        </div>
-
-        <div id="contenedorBotones">
-            <div class="control">
-                <button onclick="arriba()">🔼</button>
-                <div class="medio">
-                    <button onclick="izquierda()">◀️</button>
-                    <button onclick="derecha()">▶️</button>
-                </div>    
-                <button onclick="abajo()">🔽</button>
-            </div>
             
-            <div class="control">
-                <button onclick="arriba3('up')">🔼</button>
-                <div class="medio">
-                    <button onclick="izquierda2('left')">◀️</button>
-                    <button onclick="derecha1('right')">▶️</button>
+            <div class="sintaxis"> 
+                <b class="golden">section{</b> 
+                <b class="sky">margin</b>: 
+                <b class="orange">auto</b> 
+                <b class="verde">10px</b>; 
+                <b class="golden">}</b> 
+            </div> 
+
+        </section>
+
+        <!-- SELECTOR -->
+        <section id="selectores">
+            <h2 class="sticky">Selectores básicos</h2>
+            
+            <h4 class="amarillo">Selector de tipo</h4>
+            <p>Selecciona todos los elementos que coincidan con el nombre de la etiqueta HTML.</p>
+
+            <h4 class="amarillo">Selector de clase</h4>
+            <p>Selecciona todos los elementos que coincidan con las etiquetas HTML que contengan el atributo class. Para seleccionar estos elementos, se empieza por un punto . y seguido el valor exacto del atributo class de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
+            
+            <h4 class="amarillo">Selector de identificador único</h4>
+            <p>Selecciona el único elemento que coincida con la etiqueta HTML que contenga el atributo id. Solo puede existir un valor id para todo el documento.Para seleccionar el elemento, se empieza por el símbolo de hashtag # y seguido el valor exacto del atributo id de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
+
+            <h4 class="amarillo">Selector de atributo</h4>
+            <p>Selecciona los elementos que coincidan con la etiqueta HTML que contenga el atributo y valor especificado.Para seleccionar los elementos, se empieza por el nombre de la etiqueta, seguido de corchetes [] que contiene el atributo y valor especificado.</p>
+            
+            <h4 class="amarillo">Selector universal</h4>
+            <p>Selecciona todos los elementos del documento mediante un asterisco.</p>
+
+            <table>
+                <tr style="background-color: rgb(13, 13, 13);">
+                    <th class="doger">HTML</th>
+                    <th class="orange">CSS</th>
+                </tr>
+
+                <tr>
+                    <td>&lt;<b class="doger">div</b>&gt;</td>
+                    <td><b class="amarillo">div</b> &lcub; afecta todos los div del documento &rcub;</td>
+                </tr>
+                <tr>
+                    <td>
+                        &lt;<b class="doger">div</b> 
+                        <b class="sky">class</b> =
+                        "<b class="orange">red</b>"&gt;
+                    </td>
+                    <td><b class="amarillo">.red</b> &lcub; afecta a los div con la clase &rcub;</td> 
+                </tr>
+                <tr>
+                    <td>
+                        &lt;<b class="doger">button</b> 
+                        <b class="sky">id</b> =
+                        "<b class="orange">unico</b>"&gt;
+                    </td>
+                    <td><b class="amarillo">.unico</b> &lcub; afecta solo la etiqueta con el id unico &rcub;</td> 
+                </tr>
+                <!-- selector de atributo -->
+                <tr>
+                    <td>
+                        &lt;<b class="doger">a</b>  
+                        <b class="sky">href</b> = 
+                        <b class="orange">"https://platzi.com"</b>&gt;
+                    </td>
+                    <td>
+                        <b class="amarillo">a</b>
+                        &lbrack;<b class="sky">href</b> = 
+                        <b class="orange">"https://platzi.com"</b>&rbrack; 
+                        &lcub; afecta solo los enlaces con el mismo valor &rcub;
+                    </td>
+                </tr>
+                <!-- selector universal -->
+                <tr>
+                    <td colspan="2"><b class="doger">*</b> &lcub; afecta a todos los elementos de la pagina.&rcub;</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- COMBINADOS -->
+        <section id="Scombinados">
+            <h2 class="sticky">Selectores combinados</h2>
+            
+            <div><!-- Combinador descendientes -->
+                <h4>Combinador de descendientes</h4>
+                <p>Selecciona todos los elementos del selector de la derecha (p) que son hijos del selector de la izquierda (div), independientemente de la profundidad de anidacion. Estos selectores están separados por un espacio.</p>
+                
+                <div class="sintaxis"> 
+                    <b class="amarillo">div p{</b> afecta todos los hijos 
+                    &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
+                    <b class="amarillo">.container img{</b> Todos los hijos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
                 </div>
-                <button onclick="abajo4('down')">🔽</button>
             </div>
-        </div>
-        <div class="centrarTexto"><span style="margin: 0;">Cuadrado relativo 🟦</span>&emsp; &emsp; &emsp; &emsp; &emsp;<span style="margin: 0;">Circulo absoluto 🔴</span></div>
-    </section>    
 
-    <!-- VARIABLES GLOBALES -->
-    <section id="variables"> 
-        <h2 class="sticky">Variables Globales</h2>
-        <p>Las CSS Custom Properties (conocidas como variables CSS) son un mecanismo de CSS que permite dar un valor personalizado a las propiedades CSS. El objetivo principal es evitar escribir múltiples veces un mismo valor, y en su lugar, ponerle un nombre más lógico, semántico y fácil de recordar, que hará referencia al valor real. De esta forma será mucho más legible y más fácil de mantener.</p>
+            <div><!-- Combinador de hijo directo -->
+                <h4>Combinador de hijo directo</h4>
+                <p>Selecciona todos los elementos del selector de la derecha que son hijos directos del selector de la izquierda. Estos selectores están separados por >.</p>
+                
+                <div class="sintaxis"> 
+                    <b class="amarillo">div > p{</b> todos los hijos directos &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
+                    <b class="amarillo">.container > img{</b> Todos los hijos directos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                </div>
+            </div>
 
-        <h3>Crear y usar variables en CSS</h3>
-        <p>
-            Para declarar variables globales utilizaremos el selector / pseudo-clase
-            <code class="amarillo">:root</code> ya que tiene mayor especificidad y es global. 
-            la sintaxis es: dos guiones (<b class="sky">--</b>) como prefijo al nombre que vamos 
-            a utilizar seguido del valor. Esta pseudoclase hace referencia al elemento raíz 
-            del documento &lt;<span class="doger">html</span>&gt;.
-        </p>
-        <p>
-            Para usarlas haremos uso de la funcion <b class="amarillo">var</b>(), que 
-            indica que se usara una variable global, y recibe como parametro el nombre 
-            de la variable que ya declaramos. Tambien podemos agregar un segundo 
-            parametro que puede ser otra variable o el valor por defecto de la propiedad.
-        </p>
-        <p>
-            Tambien podemos declarar variables globales en otros selectores, pero solo funcionara 
-            dentro del mismo, su principal ventaja seria la de poder sobreescribir una varibale 
-            global ya definida, esto podria ser util si queremos que los estilos sean 
-            diferentes para el elemento al que se aplica.
-        </p>
+            <div><!-- Combinador de elemento adyacente -->
 
-        <div class="seccionB">
-            <code>
-                <span class="amarillo">:root</span> { <br>
-                &emsp; <span class="sky">--letra-amarilla</span>: <span class="orange">yellow</span> <br>
-                } <br><br>
+                <h4>Combinador de elemento adyacente</h4>
+                <p>Selecciona todos los elementos del selector de la derecha que están adyacente al selector de la izquierda. Estos selectores están separados por +. <b>elemento + adyacente {Elementos adyacentes}</b></p>
+                
+                <div class="sintaxis"> 
+                    <b class="amarillo">div + p{</b> todos los &lt;<b class="doger">p</b>&gt; adyacentes a &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
+                    <b class="amarillo">.container + img{</b> Todos los &lt;<b class="doger">img</b>&gt; adyacentes a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                </div>
             
-                <span class="amarillo">h2</span> { <br>
-                &emsp; <span class="sky">color</span>: <span class="amarillo">var</span>( <span class="sky">--letra-amarilla</span>, segundo parametro(opcional) ) <br>
-                }
-            </code>
-        </div>
+                <p>Adyacente significa que comparten el mismo padre y está situado inmediatamente hacia abajo de otro elemento. Por ejemplo, en el siguiente código, &lt;div&gt; está adyacente a &lt;h1&gt; y &lt;p&gt; está adyacente a &lt;div&gt;. Sin embargo, &lt;h1&gt; no está adyacente a &lt;div&gt; y &lt;div&gt; no está adyacente a &lt;p&gt;. </p>
+            </div>
 
-        <div class="notas margincero">Las custom properties se suelen agrupar en las primeras líneas de un bloque CSS, separándolas por una línea en blanco de las demás propiedades. Esto facilita la lectura del código.</div>
+            <div><!-- Combinador general de hermanos -->
 
-    </section>
+                <h4>Combinador general de hermanos</h4>
+                <p>Selecciona todos los elementos del selector de la derecha que son hermanos del selector de la izquierda. Estos selectores están separados por ~ (<kbd>Alt 126</kbd>) <b>elemento ~ hermanos</b>. Hermanos significa que comparten el mismo padre y están situados hacia abajo de otro elemento</p>
+                
+                <div class="sintaxis"> 
+                    <b class="amarillo">div ~ p{</b> todos los 
+                    &lt;<b class="doger">p</b>&gt; hermanos de &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
+                    <b class="amarillo">.container ~ img{</b> Todos los 
+                    &lt;<b class="doger">img</b>&gt; hermanos a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                </div>
+            </div>
 
-    <section>
-        <h3>Imagenes de fondo</h3>
-            <p>casi todos los elementos de HTML pueden tener una imagen de fondo, para añadir una imagen de fondo se usa la propiedad de CCS background-image, tenemos dos formas de hacerlo, una es usando un contenedor "div" con un atributo "style"  usamos la propiedad background-image:url('') y entre parentesis y comillas anexamos la url de la imagen, 
-            luego podemos determinar el color de las letras, el ancho y el relleno con las propiedades "color" "width" "padding", la segunda forma es usando la etiqueta "style" que tenemos en el "head", dentro de ella escribimos ( div{background-image:url("")} ) </p>
-            <div style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPYz1ViZX-_SCMlo_uubngB-cjDXHnxCWeA&s');color:white;width:200px;padding: 3%;"> La tierra<p>desde la luna</p></div>
+            <!-- codigo -->
+            <div class="codigo" style="margin-top: 100px;">
+                <div id="codigo-selectores">
+                    <button>
+                        <b class="amarillo">section p</b> { 
+                        <b class="sky">color</b> = <b class="orange">"orange"</b> } 
+                    </button>
+                    <button>
+                        <b class="amarillo">section</b> &gt; <b class="amarillo">p</b> { 
+                        <b class="sky">color</b> = <b class="orange">"orange"</b> } 
+                    </button>
+                    <button>
+                        <b class="amarillo">section</b> 
+                        <b class="amarillo">h5</b> + <b class="amarillo">p</b> { 
+                        <b class="sky">color</b> = <b class="orange">"orange"</b> } 
+                    </button>
+                    <button>
+                        <b class="amarillo">section</b> 
+                        <b class="amarillo">div</b> ~ <b class="amarillo">p</b> { 
+                        <b class="sky">color</b> = <b class="orange">"orange"</b> } 
+                    </button>
+                </div>
+
+                <div id="content-html" style="width: 500px;">
+                    &lt;<b class="doger ">section</b>&gt; 
+
+                    <h5> &lt;h5&gt; Soy un título hijo de div &lt;/h1&gt;</h5> 
+                    <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
+                    <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
+
+                    <div>
+                        &emsp; &lt;<b class="doger">div</b>&gt; <br>
+                        <p style="margin-left: 50px;">
+                            &lt;p&gt; Soy un párrafo hijo de div &lt;/p&gt;
+                        </p> 
+                        &emsp; &lt;/<b class="doger">div</b>&gt; 
+                    </div>
+                    <p> &lt;p&gt; Soy un párrafo hijo de section &lt;/p&gt;</p>
+
+                    &lt;/<b class="doger">section</b>&gt;
+                </div>  
+            </div>
+
+        </section>
         
-        <h3>Fondo de la pagina</h3>
-            <p>para añadir una imagen de fondo a toda la pagina tenemos que especificar el background-image para el elemento "body", dentro de la etiqueta "style" escribimos ( body {background-image:url('')} ) si metemos una imagen de fondo pequeña por defecto esta se repetira horizontal y verticalmente hasta que rellene todo el elemento. 
-            Para ello utilizaremos el Background-repeat: no-repeat junto con el primero que tenemos. si queremos que la imagen de fondo cubra el elemento entero podemos usar Background-size:cover , de esta manera la imagen cubrira todo el elemento sin deformarse. pero si queremos que la imagen de fondo cubra el elemento pero deformandose a la proporcion de este, tenemos que poner el Background-size a 100%.
+        <!-- CASCADA -->
+        <section id="cascada"> 
+            <h2 class="sticky">Cascada y Especificidad</h2>
+            <p>La cascada es el concepto que determina qué estilos se colocan sobre otros, priorizando a aquellos que se encuentren más abajo del código. Recordarás que CSS es la abreviación de Cascade Style Sheets, que traducido es hojas de estilos en Cascada.</p>
+            <p><b>Importancia:</b> El navegador carga estilos de distintas fuentes. Primero aplica los estilos predeterminados del usuario (navegador), luego los estilos escritos por los desarrolladores, y por último aplica aquellos con la etiqueta <span class="doger">!important</span> al final de una declaración.</p>        
+
+            <h3>¿Qué es especificidad?</h3>
+            <p>La especificidad consiste en dar un valor a una regla CSS sobre qué tan específico es el estilo, esto para que los navegadores puedan saber qué estilos aplicar sobre otros, independientemente de dónde se encuentren en el código. El estilo se aplicará donde la especificidad sea mayor. Existen 6 tipos de especificidad con su respectivo valor, donde (uno) es la cantidad de estilos que lo contienen.</p>
+            <table class="tabla">
+                <tr><th>Selectores</th><th>Especificidad</th></tr>
+                <tr><td>!important</td><td>1,0,0,0,0</td></tr>
+                <tr><td>Inline styles (estilos en linea)</td><td>0,1,0,0,0</td></tr>
+                <tr><td>#id (identificadores)</td><td>0,0,1,0,0</td></tr>
+                <tr><td>.class (clases)</td><td>0,0,0,1,0</td></tr>
+                <tr><td>Etiquetas</td><td>0,0,0,0,1</td></tr>
+                <tr><td>* Selector Universal</td> <td>0,0,0,0,0</td></tr>
+            </table>
+
+            <h4 class="doger">!important</h4>
+            <p>La palabra reservada !important es un valor de toda propiedad CSS que provee una especificidad de 10000, por lo que se aplicará ante otros estilos. Esto es una mala práctica y no deberías utilizarlo.</p>
+            <div class="sintaxis">  
+                &lt;<b class="doger">h1</b> <b class="sky">style</b> = 
+                <b class="orange">"color: red;"</b> <b class="doger">!important</b>&gt;Especificidad = 10000
+                &lt;/<b class="doger">h1</b>&gt;  
+            </div>
+
+
+            <h4 class="sky">Estilos en línea</h4>
+            <p>Los estilos en línea son las propiedades CSS escritas en el HTML a través de la propiedad/atributo <span class="sky">style</span> de toda etiqueta. También es una mala práctica y debes evitarlo.</p> 
+            <div class="sintaxis">  
+                &lt;<b class="doger">h1</b> <b class="sky">style</b> = 
+                <b class="orange">"color: blue;"</b>&gt;Especificidad = 1000
+                &lt;/<b class="doger">h1</b>&gt;  
+            </div>
+
+            <h4 class="amarillo">Especificidad en selectores</h4>
+            <p>Los selectores de tipo ID son más específicos que las clases, atributos y pseudoclases. Estas últimas son más específicas que los elementos y pseudoelementos. El selector universal tiene una especificidad de 0. Los selectores combinadores suman la especificidad de cada selector basico. Si utilizas Visual Studio y mantienes el mouse sobre el selector, te mostrará la especificidad total.</p>
+            
+            <h4>¿Cómo afectan la especificidad y el orden de las reglas CSS?</h4>
+            <ul>
+                <li><b>Importancia:</b> Primero verifica si hay un estilo con !important.</li>
+                <li><b>Estilo Embebido:</b> Luego considera los estilos inline.</li>
+                <li><b>Especificidad:</b> Revisa las reglas según las características de especificidad (qué tan detallado es el selector).</li>
+                <li><b>Orden de declaración:</b> Las reglas declaradas más abajo en el archivo CSS tienen preferencia.</li>
+            </ul>    
+        </section>
+        
+        <!-- Tipos de posicionamiento -->
+        <section id="tiposdeposiones"> 
+            <h2 class="sticky">Tipos de Posicionamiento</h2>
+            <p>El posicionamiento en CSS consiste en cómo un elemento se situará, con respecto a su elemento padre y al flujo normal del documento. El flujo normal del documento es el orden de los elementos establecidos en el HTML.</p>
+            
+            <h3 class="sky">position</h3>
+            <p>
+                La propiedad position en CSS define cómo se posiciona un elemento en el flujo documento y cómo se comporta respecto a sus cordenadas, tiene 
+                subpropiedades de posicion: <b class="sky">top right bottom left</b>, estas sirven para mover el elemento con respecto a su padre.
             </p>
-    </section>
+            
+            <table class="tablaValores">
+                <tr><th>Valor</th>    <th>Descripcion</th></tr>
+                <tr><td>static</td>   <td>Valor por defecto. El elemento se posiciona según el flujo normal del documento. No se aplican top, right, bottom, ni left.</td></tr>
+                <tr><td>relative</td> <td>El elemento se posiciona en relación a su posición original. Puedes moverlo con top, left, etc., sin sacarlo del flujo del documento.</td></tr>
+                <tr><td>absolute</td> <td>El elemento se posiciona respecto al contenedor más cercano que no tenga position: static. Se elimina del flujo del documento.</td></tr>
+                <tr><td>fixed</td>    <td>Similar a absolute, pero se posiciona respecto a la ventana del navegador. No se mueve al hacer scroll.</td></tr>
+                <tr><td>sticky</td>   <td>El elemento actúa como relative hasta que se alcanza un umbral de scroll, y luego se comporta como fixed. Ideal para encabezados pegajosos.</td></tr>
+            </table>
+    
+            <p><b>Posición estática</b> La posición static es el valor por defecto de todo elemento HTML, consiste en respetar el flujo normal del documento donde las propiedades de posición no pueden ser establecidas.</p>
+            <p><b>Posición relativa</b> mantiene el elemento dentro del flujo normal del documento, pero permite ajustar su posición usando top, left, right o bottom. El elemento sigue ocupando su espacio original en la pagina pero puedes modificar su ubicación. Es util para mover elementos sin alterar el diseño de otros.</p>
+            <p><b>Posición absoluta</b> consiste en quitar al elemento del flujo normal del documento, esto significa que el elemento se situa con respecto a su contenedor mas cercano que tenga una propiedad "position" distinta a static. Si no hay un contenedor con relative, absolute o fixed, el elemento se posiciona en relación con el &lt;html&gt;.</p>
+            <p><b>Posición fija</b> La posición fixed consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar donde quedara fijo en la pantalla al hacer scroll; donde las propiedades de posición sí pueden ser establecidas.</p>
+            <p><b>Posición variable fija</b> La posición sticky consiste en quitar al elemento del flujo normal del documento y fijarlo en un lugar mientras su contenedor sea visible; donde las propiedades de posición sí pueden ser establecidas. Eso significa que permite que un elemento se comporte como relative hasta que se alcance un determinado punto de desplazamiento, momento en el cual se "pega" a su posición y actúa como fixed. Es útil para mantener elementos visibles mientras el usuario hace scroll.</p>
 
-    <section id="herencias"> <!-- Herencias -->
-        <h2 class="sticky">¿Qué es la herencia en CSS?</h2>
-        <p>La herencia en CSS se refiere al fenómeno por el cual algunos estilos establecidos en un elemento HTML se transmiten automáticamente a sus elementos hijos. Por ejemplo, al definir un tamaño de fuente en la etiqueta <html>, ese tamaño puede propagar a etiquetas como &lt;p&gt; o &lt;span&gt; que no tengan un tamaño de fuente definido explícitamente.</p>
-        <ul>
-            <li>Propiedades herederas comunes: tamaño de fuente (font-size), color de texto (color).</li>
-            <li>Propiedades no herederas: márgenes (margin), posición (position), anchura (width).</li>
-        </ul>
+            <h4>Contenedor de elementos con posiciones relativa y absoluta</h4>
+            <div id="contenedor">
+                <div id="ejemplorelative">
+                    <div id="ejemploabsolute"></div>
+                </div>
+            </div>
 
-        <pre>
-        <b class="amarillo">html{</b>
-            <b class="sky">font-size</b>: <b class="verde">75%</b>; /* Aplica un 75% del tamaño de fuente por defecto */
-            <b class="sky">font-family</b>: <b class="orange">Verdana, sans-serif</b>; /* Cambia la fuente a Verdana */
-        <b class="amarillo">}</b></pre>
-        <p>En el ejemplo anterior, se establece un tamaño de fuente del 75% para la etiqueta <html>. Esto significa que todos los elementos de texto dentro del documento heredarán este tamaño de fuente, a menos que se defina un tamaño específico en ellos.</p>
-        
-        <h3>¿Cómo controlar o romper la herencia?</h3>
-        <p>En CSS, puedes decidir explícitamente cuándo deseas que un elemento herede propiedades. Mediante el uso de la propiedad inherit, puedes forzar a un elemento a que tome el estilo de su elemento padre, aunque no lo haga por defecto.</p>
-        <pre>
-        <b class="amarillo">h1{</b>
-            <b class="sky">font-size</b>: <b class="orange">inherit</b>; /* Hereda el tamaño del padre más cercano con tamaño definido */
-        <b class="amarillo">}</b></pre>
-    </section>
+            <div id="contenedorBotones">
+                <div class="control">
+                    <button onclick="arriba()">🔼</button>
+                    <div class="medio">
+                        <button onclick="izquierda()">◀️</button>
+                        <button onclick="derecha()">▶️</button>
+                    </div>    
+                    <button onclick="abajo()">🔽</button>
+                </div>
+                
+                <div class="control">
+                    <button onclick="arriba3('up')">🔼</button>
+                    <div class="medio">
+                        <button onclick="izquierda2('left')">◀️</button>
+                        <button onclick="derecha1('right')">▶️</button>
+                    </div>
+                    <button onclick="abajo4('down')">🔽</button>
+                </div>
+            </div>
+            <div class="centrarTexto"><span style="margin: 0;">Cuadrado relativo 🟦</span>&emsp; &emsp; &emsp; &emsp; &emsp;<span style="margin: 0;">Circulo absoluto 🔴</span></div>
+        </section>    
+
+        <!-- VARIABLES GLOBALES -->
+        <section id="variables"> 
+            <h2 class="sticky">Variables Globales</h2>
+            <p>Las CSS Custom Properties (conocidas como variables CSS) son un mecanismo de CSS que permite dar un valor personalizado a las propiedades CSS. El objetivo principal es evitar escribir múltiples veces un mismo valor, y en su lugar, ponerle un nombre más lógico, semántico y fácil de recordar, que hará referencia al valor real. De esta forma será mucho más legible y más fácil de mantener.</p>
+
+            <h3>Crear y usar variables en CSS</h3>
+            <p>
+                Para declarar variables globales utilizaremos el selector / pseudo-clase
+                <code class="amarillo">:root</code> ya que tiene mayor especificidad y es global. 
+                la sintaxis es: dos guiones (<b class="sky">--</b>) como prefijo al nombre que vamos 
+                a utilizar seguido del valor. Esta pseudoclase hace referencia al elemento raíz 
+                del documento &lt;<b class="doger">html</b>&gt;.
+            </p>
+            <p>
+                Para usarlas haremos uso de la funcion <b class="amarillo2">var</b>(), que 
+                indica que se usara una variable global, y recibe como parametro el nombre 
+                de la variable que ya declaramos. Tambien podemos agregar un segundo 
+                parametro que puede ser otra variable o el valor por defecto de la propiedad.
+            </p>
+            <p>
+                Tambien podemos declarar variables globales en otros selectores, pero solo funcionara 
+                dentro del mismo, su principal ventaja seria la de poder sobreescribir una varibale 
+                global ya definida, esto podria ser util si queremos que los estilos sean 
+                diferentes para el elemento al que se aplica.
+            </p>
+
+            <div class="seccionB">
+                <code>
+                    <span class="golden">:root</span> { <br>
+                    &emsp; <span class="sky">--letra-amarilla</span>: <span class="orange">yellow</span> <br>
+                    } <br><br>
+                
+                    <span class="golden">h2</span> { <br>
+                    &emsp; <span class="sky">color</span>: <span class="amarillo2">var</span>( <span class="sky">--letra-amarilla</span>, segundo parametro(opcional) ) <br>
+                    }
+                </code>
+            </div>
+
+            <div class="notas margincero">Las custom properties se suelen agrupar en las primeras líneas de un bloque CSS, separándolas por una línea en blanco de las demás propiedades. Esto facilita la lectura del código.</div>
+
+        </section>
+
+        <section id="herencias"> <!-- Herencias -->
+            <h2 class="sticky">¿Qué es la herencia en CSS?</h2>
+            <p>La herencia en CSS se refiere al fenómeno por el cual algunos estilos establecidos en un elemento HTML se transmiten automáticamente a sus elementos hijos. Por ejemplo, al definir un tamaño de fuente en la etiqueta <html>, ese tamaño puede propagar a etiquetas como &lt;p&gt; o &lt;span&gt; que no tengan un tamaño de fuente definido explícitamente.</p>
+            <ul>
+                <li>Propiedades herederas comunes: tamaño de fuente (font-size), color de texto (color).</li>
+                <li>Propiedades no herederas: márgenes (margin), posición (position), anchura (width).</li>
+            </ul>
+
+            <pre>
+            <b class="amarillo">html{</b>
+                <b class="sky">font-size</b>: <b class="verde">75%</b>; /* Aplica un 75% del tamaño de fuente por defecto */
+                <b class="sky">font-family</b>: <b class="orange">Verdana, sans-serif</b>; /* Cambia la fuente a Verdana */
+            <b class="amarillo">}</b></pre>
+            <p>En el ejemplo anterior, se establece un tamaño de fuente del 75% para la etiqueta <html>. Esto significa que todos los elementos de texto dentro del documento heredarán este tamaño de fuente, a menos que se defina un tamaño específico en ellos.</p>
+            
+            <h3>¿Cómo controlar o romper la herencia?</h3>
+            <p>En CSS, puedes decidir explícitamente cuándo deseas que un elemento herede propiedades. Mediante el uso de la propiedad inherit, puedes forzar a un elemento a que tome el estilo de su elemento padre, aunque no lo haga por defecto.</p>
+            <pre>
+            <b class="amarillo">h1{</b>
+                <b class="sky">font-size</b>: <b class="orange">inherit</b>; /* Hereda el tamaño del padre más cercano con tamaño definido */
+            <b class="amarillo">}</b></pre>
+        </section>
+    </main>
 
     <footer>luissda1995@gmail.com</footer>
 

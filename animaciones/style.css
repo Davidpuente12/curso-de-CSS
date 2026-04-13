@@ -1,0 +1,62 @@
+#element-to-animation{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(222, 77, 28);
+    margin-top: 80px;
+}
+.change-color{
+    animation: change-color 5s infinite;
+}
+@keyframes change-color{
+    0%{
+        background-color: rgb(222, 77, 28);
+    }
+    50%{
+        background-color: rgb(49, 111, 236);
+    }
+    100%{
+        background-color: rgb(222, 77, 28);
+    }
+}
+
+.translate-scale{
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes move{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(300px) scale(0.8);
+        background-color: rgb(30, 169, 216);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+}
+
+.lanzamiento{
+    position: relative;
+    animation-name: lanzamiento;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes lanzamiento{
+    0%{
+        left: 0px;
+        bottom: 0px;
+        transform: rotate(0deg);
+    }
+    50%{
+        bottom: 60px;
+    }
+    100%{
+        bottom: 0px;
+        left: 350px;
+        transform: rotate(180deg);
+    }
+}

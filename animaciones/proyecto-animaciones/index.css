@@ -1,0 +1,378 @@
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #252525;
+    counter-reset: game;
+}
+
+.phone{
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    background-color: #ccefff;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.3), 0 -15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.phone > div {
+    position: absolute;
+}
+
+/* score */
+h1{
+    font-family: sans-serif;
+    font-size: 22px;
+    margin-left: 20px;
+}
+h1::after{
+    content: counter(game);
+}
+
+/* CONEJOS  */
+/* conejos superiores */
+.layer-1{
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+
+    animation: layer-1;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer-1 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.layer-2{
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+
+    animation: layer-2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+@keyframes layer-2 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+ /* conejo medium */
+.layer-4{
+    height: 350px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+
+    animation: conejo-3;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes conejo-3 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+ /* conejo inferior */
+.layer-6{
+    height: 250px;
+    width: 80px;
+    bottom: 0;
+    right: 50px;
+
+    animation: conejo-4;
+    animation-duration: 2s;
+    animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: infinite;
+}
+@keyframes conejo-4 {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -80px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+/* MONTAÑAS */
+.layer-3,.layer-5,.layer-7{
+   background-color: #BB6D50;
+   border-radius: 40px;
+   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+}
+/* montaña 1 */
+.layer-3{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+}
+/* montaña 2 */
+.layer-5{
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 300px;
+}
+/* montaña 3 */
+.layer-7{
+    right: 0;
+    bottom: 0;
+    width: 180px;
+    height: 200px;
+}
+.cima::after{
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    height: 30px;
+    background: linear-gradient(135deg, rgb(5, 180, 5) 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, rgb(5, 180, 5) 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, rgb(5, 180, 5) 25%, transparent 25%),
+                linear-gradient(-45deg, rgb(5, 180, 5) 25%, transparent 25%);
+    background-size: 30px 80px;
+    border-radius: 20px;
+}
+.cima::before{
+    content: "";
+    position: absolute; 
+    top: 15px;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(135deg, rgb(166, 84, 61) 25%, transparent 25%) -50px 0,
+                linear-gradient(-135deg, #a6543d 25%, transparent 25%) -50px 0,
+                linear-gradient(45deg, #a6543d 25%, transparent 25%),
+                linear-gradient(-45deg, #a6543d 25%, transparent 25%);
+    background-size: 30px 100px;
+    background-position: 140px 0 0 30px 0;
+}
+
+
+/* ARBOLES */
+.layer-8{
+    position: absolute;
+    z-index: 8;
+    width: 60%;
+    height: 20%;
+    bottom: 0;
+    right: 20%;
+}
+.layer-8::before{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    background: #67A167;
+}
+.layer-8::after{
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 70%;
+    bottom: 0;
+    right: 0;
+    background: #67A167;
+    border-radius: 100px 100px 10px 20px;
+}
+.grass{
+    position: absolute;
+    width: 40%;
+    height: 90%;
+    bottom: 0;
+    left: 30%;
+    background: #67A167;
+    border-radius: 100px 100px 10px 20px;
+}
+
+.layer-9{
+    position: absolute;
+    z-index: 9;
+    width: 40%;
+    height: 17%;
+    bottom: 0;
+    left: 0%;
+}
+.layer-9::before{
+    position: absolute;
+    content: "";
+    width: 75%;
+    height: 100%;
+    background: rgb(88, 222, 88);
+    border-radius: 100px 100px 10px 70px;
+}
+.layer-9::after{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 60%;
+    bottom: 0;
+    right: 0;
+    background: rgb(88, 222, 88);
+    border-radius: 100px;
+}
+
+.layer-10{
+    position: absolute;
+    z-index: 10;
+    width: 40%;
+    height: 17%;
+    bottom: 0;
+    right: 0;
+}
+.layer-10::before{
+    position: absolute;
+    content: "";
+    width: 75%;
+    height: 100%;
+    right: 0;
+    background: rgb(88, 222, 88);
+    border-radius: 100px 100px 70px 20px;
+}
+.layer-10::after{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    border-radius: 100px;
+    background: rgb(88, 222, 88);
+}
+
+/* DIBUJAR CONEJOS */
+.left-ear--outer{
+    background: rgb(119, 116, 116);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+.left-ear--inner{
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    left: 15px;
+    top: -3px;
+}
+
+.right-ear--outer{
+    background: rgb(119, 116, 116);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}
+.right-ear--inner{
+    background: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    top: -3px;
+}
+
+.head{
+    background: white;
+    border-radius: 50%;
+    width: 90%;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.head > div{
+    background-color: #252525;
+    border-radius: 50%;
+    width: 5px;
+    height: 8px;
+    position: absolute;
+    top: 18px;
+
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    0% {
+        height: 8px;
+    }
+    5% {
+        transform: translate(0px, 2px);
+        height: 2px;
+    }
+    10% {
+        transform: translate(0px, 0px);
+        height: 8px;
+    }
+}
+
+.eye-left{
+    left: 42px;
+}
+.eye-right{
+    right: 42px;
+}
+
+/* inputs */
+input[type="checkbox"]{
+    appearance: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+}
+input:checked{
+    counter-increment: game;
+}
+

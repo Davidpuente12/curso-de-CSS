@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul>
+                <li onclick="location.href='#declaracion'">Declaraciones</li>
+                <li onclick="location.href='#selectores'">Selectores</li>
+                <li onclick="location.href='#Scombinados'">Selectores Conbinados</li>
+                <li onclick="location.href='../pseudoclases/pseudoClases.html'">Pseudo clases y elementos</li>
+                <li onclick="location.href='#cascada'">Cascada y especificidad</li>
+                <li onclick="location.href='#tiposdedisplay'">Tipos de display</li>
+                <li onclick="location.href='../flexbox/flexbox.html'">Flexbox</li>
+                <li onclick="location.href='../grid/grid.html'">Grid</li>
+                <li onclick="location.href='../modelo-de-caja/caja.html'">Modelo de caja</li>
+                <li onclick="location.href='../Tipos-de-fuentes/fuentes.html'">Tipos de Fuentes</li>
+                <li onclick="location.href='../Control-de-texto/texto.html'">Control de texto</li>
+                <li onclick="location.href='../Sistema-de-color/color.html'">Sistema de color</li>
+                <li onclick="location.href='../degradados/degradados.html'">Degradados</li>
+                <li onclick="location.href='#tiposdeposiones'">Tipos de Posicionamiento</li>  
+                <li onclick="location.href='../z-index/z-index.html'">Z-index</li>
+                <li onclick="location.href='../Unidades_de_medida/unidades.html'">Unidades de medida</li>
+                <li onclick="location.href='#variables'">Variables Glovales</li>
+                <li onclick="location.href='#herencias'">Herencias</li>
+                <li onclick="location.href='../diseño-responsivo/responsivo.html'">Diseño Responsivo</li>
+                <li onclick="location.href='../Transformaciones_Y_Transiciones/transformaciones.html'">Transformaciones</li>
+                <li onclick="location.href='../animaciones/index.html'">Animaciones</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section>
+        <h2>Animaciones</h2>
+        <p>Las animaciones CSS son un conjunto de reglas que describen cómo un elemento debe cambiar sus estilos en distintos puntos del tiempo (fotogramas clave), permitiendo transiciones complejas entre varios estados sin necesidad de scripting, como cambiar gradualmente estilos de un elemento (posición, color, tamaño, opacidad, etc.) a lo largo del tiempo sin JavaScript.</p>
+        <p>Esto se logra mediante la propiedad @keyframes, que define los fotogramas clave de la animación, y la propiedad animation, que controla la duración, el retraso, el número de repeticiones y otros aspectos de la animación. Las animaciones CSS son ampliamente utilizadas para mejorar la experiencia del usuario al agregar movimiento y dinamismo a las páginas web.</p>
+
+        <h4>Estados y transiciones</h4>
+        <p>Las Transiciones CSS son cambios de un estado inicial a un estado final, en el caso de las Animaciones CSS se trata de un conjunto de transiciones entre estados, de modo que es posible cambiar entre dos o más estados, a diferencia de las transiciones, donde solo puedes cambiar entre dos estados.</p>
+        <figure>
+            <img src="../img/estados.png" alt="Estados" width="100%">
+        </figure>
+        <p>En las animaciones, nosotros definimos los estados o fotogramas clave de una animación dándole estilos mediante propiedades CSS, y el navegador se encarga de crear los fotogramas intermedios entre un estado y otro, para que se produzca la animación y no tengamos que definir cientos de estados o fotogramas intermedios.</p>
+
+        <h4>Propiedades de animación</h4>
+        <p>Las propiedades de animación en CSS permiten controlar diversos aspectos de una animación, como su duración, retraso, dirección, y número de repeticiones.</p>
+
+        <h3 class="sky">animation</h3>
+        <p>La propiedad <b>animation</b> es una propiedad abreviada que permite especificar varios aspectos de una animación en una sola declaración. Sus valores incluyen: <code>duration</code>, <code>timing-function</code>, <code>delay</code>, <code>iteration-count</code>, <code>direction</code>, <code>fill-mode</code>, y <code>play-state</code>.</p>
+        
+        <div class="sintaxis">
+            <p style="margin-top: 0;">Sintaxis con un solo valor:</p> 
+            <b class="sky">animation</b>: 
+            <b class="orange">initial | inherit</b>
+        </div>
+        
+        <div class="sintaxis">
+            <p style="margin-top: 0;">Sintaxis con todos los valores:</p> 
+            <b class="sky">animation</b>: 
+            <b class="orange">[nombre de la animación] [duración] [función de tiempo] [retraso] [número de iteraciones] [dirección] [modo de llenado] [estado de reproducción];</b>
+        </div>
+
+        <p class="margenTop">Tambien podemos especificar cada valor, usando las propiedades individuales de animación, todas incluyen los valores initial | inherit, para reestablecer el valor inicial, o heredar valores.</p>
+        <table class="tablaPropiedades">
+            <tr>
+                <th style="width: 250px;">Propiedad</th>
+                <th>Descripción</th>
+                <th>Valores</th>
+            </tr>
+            <tr>
+                <td>animation-name</td>
+                <td>Nombre de la animación definida con @keyframes</td>
+                <td>keyframename | none | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-duration</td>
+                <td>Duración de la animación</td>
+                <td>time | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-timing-function</td>
+                <td>(opcional) Función de tiempo de la animación</td>
+                <td>linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n) | steps(int, start|end).</td>
+            </tr>
+            <tr>
+                <td>animation-delay</td>
+                <td>(opcional) Retraso antes de iniciar la animación</td>
+                <td>time | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-iteration-count</td>
+                <td>(opcional) Número de repeticiones de la animación</td>
+                <td>number | infinite | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-direction</td>
+                <td>(opcional) Dirección de la animación</td>
+                <td>normal | reverse | alternate | alternate-reverse | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-fill-mode</td>
+                <td>(opcional) Modo de llenado de la animación</td>
+                <td>none | forwards | backwards | both | initial | inherit</td>
+            </tr>
+            <tr>
+                <td>animation-play-state</td>
+                <td>(opcional) Estado de reproducción de la animación</td>
+                <td>running | paused | initial | inherit</td>
+            </tr>
+        </table>
+
+        <h3 class="morado">@keyframes</h3>
+        <p>La regla @keyframes define los fotogramas clave de una animación, especificando cómo debe cambiar un elemento a lo largo del tiempo. Cada fotograma clave se define con un porcentaje (del 0% al 100%) o con las palabras clave "from" y "to".</p>
+      
+        <!-- controls-consola -->
+        <div class="controls-consola botones_animaciones">
+            <span>Ejecutar:</span>
+            <button class="btn-change-color">Cambiar color</button>
+            <button class="btn-translate-scale">Transladra y escalar</button>
+            <button class="btn-lanzamiento">Lanzamiento</button>
+        </div>
+        <!-- codigo -->
+        <div class="codigo" style="height: 615px;">
+            <div id="codigo" style="width: 50%;">
+                <p class="margincero">
+                    <b class="amarillo">#element-to-animation</b>{
+                    <div class="margenIz">
+                        <b class="sky">width</b>: 100px; <br>
+                        <b class="sky">height</b>: 100px; <br>
+                        <b class="sky">animation</b>: change-color 5s <b class="orange">infinite</b>;
+                    </div>
+                    }
+                </p> 
+                <p class="margincero">
+                    <b class="morado">@keyframes</b> change-color{
+                    <div class="margenIz">
+                        0% {<b class="sky">background-color</b>: red;} <br>
+                        50% {<b class="sky">background-color</b>: blue;} <br>
+                        100% {<b class="sky">background-color</b>: red;}
+                    </div>
+                    }
+                </p>  
+            </div>
+
+            <div style="width: 50%;">
+                <div id="element-to-animation"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="index.js"></script>
+</body>
+</html>

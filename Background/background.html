@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <link rel="stylesheet" href="../estilo.css" />
+    <style>
+      .image {
+        background-color: #222;
+        background-image: url("../img/imagenDeLaTierra.jpg");
+
+        color: white;
+        width: 600px;
+        height: 300px;
+        padding: 10px;
+        margin: 50px auto;
+      }
+      .boton {
+        border: 1px solid white;
+        padding: 1px 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 1px;
+        display: inline-block;
+      }
+      .boton:hover {
+        border: 1px solid var(--orange);
+      }
+
+      /*  backdrop filter */
+      .backdrop-image {
+        background: url("../img/imagenDeLaTierra.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 280px;
+        margin: auto;
+      }
+      .backdrop {
+        padding: 30px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* mix-blend-mode */
+      .lighten {
+        backdrop-filter: blur(5px);
+        mix-blend-mode: lighten;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="head">
+        <span id="button-temas"></span>
+      </div>
+      <div id="head-logo">
+        <h1>Background</h1>
+      </div>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li onclick="location.href = '#declaracion'">Declaraciones</li>
+          <li onclick="location.href = '#selectores'">Selectores</li>
+          <li onclick="location.href = '#Scombinados'">
+            Selectores Conbinados
+          </li>
+          <li onclick="location.href = './pseudoclases/pseudoClases.html'">
+            Pseudo clases y elementos
+          </li>
+          <li onclick="location.href = '#cascada'">Cascada y especificidad</li>
+          <li onclick="location.href = './tipos-de-display/display.html'">
+            Tipos de display
+          </li>
+          <li onclick="location.href = './flexbox/flexbox.html'">Flexbox</li>
+          <li onclick="location.href = './grid/grid.html'">Grid</li>
+          <li onclick="location.href = '../modelo-de-caja/caja.html'">
+            Modelo de caja
+          </li>
+          <li onclick="location.href = './Tipos-de-fuentes/fuentes.html'">
+            Tipos de Fuentes
+          </li>
+          <li onclick="location.href = './Control-de-texto/texto.html'">
+            Control de texto
+          </li>
+          <li onclick="location.href = './Sistema-de-color/color.html'">
+            Sistema de color
+          </li>
+          <li onclick="location.href = './degradados/degradados.html'">
+            Degradados
+          </li>
+          <li onclick="location.href = '#tiposdeposiones'">
+            Tipos de Posicionamiento
+          </li>
+          <li onclick="location.href = './z-index/z-index.html'">Z-index</li>
+          <li onclick="location.href = './Unidades_de_medida/unidades.html'">
+            Unidades de medida
+          </li>
+          <li onclick="location.href = '#variables'">Variables Glovales</li>
+          <li onclick="location.href = '#herencias'">Herencias</li>
+          <li onclick="location.href = './diseño-responsivo/responsivo.html'">
+            Diseño Responsivo
+          </li>
+          <li
+            onclick="
+              location.href =
+                './Transformaciones_Y_Transiciones/transformaciones.html'
+            "
+          >
+            Transformaciones
+          </li>
+          <li onclick="location.href = './animaciones/index.html'">
+            Animaciones
+          </li>
+          <li onclick="location.href = './Background/background.html'">
+            Background
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <p>
+          El background en CSS es una herramienta versátil que permite dar
+          estilo visual al área detrás del contenido de un elemento. Con ella
+          puedes aplicar colores sólidos, imágenes decorativas, patrones
+          repetidos o incluso fondos dinámicos que se adaptan al tamaño de la
+          pantalla.
+        </p>
+
+        <h3 class="sky">Background</h3>
+        <p>
+          La propiedad background en CSS es un shorthand (atajo) que permite
+          definir en una sola línea múltiples aspectos del fondo de un elemento,
+          como color, imagen, posición, repetición y más. es una propiedad
+          abreviada que combina varias propiedades relacionadas con el fondo en
+          una sola declaración. Se aplica a todos los elementos HTML y no se
+          hereda automáticamente. Tambien permite varias imagenes usando comas
+          para separar.
+        </p>
+
+        <div class="sintaxis">
+          <b class="sky">background</b>: color, image, position / size, repeat,
+          atachment, clip
+        </div>
+
+        <div class="seccionB">
+          <b>/* Atajo completo */</b>
+          <p>
+            <b class="sky">background</b>: <b class="orange">blue</b>
+            <b class="amarillo2">url</b>("imagen.jpg") 0 0 / 150px
+            <b class="orange">space scroll padding-box padding-box</b>
+          </p>
+
+          <b>/* Atajo múltiple */</b>
+          <p>
+            <b class="sky">background</b>: <br />
+            &emsp; <b class="amarillo2">url</b>("primer-plano.jpg")
+            <b class="orange">center center / cover</b>, <br />
+            &emsp; <b class="orange">blue</b>
+            <b class="amarillo2">url</b>("imagen.jpg") 0 0 / 150px
+            <b class="orange">space scroll padding-box padding-box</b>;
+          </p>
+        </div>
+
+        <div class="notas">
+          Ten en cuenta que el parámetro <b class="sky">size</b> es opcional. De
+          indicar el carácter /, la propiedad background se esperará el valor
+          background-size a continuación de background-position. Si no
+          necesitamos algún valor, simplemente podemos omitirlo
+        </div>
+
+        <table class="tablaPropiedades">
+          <caption>
+            Familia de propiedades background
+          </caption>
+          <thead>
+            <tr>
+              <th>Subpropiedad</th>
+              <th>Definición breve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>background-color</td>
+              <td>Define el color sólido de fondo de un elemento.</td>
+            </tr>
+            <tr>
+              <td>background-image</td>
+              <td>Establece una o varias imágenes como fondo.</td>
+            </tr>
+            <tr>
+              <td>background-position</td>
+              <td>Indica la ubicación inicial de la imagen de fondo.</td>
+            </tr>
+            <tr>
+              <td>background-size</td>
+              <td>Controla el tamaño de la imagen de fondo.</td>
+            </tr>
+            <tr>
+              <td>background-repeat</td>
+              <td>Determina si la imagen se repite o no.</td>
+            </tr>
+            <tr>
+              <td>background-attachment</td>
+              <td>
+                Define si el fondo se desplaza con el contenido o permanece
+                fijo.
+              </td>
+            </tr>
+            <tr>
+              <td>background-origin</td>
+              <td>Especifica el área de referencia para colocar el fondo.</td>
+            </tr>
+            <tr>
+              <td>background-clip</td>
+              <td>
+                Indica hasta dónde se extiende el fondo dentro del elemento.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sky">background-color</h3>
+        <p>
+          La propiedad background-color en CSS se utiliza para definir el color
+          de fondo de un elemento HTML. Es una de las subpropiedades más simples
+          y directas del conjunto background, y su función es rellenar el área
+          detrás del contenido con un color sólido, ocupando toda su area de
+          caja.
+        </p>
+
+        <h3 class="sky">background-image</h3>
+        <p>
+          La propiedad background-image en CSS se utiliza para establecer una o
+          varias imágenes como fondo de un elemento HTML. Es una de las
+          subpropiedades del conjunto background, y su función es mostrar una
+          imagen detrás del contenido del elemento.
+        </p>
+
+        <ul>
+          <li>Acepta URLs de imágenes (url("imagen.png")).</li>
+          <li>
+            Puede usar gradientes CSS como fondo (linear-gradient(...),
+            radial-gradient(...)).
+          </li>
+          <li>Permite múltiples imágenes separadas por comas.</li>
+          <li>
+            Se combina con otras subpropiedades como background-position,
+            background-size y background-repeat.
+          </li>
+        </ul>
+
+        <table class="tablaValores">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción breve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>none</td>
+              <td>
+                Indica que no se usará ninguna imagen de fondo. (por defecto)
+              </td>
+            </tr>
+            <tr>
+              <td><span class="amarillo2">url()</span></td>
+              <td>
+                Es una funcion que permite establecer una imagen como fondo
+                mediante una ruta local o externa.
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="amarillo2">linear-gradient()</span></td>
+              <td>Genera un gradiente lineal como fondo.</td>
+            </tr>
+            <tr>
+              <td><span class="amarillo2">radial-gradient()</span></td>
+              <td>Genera un gradiente radial como fondo.</td>
+            </tr>
+            <tr>
+              <td><span class="amarillo2">conic-gradient()</span></td>
+              <td>Genera un gradiente cónico como fondo.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sky">background-position</h3>
+        <p>
+          Se utiliza para definir la posición inicial de la imagen de fondo
+          dentro de un elemento. Su función principal es controlar dónde se
+          coloca la imagen (por ejemplo, centrada, en la esquina superior
+          izquierda, en la parte inferior derecha, etc.), antes de que se
+          aplique cualquier repetición o ajuste de tamaño.
+        </p>
+
+        <ul>
+          <li>
+            Permite alinear la imagen en posiciones predefinidas (ej. top,
+            center, bottom)
+          </li>
+          <li>
+            Acepta valores en palabras clave, porcentajes o unidades (px, em,
+            etc.).
+          </li>
+          <li>
+            Se puede usar para colocar la imagen en cualquier punto del
+            contenedor.
+          </li>
+          <li>
+            En combinación con background-size, ayuda a crear diseños más
+            precisos y responsivos.
+          </li>
+        </ul>
+
+        <table class="tablaValores">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción breve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>left top</td>
+              <td>Coloca la imagen en la esquina superior izquierda.</td>
+            </tr>
+            <tr>
+              <td>left center</td>
+              <td>Coloca la imagen en el centro del lado izquierdo.</td>
+            </tr>
+            <tr>
+              <td>left bottom</td>
+              <td>Coloca la imagen en la esquina inferior izquierda.</td>
+            </tr>
+            <tr>
+              <td>right top</td>
+              <td>Coloca la imagen en la esquina superior derecha.</td>
+            </tr>
+            <tr>
+              <td>right center</td>
+              <td>Coloca la imagen en el centro del lado derecho.</td>
+            </tr>
+            <tr>
+              <td>right bottom</td>
+              <td>Coloca la imagen en la esquina inferior derecha.</td>
+            </tr>
+            <tr>
+              <td>center top</td>
+              <td>Coloca la imagen centrada en la parte superior.</td>
+            </tr>
+            <tr>
+              <td>center center</td>
+              <td>Coloca la imagen exactamente en el centro.</td>
+            </tr>
+            <tr>
+              <td>center bottom</td>
+              <td>Coloca la imagen centrada en la parte inferior.</td>
+            </tr>
+            <tr>
+              <td>valores en px o %</td>
+              <td>Permite ubicar la imagen en coordenadas específicas.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sky">background-size</h3>
+        <p>
+          Se utiliza para definir el tamaño de la imagen de fondo dentro de un
+          elemento. Su función principal es controlar cómo se escala o ajusta la
+          imagen en relación con el área del contenedor, permitiendo que se
+          adapte de forma precisa al diseño.
+        </p>
+
+        <table class="tablaValores">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción breve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>auto</td>
+              <td>Usa el tamaño original de la imagen.</td>
+            </tr>
+            <tr>
+              <td>cover</td>
+              <td>
+                Escala el ancho de la imagen de fondo al ancho del elemento.,
+                aunque se recorte.
+              </td>
+            </tr>
+            <tr>
+              <td>contain</td>
+              <td>
+                Escala el alto de la imagen de fondo al alto del elemento.
+              </td>
+            </tr>
+            <tr>
+              <td>valores en px</td>
+              <td>Define un tamaño fijo en píxeles.</td>
+            </tr>
+            <tr>
+              <td>valores en %</td>
+              <td>Escala la imagen en proporción al tamaño del contenedor.</td>
+            </tr>
+            <tr>
+              <td>dos valores (ancho alto)</td>
+              <td>
+                Permite definir el ancho y el alto de la imagen por separado.
+                (background-size: 200px 100px;)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sky">background-repeat</h3>
+        <p>
+          La propiedad background-repeat en CSS se utiliza para definir cómo se
+          repite una imagen de fondo (cuando la imagen es pequeña) dentro de un
+          elemento. Su función principal es controlar si la imagen se repite en
+          el eje horizontal, vertical, en ambos, o si no se repite en absoluto.
+        </p>
+
+        <table class="tablaValores">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción breve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>repeat</td>
+              <td>
+                La imagen se repite en ambos ejes (horizontal y vertical). (por
+                defecto)
+              </td>
+            </tr>
+            <tr>
+              <td>repeat-x</td>
+              <td>La imagen se repite solo en el eje horizontal.</td>
+            </tr>
+            <tr>
+              <td>repeat-y</td>
+              <td>La imagen se repite solo en el eje vertical.</td>
+            </tr>
+            <tr>
+              <td>no-repeat</td>
+              <td>La imagen se muestra una sola vez, sin repetición.</td>
+            </tr>
+            <tr>
+              <td>space</td>
+              <td>
+                La imagen se repite dejando espacios iguales entre copias.
+              </td>
+            </tr>
+            <tr>
+              <td>round</td>
+              <td>La imagen se escala para encajar y repetirse sin cortar.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+          <div>
+            <b class="golden">.container</b> { <br />
+            &emsp; <b class="sky">background-color</b>: #222; <br />
+            &emsp; <b class="sky">background-image</b>:
+            url("../img/imagenDeLaTierra.jpg"); <br />
+
+            <!-- repeat -->
+            &emsp; <b class="sky">background-repeat</b>:
+            <span class="boton repeat orange">repeat</span> ;
+            <span class="boton no-repeat orange">no-repeat</span> ;
+            <br />
+
+            <!-- size -->
+            &emsp; <b class="sky">background-size</b>:
+            <span class="boton auto orange">auto</span>;
+            <span class="boton contain orange">contain</span>;
+            <span class="boton cover orange">cover</span>;
+            <br />
+
+            <!-- position -->
+            &emsp; <b class="sky">background-position</b>:
+            <span class="boton left orange">left</span>;
+            <span class="boton center orange">center</span>;
+            <span class="boton right orange">right</span>;
+            <br />
+
+            &emsp; width: 600px; <br />
+            &emsp; height: 300px; <br />
+            }
+          </div>
+
+          <div>
+            <div class="image">
+              La tierra
+              <p>desde la luna</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- backdrop-filter -->
+      <section>
+        <h3 class="sky">backdrop-filter</h3>
+        <p>
+          La propiedad backdrop-filter en CSS permite aplicar efectos gráficos
+          (como desenfoque, brillo, contraste, sepia, etc.) al área que está
+          detrás de un elemento, siempre que dicho elemento tenga un fondo
+          parcialmente transparente. Es muy usada para crear efectos de vidrio
+          esmerilado o interfaces con estilo “blur” moderno.
+        </p>
+        <ul>
+          <li>
+            backdrop-filter aplica filtros visuales al backdrop (todo lo que se
+            ve detrás del elemento).
+          </li>
+          <li>
+            Requiere que el elemento tenga transparencia (opacity &lt; 1 o
+            background-color con alfa).
+          </li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b class="amarillo2">blur</b>(length)</td>
+              <td>Aplica un desenfoque al fondo.</td>
+            </tr>
+            <tr>
+              <td>brightness(&lt;porcentaje&gt;)</td>
+              <td>Ajusta el brillo del fondo.</td>
+            </tr>
+            <tr>
+              <td>contrast(&lt;porcentaje&gt;)</td>
+              <td>Modifica el contraste del fondo.</td>
+            </tr>
+            <tr>
+              <td>grayscale(&lt;porcentaje&gt;)</td>
+              <td>Convierte el fondo a escala de grises.</td>
+            </tr>
+            <tr>
+              <td>sepia(&lt;porcentaje&gt;)</td>
+              <td>Aplica un efecto sepia al fondo.</td>
+            </tr>
+            <tr>
+              <td>invert(&lt;porcentaje&gt;)</td>
+              <td>Invierte los colores del fondo.</td>
+            </tr>
+            <tr>
+              <td>hue-rotate(&lt;grados&gt;)</td>
+              <td>Rota el matiz de los colores.</td>
+            </tr>
+            <tr>
+              <td>saturate(&lt;porcentaje&gt;)</td>
+              <td>Aumenta o reduce la saturación.</td>
+            </tr>
+            <tr>
+              <td>drop-shadow(&lt;valores&gt;)</td>
+              <td>Aplica una sombra al fondo.</td>
+            </tr>
+            <tr>
+              <td>none</td>
+              <td>Sin efecto, valor por defecto.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Estos valores se pueden combinar:</p>
+        <div class="sintaxis" style="margin-top: 0">
+          <p>
+            <b class="sky">backdrop-filter</b>:
+            <b class="amarillo2">blur</b>(8px)
+            <b class="amarillo2">brightness</b>(70%)
+            <b class="amarillo2">contrast</b>(120%);
+          </p>
+        </div>
+
+        <!-- codigo -->
+        <div class="codigo" style="margin-top: 80px">
+          <div>
+            <p>
+              <b class="golden">.container</b> { <br />
+              &emsp; <b class="sky">background-color</b>: rgba(255, 255, 255,
+              0.2);<br />
+              &emsp; <b class="sky">backdrop-filter</b>:
+
+              <!-- blur -->
+              <span class="boton blur"><b class="amarillo2">blur</b>(5px)</span
+              >;
+
+              <!-- brightness -->
+              <span class="boton brightness"
+                ><b class="amarillo2">brightness</b>(150%)</span
+              >
+
+              <!-- grayscale -->
+              <span class="boton grayscale"
+                ><b class="amarillo2">grayscale</b>(50%)</span
+              >
+              <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <div class="backdrop-image">
+              <p class="backdrop">La tierra desde la luna</p>
+            </div>
+          </div>
+        </div>
+
+        <h4>Funcion <span class="amarillo2">blur()</span></h4>
+        <p>
+          El valor blur() dentro de backdrop-filter es uno de los más usados
+          porque crea el famoso efecto de “vidrio esmerilado” o “fondo borroso”
+          detrás de un elemento. El nivel de desenfoque se controla con una
+          longitud(px, em, rem). El número representa el radio de desenfoque
+          gaussiano, es decir, cuántos píxeles se mezclan entre sí. Cuanto mayor
+          sea el valor, más difuso se verá el fondo.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Efecto esperado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>blur(0px)</td>
+              <td>Sin desenfoque, fondo nítido.</td>
+            </tr>
+            <tr>
+              <td>blur(2px)</td>
+              <td>Desenfoque leve, detalles aún visibles.</td>
+            </tr>
+            <tr>
+              <td>blur(10px)</td>
+              <td>Fondo claramente borroso, se pierde definición.</td>
+            </tr>
+            <tr>
+              <td>blur(30px)</td>
+              <td>Fondo muy difuso, formas apenas reconocibles.</td>
+            </tr>
+            <tr>
+              <td>blur(100px)</td>
+              <td>Fondo completamente lavado, casi uniforme.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          no hay un límite máximo estricto: puedes usar valores muy altos, pero
+          en la práctica lo más común es trabajar entre 2px y 20px para lograr
+          un efecto estético sin comprometer demasiado el rendimiento.
+        </p>
+      </section>
+
+      <!-- mix-blend-mode -->
+      <section>
+        <h3 class="sky">mix-blend-mode</h3>
+        <p>
+          La propiedad mix-blend-mode en CSS define cómo el contenido de un
+          elemento se mezcla con el fondo y los elementos que están detrás de
+          él, permitiendo efectos similares a los modos de fusión de Photoshop o
+          GIMP. Es muy útil para crear composiciones visuales dinámicas, juegos
+          de color y efectos artísticos en interfaces web.
+        </p>
+        <ul>
+          <li>
+            mix-blend-mode especifica el modo de fusión que se aplicará entre el
+            contenido del elemento y su fondo/padre.
+          </li>
+          <li>
+            Funciona de manera similar a los blend modes en programas de edición
+            de imágenes.
+          </li>
+          <li>El valor por defecto es normal (sin mezcla).</li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>normal</td>
+              <td>Sin mezcla, se muestra tal cual.</td>
+            </tr>
+            <tr>
+              <td>multiply</td>
+              <td>
+                Oscurece combinando colores, como superposición de tintas.
+              </td>
+            </tr>
+            <tr>
+              <td>screen</td>
+              <td>Aclara la imagen, como proyección de luz.</td>
+            </tr>
+            <tr>
+              <td>overlay</td>
+              <td>Combina multiply y screen según el brillo.</td>
+            </tr>
+            <tr>
+              <td>darken</td>
+              <td>Muestra los tonos más oscuros entre fondo y elemento.</td>
+            </tr>
+            <tr>
+              <td>lighten</td>
+              <td>Muestra los tonos más claros entre fondo y elemento.</td>
+            </tr>
+            <tr>
+              <td>color-dodge</td>
+              <td>Aclara intensamente las áreas brillantes.</td>
+            </tr>
+            <tr>
+              <td>color-burn</td>
+              <td>Oscurece intensamente las áreas oscuras.</td>
+            </tr>
+            <tr>
+              <td>difference</td>
+              <td>Resta valores de color, creando contraste fuerte.</td>
+            </tr>
+            <tr>
+              <td>exclusion</td>
+              <td>Similar a difference, pero con menor contraste.</td>
+            </tr>
+            <tr>
+              <td>hue</td>
+              <td>Aplica el matiz del elemento al fondo.</td>
+            </tr>
+            <tr>
+              <td>saturation</td>
+              <td>Aplica la saturación del elemento al fondo.</td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>Aplica el color del elemento al fondo.</td>
+            </tr>
+            <tr>
+              <td>luminosity</td>
+              <td>Aplica la luminosidad del elemento al fondo.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo" style="margin-top: 80px">
+          <div>
+            <p>
+              <b class="golden">.container</b> { <br />
+              &emsp; <b class="sky">background-color</b>: rgba(255, 255, 255,
+              0.2);<br />
+              &emsp; <b class="sky">backdrop-filter</b>:
+              <b class="amarillo2">blur</b>(5px); <br />
+
+              <!-- mix-blend-mode -->
+              &emsp; <b class="sky">mix-blend-mode</b>:
+
+              <!-- plus-lighter -->
+              <span><b class="orange boton lighten-btn">plus-lighter</b></span
+              >; <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <div class="backdrop-image">
+              <p class="backdrop mixBlendMode">La tierra desde la luna</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- content-visibility -->
+      <section>
+        <h3 class="sky">content-visibility</h3>
+        <p>
+          Indica al navegador si el contenido de un elemento debe renderizarse o
+          no al cargar la página. Así, mientras el navegador carga el contenido
+          y lo muestra en pantalla, esta propiedad nos permite indicarle que no
+          cargue el contenido de un elemento hasta que sea necesario. Es similar
+          a la carga diferida, donde los elementos secundarios de un elemento
+          que no está en pantalla no se renderizan hasta que entran en la
+          ventana gráfica.
+        </p>
+        <p>
+          La principal ventaja de esta función content-visibilityes el
+          rendimiento. Puede acelerar la carga de la página, ya que el navegador
+          puede posponer la visualización de los elementos que no están visibles
+          para el usuario hasta que este se desplace hasta ellos.
+        </p>
+
+        <div class="sintaxis">
+          <p>
+            <b class="sky">content-visibility</b>: [visible |
+            <b class="orange">auto</b> | hidden];
+          </p>
+        </div>
+
+        <table class="tablaValores">
+          <tr>
+            <th>Valores</th>
+            <th>Funcion</th>
+          </tr>
+
+          <tr>
+            <td>hidden</td>
+            <td>
+              El elemento omite su contenido (algo similar a aplicarlo display:
+              none;al contenido).
+            </td>
+          </tr>
+          <tr>
+            <td>visible</td>
+            <td>
+              No hay ningún efecto y el elemento se renderiza con normalidad.
+              (valor por defecto)
+            </td>
+          </tr>
+          <tr>
+            <td>auto</td>
+            <td>
+              Si un elemento se encuentra fuera de la vista principal y
+              navegador determina que el contenido es irrelevante para el
+              usuario lo omite. A medida que el usuario se desplaza hacia el
+              elemento, el navegador dibuja su contenido y la renderización se
+              completa rápidamente.
+            </td>
+          </tr>
+        </table>
+
+        <p>
+          <b class="orange">auto</b> indica al navegador que el contenido de un
+          elemento no es necesario en la carga inicial de la pagina, siempre y
+          cuando este fuera de la pantalla. Sin embargo, el elemento debería
+          seguir estando disponible para el usuario en lugar de ignorarlo por
+          completo en el DOM. Esto significa que el elemento y su contenido
+          deberían poder enfocarse, seleccionarse, navegar por él mediante la
+          tecla Tab y buscarse a través de la función de búsqueda en la página
+          del navegador.
+        </p>
+
+        <h4>Consideraciones</h4>
+        <p>
+          Naturalmente, cuando un navegador renderiza inicialmente todo el
+          contenido de una página web, conoce la altura necesaria para mostrarlo
+          todo (basándose en la suma de las alturas individuales de todas las
+          secciones de la página) y el desplazamiento será fluido. Sin embargo,
+          content-visibility: auto;cuando se aplica a un elemento, lo trata como
+          si tuviera una altura de 0 (siempre que la heightpropiedad no se haya
+          establecido explícitamente). Cuando el usuario se desplaza y el
+          elemento aparece en la vista (y el navegador comienza a dibujarlo), se
+          calcula la altura real y esto provoca un cambio de diseño en la
+          página. El desplazamiento también puede hacer que la página web se vea
+          un poco irregular, algo conocido como Cambio de Diseño Acumulativo
+          (CLS).
+        </p>
+
+        <p>
+          La solución a los grandes cambios de diseño es combinar
+          content-visibility: auto; con contain-intrinsic-size, dándole al
+          navegador una altura predecible para usar como marcador de posición
+          para el elemento cuando lo pinta.
+        </p>
+
+        <h4 class="sky">contain-intrinsic-size</h4>
+        <p>
+          Esta propiedad actúa como un marcador de posición para el contenido
+          aún no renderizado, lo que reduce los problemas de desplazamiento y
+          cambio de diseño. Si conoce la altura exacta, puede usarla como valor.
+          De lo contrario, haga una estimación. Al renderizar la sección, si la
+          altura que establece no es la real, se producirá un ligero cambio de
+          diseño, pero no será tan pronunciado como sin esta propiedad.
+        </p>
+
+        <div class="seccionB">
+          <p>
+            <b class="golden">.container</b> { <br />
+            &emsp; <b class="sky">content-visibility</b>:
+            <b class="orange">auto</b>; <br />
+            &emsp; <b class="sky">contain-intrinsic-size</b>:
+            <b class="verde">4800px</b>; <br />
+            }
+          </p>
+        </div>
+      </section>
+
+      <script src="../codigo.js"></script>
+      <script>
+        // BACKGROUND
+        const contenedor_for_background = document.querySelector(".image");
+
+        //  background-repeat
+        document.querySelector(".repeat").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundRepeat = "repeat";
+        });
+        document.querySelector(".no-repeat").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundRepeat = "no-repeat";
+        });
+
+        // background-size
+        document.querySelector(".auto").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundSize = "auto";
+        });
+        document.querySelector(".contain").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundSize = "contain";
+        });
+        document.querySelector(".cover").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundSize = "cover";
+        });
+
+        // background-position
+        document.querySelector(".left ").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundPosition = "left top";
+        });
+        document.querySelector(".center").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundPosition = "center top";
+        });
+        document.querySelector(".right ").addEventListener("click", () => {
+          contenedor_for_background.style.backgroundPosition = "right top";
+        });
+
+        // BACKDROP
+        const contenedor_for_backdrop = document.querySelector(".backdrop");
+        // blur
+        document.querySelector(".blur").addEventListener("click", () => {
+          contenedor_for_backdrop.style.backdropFilter = "blur(5px)";
+        });
+        // brightness
+        document.querySelector(".brightness").addEventListener("click", () => {
+          contenedor_for_backdrop.style.backdropFilter = "brightness(150%)";
+        });
+        // grayscale
+        document.querySelector(".grayscale").addEventListener("click", () => {
+          contenedor_for_backdrop.style.backdropFilter = "grayscale(50%)";
+        });
+
+        // MIX-BLEND-MODE
+        const contenedor_for_mixBlendMode = document.querySelector(
+          ".backdrop.mixBlendMode",
+        );
+
+        document.querySelector(".lighten-btn").addEventListener("click", () => {
+          contenedor_for_mixBlendMode.classList.toggle("lighten");
+        });
+      </script>
+    </main>
+  </body>
+</html>
