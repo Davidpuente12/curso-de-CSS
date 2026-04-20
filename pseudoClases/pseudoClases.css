@@ -1,164 +1,266 @@
-#colorSeccionPseudo{background: #272727;color: white;}
+#colorSeccionPseudo {
+  background: #272727;
+  color: white;
+}
 
 /* Pseudo clases de Interaccion */
-#elemento-ejemplo-hoverYactive{
-    padding: 8px;
-    font-size: 1.5rem;
-    margin: 10px 0 0 150px;
-    font-weight: bold;
-    color: rgb(254, 85, 51);
-    border-radius: 10px;
-    cursor: pointer;
+#elemento-ejemplo-hoverYactive {
+  padding: 8px;
+  font-size: 1.5rem;
+  margin: 10px 0 0 150px;
+  font-weight: bold;
+  color: rgb(254, 85, 51);
+  border-radius: 10px;
+  cursor: pointer;
 }
-.elemento-ejemplofocus{
-    margin: 10px ; 
-    padding: 8px; 
-    width: 150px;
-    font-weight: bold;
-    border-radius: 10px;
+.elemento-ejemplofocus {
+  margin: 10px;
+  padding: 8px;
+  width: 150px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
-#elemento-ejemplo-hoverYactive:hover{font-size: 2rem;}
-#elemento-ejemplo-hoverYactive:active{color: rgb(0, 98, 255);}
+#elemento-ejemplo-hoverYactive:hover {
+  font-size: 2rem;
+}
+#elemento-ejemplo-hoverYactive:active {
+  color: rgb(0, 98, 255);
+}
 
-.elemento-ejemplofocus:focus{color: rgb(254, 85, 51); background: #383838;}
-#focuswithin:focus-within{background:rgb(254, 85, 51);}    
+.elemento-ejemplofocus:focus {
+  color: rgb(254, 85, 51);
+  background: #383838;
+}
+#focuswithin:focus-within {
+  background: rgb(254, 85, 51);
+}
+/* ...................... */
+#btn-menu-interactivo {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+#menu-list {
+  width: 150px;
+  background-color: gray;
+  padding: 10px;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition:
+    opacity 1s,
+    transform 1s;
+}
+#btn-menu-interactivo:hover + #menu-list,
+#btn-menu-interactivo:focus-within + #menu-list {
+  opacity: 1;
+  transform: scaleY(1);
+}
 
 /* Pseudo clases de estructura */
-#Elementos p, #Elementos div, #Elementos span, #Elementos h3{
-    display: block;
-    border: 1px solid white;
-    width: 60px;
-    margin: 10px;
-    padding: 6px;
-    font-size: 1.8rem;
+#Elementos p,
+#Elementos div,
+#Elementos span,
+#Elementos h3 {
+  display: block;
+  border: 1px solid white;
+  width: 60px;
+  margin: 10px;
+  padding: 6px;
+  font-size: 1.8rem;
 }
 
-.botones-nth button{
-    color: var(--amarillo);
-    border: none;
-    box-shadow: 0 0 2px gray;
-    font-size: 1.7rem;
+.botones-nth button {
+  color: var(--amarillo);
+  border: none;
+  box-shadow: 0 0 2px gray;
+  font-size: 1.7rem;
 }
-.botones-nth button:hover{
-    box-shadow: 0 0 2px white;
+.botones-nth button:hover {
+  box-shadow: 0 0 2px white;
 }
-.botones-nth div p{
-    font-weight: bold;
-    font-family: sans-serif;
-    margin: 10px auto 1px;
-    font-size: 1.7rem;
-    color: gray;
+.botones-nth div p {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin: 10px auto 1px;
+  font-size: 1.7rem;
+  color: gray;
 }
 
 /* nth-child(3) */
-.childn :nth-child(3){background: rgb(4, 26, 82);}
-.p-childn p:nth-child(3){background: rgb(4, 26, 82);}
+.childn :nth-child(3) {
+  background: rgb(4, 26, 82);
+}
+.p-childn p:nth-child(3) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(odd) */
-.odd :nth-child(odd){background: rgb(4, 26, 82);}
-.p-odd p:nth-child(odd){background: rgb(4, 26, 82);}
+.odd :nth-child(odd) {
+  background: rgb(4, 26, 82);
+}
+.p-odd p:nth-child(odd) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(even) */
-.even :nth-child(even){background: rgb(4, 26, 82);}
-.p-even p:nth-child(even){background: rgb(4, 26, 82);}
+.even :nth-child(even) {
+  background: rgb(4, 26, 82);
+}
+.p-even p:nth-child(even) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(3n) */
-.tresn :nth-child(3n){background: rgb(4, 26, 82);}
-.p-tresn p:nth-child(3n){background: rgb(4, 26, 82);}
+.tresn :nth-child(3n) {
+  background: rgb(4, 26, 82);
+}
+.p-tresn p:nth-child(3n) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(3n+2) */
-.dosn :nth-child(3n+2){background: rgb(4, 26, 82);}
-.p-dosn p:nth-child(3n+2){background: rgb(4, 26, 82);}
+.dosn :nth-child(3n + 2) {
+  background: rgb(4, 26, 82);
+}
+.p-dosn p:nth-child(3n + 2) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(-n+3) */
-.menostres :nth-child(-n+3){background: rgb(4, 26, 82);}
-.p-menostres p:nth-child(-n+3){background: rgb(4, 26, 82);}
+.menostres :nth-child(-n + 3) {
+  background: rgb(4, 26, 82);
+}
+.p-menostres p:nth-child(-n + 3) {
+  background: rgb(4, 26, 82);
+}
 /* nth-child(n) */
-.todos :nth-child(n){background: rgb(4, 26, 82);}
-.p-todos p:nth-child(n){background: rgb(4, 26, 82);}
+.todos :nth-child(n) {
+  background: rgb(4, 26, 82);
+}
+.p-todos p:nth-child(n) {
+  background: rgb(4, 26, 82);
+}
 /* first-child */
-.firstchild :first-child{background: rgb(4, 26, 82);}
-.p-firstchild p:first-child{background: rgb(4, 26, 82);}
+.firstchild :first-child {
+  background: rgb(4, 26, 82);
+}
+.p-firstchild p:first-child {
+  background: rgb(4, 26, 82);
+}
 /* last-child */
-.lastchild :last-child{background: rgb(4, 26, 82);}
-.p-lastchild p:last-child{background: rgb(4, 26, 82);}
+.lastchild :last-child {
+  background: rgb(4, 26, 82);
+}
+.p-lastchild p:last-child {
+  background: rgb(4, 26, 82);
+}
 /* onlychild */
-.onlychild :only-child{background: rgb(4, 26, 82);}
-.p-onlychild span:only-child{background: rgb(4, 26, 82);}
+.onlychild :only-child {
+  background: rgb(4, 26, 82);
+}
+.p-onlychild span:only-child {
+  background: rgb(4, 26, 82);
+}
 
 /* nth-of-type(n) */
-.nthoftype :nth-of-type(1){background: rgb(4, 26, 82);}
-.p-nthoftype p:nth-of-type(1){background: rgb(4, 26, 82);}
+.nthoftype :nth-of-type(1) {
+  background: rgb(4, 26, 82);
+}
+.p-nthoftype p:nth-of-type(1) {
+  background: rgb(4, 26, 82);
+}
 
 /* has(p) */
-.has :has(p){background: rgb(4, 26, 82);}
+.has :has(p) {
+  background: rgb(4, 26, 82);
+}
+
+#demo-has h4 {
+  margin-top: 20px;
+}
+
+#demo-has:has(button:hover) h4 {
+  color: var(--doger);
+  transform: scale(1.2);
+  transform-origin: left;
+  transition: all 0.3s ease;
+}
 
 /* Pseudo clases de enlaces */
-.ejemplo-enlace{
-    display: block;
-    margin: 0 auto 20px;
-    font-weight: bold;
-    font-size: 3rem;
-    color: rgb(13, 5, 244);
+.ejemplo-enlace {
+  display: block;
+  margin: 0 auto 20px;
+  font-weight: bold;
+  font-size: 3rem;
+  color: rgb(13, 5, 244);
 }
-#div-target{   
-    display: none;
-    padding: 10px;
-    margin-top: 40px;
+#div-target {
+  display: none;
+  padding: 10px;
+  margin-top: 40px;
 }
 
-.ejemplo-enlace:link{color: #0057c1;}
-.ejemplo-enlace:visited{color: #e4750d;}
-#div-target:target{
-    display: block;
-    background: #e4750d;
+.ejemplo-enlace:link {
+  color: #0057c1;
+}
+.ejemplo-enlace:visited {
+  color: #e4750d;
+}
+#div-target:target {
+  display: block;
+  background: #e4750d;
 }
 
 /* Pseudo clases de Formularios */
-#inputs-pseudoclases-formularios input{padding: 5px;}
-#inputs-pseudoclases-formularios select{
-    width: 150px;
-    padding: 5px;
+#inputs-pseudoclases-formularios input {
+  padding: 5px;
+}
+#inputs-pseudoclases-formularios select {
+  width: 150px;
+  padding: 5px;
 }
 
-.Elemento-PCF:checked + label{
-    color: aquamarine;
-    font-weight: bold;
+.Elemento-PCF:checked + label {
+  color: aquamarine;
+  font-weight: bold;
 }
-.Elemento-option:checked{
-    color: #0995ec;
-    font-weight: bold;
-    font-size: 1.5rem;
-    background-color: #353432;
-}
-
-.Elemento-PCF:enabled{
-    background-color: #d0facd;
-    cursor: pointer;
-}
-.Elemento-PCF:read-only{
-    background-color: #5ab0f6;
-    font-size: 1.5rem;
-}
-.Elemento-PCF:disabled{
-    background-color: #f6695a;
-    cursor: not-allowed;
-}
-.Elemento-PCF:required{
-    border: 2px solid red;
+.Elemento-option:checked {
+  color: #0995ec;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: #353432;
 }
 
+.Elemento-PCF:enabled {
+  background-color: #d0facd;
+  cursor: pointer;
+}
+.Elemento-PCF:read-only {
+  background-color: #5ab0f6;
+  font-size: 1.5rem;
+}
+.Elemento-PCF:disabled {
+  background-color: #f6695a;
+  cursor: not-allowed;
+}
+.Elemento-PCF:required {
+  border: 2px solid red;
+}
 
-
-#ejemplonot :not(.no){
-    color: rgb(0, 255, 145);
-    font-weight: bold;
+#ejemplonot :not(.no) {
+  color: rgb(0, 255, 145);
+  font-weight: bold;
 }
 
 /* Pseudo Elementos */
-.before::before{
-    content: "*";
-    color: red;
+.before::before {
+  content: "*";
+  color: red;
 }
-.after::after{
-    content: ":)"; 
-    color: rgb(42, 84, 255);
+.after::after {
+  content: ":)";
+  color: rgb(42, 84, 255);
 }
-.first-letter::first-letter{color: var(--doger);}
-
+.first-letter::first-letter {
+  color: var(--doger);
+}

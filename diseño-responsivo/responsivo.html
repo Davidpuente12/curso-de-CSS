@@ -1,311 +1,705 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño Responsivo</title>
-    <link rel="stylesheet" href="../estilo.css">
-    <link rel="stylesheet" href="responsivo.css">
+    <link rel="stylesheet" href="../estilo.css" />
+    <link rel="stylesheet" href="responsivo.css" />
     <style>
-        /* Botones */
-        .controls{
-            display: flex;
-            justify-content: center;
-        }
+      /* Botones */
+      .controls {
+        display: flex;
+        justify-content: center;
+      }
 
-        .controls .btn-rspv{ 
-            margin: 20px; 
-            width: 100px;
-            height: 40px;
-            background-color: #0062d2;
-            border: none;
-            box-shadow: 0 4px 4px #252525;
+      .controls .btn-rspv {
+        margin: 20px;
+        width: 100px;
+        height: 40px;
+        background-color: #0062d2;
+        border: none;
+        box-shadow: 0 4px 4px #252525;
+      }
+      .btn-media {
+        background-color: transparent;
+        border: 1px solid #343434;
+        box-shadow: 4px 4px 4px rgba(191, 191, 191, 0.2);
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+      }
+      .btn-media:hover {
+        background-color: #282828;
+      }
+      .btn-media:active {
+        transform: translateY(3px);
+      }
+
+      /* query para codigo: diseño responsivo */
+      .media-diseñoResponsivo > div:nth-child(1) {
+        width: 35%;
+      }
+      .media-diseñoResponsivo > div:nth-child(2) {
+        width: 65%;
+      }
+
+      @media (max-width: 1200px) {
+        .media-diseñoResponsivo > div:nth-child(1) {
+          padding-left: 40px;
+          width: 100%;
         }
-        .btn-media{
-            background-color: transparent;
-            border: 1px solid #343434;
-            box-shadow: 4px 4px 4px rgba(191, 191, 191, 0.2);
-            padding: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 2rem;
-            color: white;
+        .media-diseñoResponsivo > div:nth-child(2) {
+          width: 100%;
         }
-        .btn-media:hover{ background-color: #282828;}
-        .btn-media:active{ transform: translateY(3px);}
+      }
     </style>
-</head>
-<body>
-    <section> 
-        <h2>Responsive Design</h2>
-        <p>El diseño responsivo (Responsive Design) consiste en un conjunto de herramientas para que tu sitio se vea bien en varias medidas de pantalla, esto incluye imágenes, tipografía, internacionalización de la página y entre otros. En la actualidad, la mayoría de sitios web son visitados desde un celular, por lo que asegurarse que nuestro sitio sea responsivo para cualquier dispositivo es fundamental para optimizar las ganancias.</p>
-        
+  </head>
+  <body>
+    <header>
+      <div id="head">
+        <span id="button-temas"></span>
+      </div>
+      <div id="head-logo">
+        <h1>Responsive Design</h1>
+      </div>
+    </header>
+
+    <aside>
+      <nav>
+        <ul>
+          <li onclick="location.href = '#declaracion'">Declaraciones</li>
+          <li onclick="location.href = '#selectores'">Selectores</li>
+          <li onclick="location.href = '#Scombinados'">
+            Selectores Conbinados
+          </li>
+          <li onclick="location.href = '../pseudoclases/pseudoClases.html'">
+            Pseudo clases y elementos
+          </li>
+          <li onclick="location.href = '#cascada'">Cascada y especificidad</li>
+          <li onclick="location.href = './tipos-de-display/display.html'">
+            Tipos de display
+          </li>
+          <li onclick="location.href = './flexbox/flexbox.html'">Flexbox</li>
+          <li onclick="location.href = './grid/grid.html'">Grid</li>
+          <li onclick="location.href = './modelo-de-caja/caja.html'">
+            Modelo de caja
+          </li>
+          <li onclick="location.href = './Tipos-de-fuentes/fuentes.html'">
+            Tipos de Fuentes
+          </li>
+          <li onclick="location.href = './Control-de-texto/texto.html'">
+            Control de texto
+          </li>
+          <li onclick="location.href = './Sistema-de-color/color.html'">
+            Sistema de color
+          </li>
+          <li onclick="location.href = './degradados/degradados.html'">
+            Degradados
+          </li>
+          <li onclick="location.href = '#tiposdeposiones'">
+            Tipos de Posicionamiento
+          </li>
+          <li onclick="location.href = './z-index/z-index.html'">Z-index</li>
+          <li onclick="location.href = './Unidades_de_medida/unidades.html'">
+            Unidades de medida
+          </li>
+          <li onclick="location.href = '#variables'">Variables Glovales</li>
+          <li onclick="location.href = '#herencias'">Herencias</li>
+          <li onclick="location.href = './diseño-responsivo/responsivo.html'">
+            Diseño Responsivo
+          </li>
+          <li
+            onclick="
+              location.href =
+                './Transformaciones_Y_Transiciones/transformaciones.html'
+            "
+          >
+            Transformaciones
+          </li>
+          <li onclick="location.href = './animaciones/index.html'">
+            Animaciones
+          </li>
+          <li onclick="location.href = './Background/background.html'">
+            Background
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <p>
+          El diseño responsivo (Responsive Design) consiste en un conjunto de
+          herramientas para que tu sitio se vea bien en varias medidas de
+          pantalla, esto incluye imágenes, tipografía, internacionalización de
+          la página y entre otros. En la actualidad, la mayoría de sitios web
+          son visitados desde un celular, por lo que asegurarse que nuestro
+          sitio sea responsivo para cualquier dispositivo es fundamental para
+          optimizar las ganancias.
+        </p>
+
         <table class="tablaDeFlex">
-            <tr><th colspan="2">Estrategias de diseño</th> </tr>
-            <tr><td>Mobile first</td> <td>Enfoque en Dispositivos moviles y luego escalamos a otros dispositivos</td></tr>
-            <tr><td>Desktop first</td> <td>Enfoque en Dispositivos de escritorio y luego escalamos a otros dispositivos</td></tr>
+          <tr>
+            <th colspan="2">Estrategias de diseño</th>
+          </tr>
+          <tr>
+            <td>Mobile first</td>
+            <td>
+              Enfoque en Dispositivos moviles y luego escalamos a otros
+              dispositivos
+            </td>
+          </tr>
+          <tr>
+            <td>Desktop first</td>
+            <td>
+              Enfoque en Dispositivos de escritorio y luego escalamos a otros
+              dispositivos
+            </td>
+          </tr>
         </table>
 
         <h4 class="titulos">Diseño con porcentajes</h4>
-        <p>El primer paso para crear un diseño que se adapte correctamente es comenzar con las unidades de medidades como los porcentajes. siendo estas relativas a contenedor padre nos aseguramos que el navegador tome estas medidas. Es necesario establecer medidas al contenedor padre.</p>
-        
+        <p>
+          El primer paso para crear un diseño que se adapte correctamente es
+          comenzar con las unidades de medidades como los porcentajes. siendo
+          estas relativas a contenedor padre nos aseguramos que el navegador
+          tome estas medidas. Es necesario establecer medidas al contenedor
+          padre.
+        </p>
+
         <h4 class="titulos">Tamaños maximos y minimos</h4>
         <p>
-            Para tener mayor control de los tamaños es ideal establecer sus valores maximos y minimos, asi nos aseguramos que el contenido no se deforme si la pantalla es mas grande o mas pequeña de lo habitual. Las propiedadse que se usan son 
-            <span class="sky">max-width</span> |
-            <span class="sky">min-width</span>.
+          Para tener mayor control de los tamaños es ideal establecer sus
+          valores maximos y minimos, asi nos aseguramos que el contenido no se
+          deforme si la pantalla es mas grande o mas pequeña de lo habitual. Las
+          propiedadse que se usan son
+          <span class="sky">max-width</span> |
+          <span class="sky">min-width</span>.
         </p>
 
         <h4 class="titulos">Viewport (Region visible)</h4>
-        <p>Este paso es muy importante, se trata de preparar al navegador para el responsive, indicandole que el ancho de pantalla sera el ancho del disposito, para que el viewport se adapte consecuentemente. lo haremos mediante el siguiente codigo.</p>
-        
+        <p>
+          Este paso es muy importante, se trata de preparar al navegador para el
+          responsive, indicandole que el ancho de pantalla sera el ancho del
+          disposito, para que el viewport se adapte consecuentemente. lo haremos
+          mediante el siguiente codigo.
+        </p>
+
         <div class="sintaxis">
-            &lt;<span class="doger">meta</span>
-            <span class="sky">name</span> = 
-            <span class="orange">"viewport"</span> 
-            <span class="sky">content</span> = 
-            <span class="orange">"width=device-width, initial-scale=1"</span>&gt; 
+          &lt;<span class="doger">meta</span> <span class="sky">name</span> =
+          <span class="orange">"viewport"</span>
+          <span class="sky">content</span> =
+          <span class="orange">"width=device-width, initial-scale=1"</span>&gt;
         </div>
 
         <h4 class="titulos">Breack Points</h4>
-        <p>Los puntos de interrupcion permiten cambiar el diseño de los elementos predefinidos. por ejemplo cuando tenemos 3 columnas en una computadora, y cuando se redimensiona la pantalla a un telefono, queremos que el elemento que los contiene se rompa recolocando los elementos uno abajo del otro. </p>
-        
+        <p>
+          Los puntos de interrupcion permiten cambiar el diseño de los elementos
+          predefinidos. por ejemplo cuando tenemos 3 columnas en una
+          computadora, y cuando se redimensiona la pantalla a un telefono,
+          queremos que el elemento que los contiene se rompa recolocando los
+          elementos uno abajo del otro.
+        </p>
+
         <!-- Media Queries -->
         <h3 class="titulos">Media Queries</h3>
         <p>
-            Nos permiten aplicar condiciones al diseño de nuestra pagina, en las que si se cumple la condicion se aplican los estilos que determinemos y en caso contrario no se aplicarian.
-            Esto sirve para establecer el layout del sitio web para diferentes tipos de pantalla: escritorio, tablets y celulares. Se deben usar al final del codigo css.
+          Nos permiten aplicar condiciones al diseño de nuestra pagina, en las
+          que si se cumple la condicion se aplican los estilos que determinemos
+          y en caso contrario no se aplicarian. Esto sirve para establecer el
+          layout del sitio web para diferentes tipos de pantalla: escritorio,
+          tablets y celulares. Se deben usar al final del codigo css.
         </p>
         <table class="tablaPropiedades">
-            <tr>
-                <th>Propiedad</th>
-                <th>Descripcion</th>
-            </tr>
+          <tr>
+            <th>Propiedad</th>
+            <th>Descripcion</th>
+          </tr>
 
-            <tr>
-                <td>max-width / max-height</td>
-                <td>establece un rango máximo para cierto comportamiento.</td>
-            </tr>
-            <tr>
-                <td>min-width / min-height </td>
-                <td>establece un rango mínimo para cierto comportamiento.</td>
-            </tr>
+          <tr>
+            <td>max-width / max-height</td>
+            <td>establece un rango máximo para cierto comportamiento.</td>
+          </tr>
+          <tr>
+            <td>min-width / min-height</td>
+            <td>establece un rango mínimo para cierto comportamiento.</td>
+          </tr>
         </table>
-        
+
         <h3 class="morado">@media</h3>
         <p>
-            La regla media es la herramienta perfecta para crear diseños responsivos que se adapten automaticamente a caracteristicas del dispositivo del usuario como tamaños de pantallas , lector de voz, orientacion, resolucion, etc.
-            La estructura de una media querie consiste en empezar con @media, seguido del tipo de la media querie estableciendo un rango, envolviendo las reglas CSS dentro de ese rango.
+          La regla media es la herramienta perfecta para crear diseños
+          responsivos que se adapten automaticamente a caracteristicas del
+          dispositivo del usuario como tamaños de pantallas , lector de voz,
+          orientacion, resolucion, etc. La estructura de una media querie
+          consiste en empezar con @media, seguido del tipo de la media querie
+          estableciendo un rango, envolviendo las reglas CSS dentro de ese
+          rango.
         </p>
-        
+
         <!-- Botones media queries -->
         <div class="sintaxis">
-            <button class="btn-media" onclick="sintaxisMedia('media')"><span class="morado">@media</span></button>
-            <button class="btn-media" onclick="sintaxisMedia('tipos')"><span class="orange">Tipo de medio</span></button>  
-            ( <button class="btn-media" onclick="sintaxisMedia('condicion')"><span class="sky">condicion</span></button> )   
+          <button class="btn-media" onclick="sintaxisMedia('media')">
+            <span class="morado">@media</span>
+          </button>
+          <button class="btn-media" onclick="sintaxisMedia('tipos')">
+            <span class="orange">Tipo de medio</span>
+          </button>
+          (
+          <button class="btn-media" onclick="sintaxisMedia('condicion')">
+            <span class="sky">condicion</span>
+          </button>
+          )
         </div>
 
         <!-- Tablas media queries -->
         <div id="content-tables">
-            <table id="tablaMedia" class="tablaDeFlex">
-                <tr><th>Regla</th> <th>Descripcion</th></tr>
-                <tr>
-                    <td><code class="morado">@media</code> (<code class="sky">condicion</code>)</td>
-                    <td>Si se cumple la condicion se aplican los estilos en su interior</td>
-                </tr>
-                <tr>
-                    <td><code class="morado">@media</code> not (<code class="sky">condicion</code>)</td>
-                    <td>Niega la condicion y aplica los estilos cuando es falsa</td>
-                </tr>
-                <tr>
-                    <td><code class="morado">@media</code> only (<code class="sky">condicion</code>)</td>
-                    <td>Filtra navegadores antiguos para que nos se apliquen los estilos</td>
-                </tr>
-                <tr>
-                    <td><code class="morado">@media</code> (<code class="sky">condicion</code>) y (<code class="sky">condicion</code>) </td>
-                    <td>Si se cumplen ambas condiciones se aplican los estilos</td>
-                </tr>
-            </table>
+          <table id="tablaMedia" class="tablaDeFlex">
+            <tr>
+              <th>Regla</th>
+              <th>Descripcion</th>
+            </tr>
+            <tr>
+              <td>
+                <code class="morado">@media</code> (<code class="sky"
+                  >condicion</code
+                >)
+              </td>
+              <td>
+                Si se cumple la condicion se aplican los estilos en su interior
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="morado">@media</code> not (<code class="sky"
+                  >condicion</code
+                >)
+              </td>
+              <td>Niega la condicion y aplica los estilos cuando es falsa</td>
+            </tr>
+            <tr>
+              <td>
+                <code class="morado">@media</code> only (<code class="sky"
+                  >condicion</code
+                >)
+              </td>
+              <td>
+                Filtra navegadores antiguos para que nos se apliquen los estilos
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="morado">@media</code> (<code class="sky"
+                  >condicion</code
+                >) y (<code class="sky">condicion</code>)
+              </td>
+              <td>Si se cumplen ambas condiciones se aplican los estilos</td>
+            </tr>
+          </table>
 
-            <table id="tablaTipo" style="display: none;" class="tablaDeFlex">
-                <tr><th>Tipo de medio</th> <th>Descripcion</th></tr>
-                <tr>
-                    <td><code class="orange">all</code></td>
-                    <td>Todos los dispositivos o medios. Por defecto</td>
-                </tr>
-                <tr>
-                    <td><code class="orange">screen</code></td>
-                    <td>Monitores o pantallas de ordenador. Mas comun</td>
-                </tr>
-                <tr>
-                    <td><code class="orange">print</code></td>
-                    <td>Documentos de medios impresos o pantallas de previsualizacion de impresion</td>
-                </tr>
-            </table>
+          <table id="tablaTipo" style="display: none" class="tablaDeFlex">
+            <tr>
+              <th>Tipo de medio</th>
+              <th>Descripcion</th>
+            </tr>
+            <tr>
+              <td><code class="orange">all</code></td>
+              <td>Todos los dispositivos o medios. Por defecto</td>
+            </tr>
+            <tr>
+              <td><code class="orange">screen</code></td>
+              <td>Monitores o pantallas de ordenador. Mas comun</td>
+            </tr>
+            <tr>
+              <td><code class="orange">print</code></td>
+              <td>
+                Documentos de medios impresos o pantallas de previsualizacion de
+                impresion
+              </td>
+            </tr>
+          </table>
 
-            <table id="tablaCondicion" style="display: none;" class="tablaDeFlex">
-                <tr><th>Condicion</th> <th>Descripcion</th></tr>
-                <tr>
-                    <td>
-                        <code class="sky">width</code> > <code class="verde">size</code> |
-                        <code class="sky">min-width</code> : <code class="verde">size</code>
-                    </td>
-                    <td>si el ancho es mayor al <code class="verde">size</code> entra la condicion</td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <code class="sky">width</code> &lt; <code class="verde">size</code> |
-                        <code class="sky">max-width</code> : <code class="verde">size</code>
-                    </td>
-                    <td>si el ancho es menor al <code class="verde">size</code> entra la condicion</td>
-                </tr>
+          <table id="tablaCondicion" style="display: none" class="tablaDeFlex">
+            <tr>
+              <th>Condicion</th>
+              <th>Descripcion</th>
+            </tr>
+            <tr>
+              <td>
+                <code class="sky">width</code> >
+                <code class="verde">size</code> |
+                <code class="sky">min-width</code> :
+                <code class="verde">size</code>
+              </td>
+              <td>
+                si el ancho es mayor al <code class="verde">size</code> entra la
+                condicion
+              </td>
+            </tr>
 
-            </table>
+            <tr>
+              <td>
+                <code class="sky">width</code> &lt;
+                <code class="verde">size</code> |
+                <code class="sky">max-width</code> :
+                <code class="verde">size</code>
+              </td>
+              <td>
+                si el ancho es menor al <code class="verde">size</code> entra la
+                condicion
+              </td>
+            </tr>
+          </table>
         </div>
 
-        <div class="notas">En las condiciones podemos usar los operadores &lt; = &gt; o establecer con los parametros max y min.</div>
-
-        <h4 class="titulos">Media Queries en html</h4>
-        <p>Otra forma de aplicar los media queries es utilizando la etiqueta &lt;<span class="doger">link</span>&gt; con el atributo <span class="sky">media</span> para establecer la condicion. De este modo podemos establecer varias hojas de estilo las cuales se aplicarian de acuerdo a las medidas establecidas por la condicion. al momento de cargar los archivo css le da prioridad al mas compatible con la pantalla, haciendo asi el tiempo de carga mas fluido, y esta es la razon de que sea el mas recomendado.</p>
-        
-        <div class="seccionB monospace"> 
-          
-            <b class="doger">link</b> 
-            <b class="sky">rel</b>=<b class="orange">"stylesheet"</b>
-            <b class="sky">href</b>=<b class="orange">"mobile.css"</b>
-            <b class="sky">media</b>=<b class="orange">"(max-width: 640px)"</b>
-
-            <br>
-            <b class="doger">link</b>
-            <b class="sky">rel</b>=<b class="orange">"stylesheet"</b>
-            <b class="sky">href</b>=<b class="orange">"desktop.css"</b>
-            <b class="sky">media</b>=<b class="orange">"(min-width: 1280px)"</b>
-
-            <br>
-            <b class="doger">link</b>
-            <b class="sky">rel</b>=<b class="orange"> "..."</b>
-            <b class="sky">href</b>=<b class="orange">"tablet.css"</b>
-            <b class="sky">media</b>=<b class="orange">"(min-width: 640px)"</b>and<b class="orange">"(max-width: 1280px)"</b>
+        <div class="notas">
+          En las condiciones podemos usar los operadores &lt; = &gt; o
+          establecer con los parametros max y min.
         </div>
 
-        <h4 style="text-align: center; margin-top: 100px;">Diseño responsivo</h4>
+        <h4 style="text-align: center; margin-top: 100px">Diseño responsivo</h4>
         <p>
-            En este cuadro Responsivo todas las medidas son relativas, con tamaños maximos y minimos 
-            para que no se deforme con: <span class="sky">max/min-width</span>. El navegador tiene 
-            establecido el viewport, y tiene un patron de diseño Mostly Fluid que usa la regla <span class="morado">@media</span>
-            que permiten el "Breack Point" de los elementos con <span class="orange">Flexbox.</span>
+          En este cuadro Responsivo todas las medidas son relativas, con tamaños
+          maximos y minimos para que no se deforme con:
+          <span class="sky">max/min-width</span>. El navegador tiene establecido
+          el viewport, y tiene un patron de diseño Mostly Fluid que usa la regla
+          <span class="morado">@media</span> que permiten el "Breack Point" de
+          los elementos con <span class="orange">Flexbox.</span>
         </p>
 
         <!-- codigo -->
-        <div class="codigo">
+        <div class="codigo media-diseñoResponsivo">
+          <div>
+            <p>
+              <b class="golden">#content-responsive</b>{ <br />
+              &emsp; <b class="sky">max-width</b>: <b class="verde">600px</b>;
+              <br />
+              &emsp; <b class="sky">min-width</b>: <b class="verde">300px</b>;
+              <br />
+              &emsp; <b class="sky">width</b>: <b class="verde">80%</b>; <br />
+              &emsp; <b class="sky">display</b>: <b class="orange">flex</b>;
+              <br />
+              &emsp; <b class="sky">flex-wrap</b>: <b class="orange">wrap</b>;
+              <br />
+              }
+            </p>
 
-            <div style="width: 35%">
-                <p>
-                    <b class="amarillo">#content-responsive</b>{ <br>
-                    &emsp; <b class="sky">max-width</b>: <b class="verde">600px</b>; <br>
-                    &emsp; <b class="sky">min-width</b>: <b class="verde">300px</b>; <br>
-                    &emsp; <b class="sky">width</b>: <b class="verde">80%</b>; <br>
-                    &emsp; <b class="sky">display</b>: <b class="orange">flex</b>; <br>
-                    &emsp; <b class="sky">flex-wrap</b>: <b class="orange">wrap</b>; <br>
-                    }
-                </p>
+            <p>
+              <b class="golden">.cajas</b>{ <br />
+              &emsp; <b class="sky">width</b>: <b class="verde">100%</b>; <br />
+              &emsp; <b class="sky">height</b>: <b class="verde">90px</b>;
+              <br />
+              }
+            </p>
+            <p>
+              <b class="golden">.caja2</b>{ <br />
+              &emsp; <b class="sky">height</b>: <b class="verde">250px</b>;
+              <br />
+              }
+            </p>
 
-                <p>
-                    <b class="amarillo">.cajas</b>{ <br>
-                    &emsp; <b class="sky">width</b>: <b class="verde">100%</b>; <br>
-                    &emsp; <b class="sky">height</b>: <b class="verde">90px</b>; <br>
-                    }
-                </p>
-                <p>
-                    <b class="amarillo">.caja2</b>{ <br>
-                    &emsp; <b class="sky">height</b>: <b class="verde">250px</b>; <br>
-                    }
-                </p>
+            <!-- medias -->
+            <p>
+              <b class="morado">@media</b> (<b class="sky">min-width</b>:
+              <b class="verde">600px</b>){ <br />
+              &emsp; <b class="golden">.caja3</b>,
+              <b class="golden">.caja4</b> { <br />
+              &emsp; &emsp; <b class="sky">width</b>: <b class="verde">50%</b>;
+              <br />
+              &emsp; } <br />
+              }
+            </p>
+            <p>
+              <b class="morado">@media</b> (<b class="sky">min-width</b>:
+              <b class="verde">800px</b>){ <br />
+              &emsp; <b class="golden">.caja3</b>, <b class="golden">.caja4</b>,
+              <b class="golden">.caja5</b> {
+              <br />
+              &emsp; &emsp; <b class="sky">width</b>:
+              <b class="verde">33.33333333%</b>; <br />
+              &emsp; } <br />
+              }
+            </p>
+          </div>
 
-                <!-- medias -->
-                <p>
-                    <b class="morado">@media</b> (<b class="sky">min-width</b>: 
-                    <b class="verde">600px</b>){ <br>
-                    &emsp; <b class="amarillo">.caja3</b>, 
-                    <b class="amarillo">.caja4</b> { <br>
-                    &emsp; &emsp; <b class="sky">width</b>: <b class="verde">50%</b>; <br>
-                    &emsp; } <br>
-                    }
-                </p>
-                <p>
-                    <b class="morado">@media</b> (<b class="sky">min-width</b>: 
-                    <b class="verde">800px</b>){ <br>
-                    &emsp; <b class="amarillo">.caja3</b>, 
-                    <b class="amarillo">.caja4</b>,
-                    <b class="amarillo">.caja5</b> { <br>
-                    &emsp; &emsp; <b class="sky">width</b>: <b class="verde">33.33333333%</b>; <br>
-                    &emsp; } <br>
-                    }
-                </p>
+          <div>
+            <!-- Cuadro responsivo -->
+            <div id="content-responsive">
+              <div class="c1">caja1</div>
+              <div class="c2">
+                <div>40% al padre</div>
+                <div>20% al padre</div>
+              </div>
+              <div class="c3">caja 3</div>
+              <div class="c4">caja 4</div>
+              <div class="c5">caja 5</div>
+              <div class="c6">
+                mover el viewport con las herramientas de desarrollador
+              </div>
             </div>
 
-            <div style="width: 65%;">
-                <!-- Cuadro responsivo -->
-                <div id="content-responsive">
-                    <div class="c1"> caja1 </div>
-                    <div class="c2">
-                        <div>40% al padre</div>
-                        <div>20% al padre</div>
-                    </div>
-                    <div class="c3">caja 3</div>
-                    <div class="c4">caja 4</div>
-                    <div class="c5">caja 5</div>
-                    <div class="c6">mover el viewport con las herramientas de desarrollador</div>
-                </div>
-                
-                <!-- Botones del cuadro -->
-                <div class="controls">
-                    <button class="btn-rspv" onclick="cambiarAncho('aumentar')">Aumentar</button>
-                    <button class="btn-rspv" onclick="cambiarAncho('reducir')">Reducir</button>
-                </div>
+            <!-- Botones del cuadro -->
+            <div class="controls">
+              <button class="btn-rspv" onclick="cambiarAncho('aumentar')">
+                Aumentar
+              </button>
+              <button class="btn-rspv" onclick="cambiarAncho('reducir')">
+                Reducir
+              </button>
             </div>
+          </div>
         </div>
-    
+
         <!-- Patrones de Diseño -->
         <div>
-            <h2>Patrones de Diseño</h2>
+          <h2>Patrones de Diseño</h2>
 
-            <h4 class="doger">Mustly Fluid</h4>
-            <p>Este patron organiza el layout con diseños fluidos y centrados. En pantallas pequeñas los bloques forman una sola colunma vertical y a medida que va creciendo acomoda los bloques en fila uno junto al otro de acuerdo a su ancho disponible y sin romper el layut original.</p>
-                <ul>
-                    <li>✅ Los elementos tienen anchos % que junto con flexbox y wrap les permite adaptarse al ancho disponible.</li>
-                    <li>📐 El contenedor principal tiene un ancho máximo fijo en pantallas grandes, para evitar que el contenido se extienda.</li>
-                    <li>📱 En pantallas pequeñas, los elementos se apilan verticalmente y ocupan el 100% del ancho.</li>
-                </ul>
-                
-            <h4 class="doger">Layout Shifter</h4>
-            <p>Su objetivo es reorganizar completamente el layout segun el tamaño de la pantalla, moviendo bloques de contenido entre contenedores o cambiando su orden visual.</p>
-            <ul>
-                <li>✅ Los elementos usan Flexbox y order para cambiar el diseño de forma inteligente.</li>
-                <li>📐 Reorganiza los bloques en horizontal o en nuevas posiciones cuando el ancho aumenta.</li>
-                <li>📱 En pantallas pequeñas, los elementos se apilan verticalmente y ocupan el 100% del ancho.</li>
-            </ul>
+          <h4 class="doger">Mustly Fluid</h4>
+          <p>
+            Este patron organiza el layout con diseños fluidos y centrados. En
+            pantallas pequeñas los bloques forman una sola colunma vertical y a
+            medida que va creciendo acomoda los bloques en fila uno junto al
+            otro de acuerdo a su ancho disponible y sin romper el layut
+            original.
+          </p>
+          <ul>
+            <li>
+              ✅ Los elementos tienen anchos % que junto con flexbox y wrap les
+              permite adaptarse al ancho disponible.
+            </li>
+            <li>
+              📐 El contenedor principal tiene un ancho máximo fijo en pantallas
+              grandes, para evitar que el contenido se extienda.
+            </li>
+            <li>
+              📱 En pantallas pequeñas, los elementos se apilan verticalmente y
+              ocupan el 100% del ancho.
+            </li>
+          </ul>
 
-            <h4 class="doger">Column Drop</h4>
-            <p>Este patron consiste en que cada bloque del contenido que esta verticalmente en una sola columna en pantallas pequeñas, se vayan desplegando horizontalmente en la primera fila segun vaya creciendo la pantalla del dispositivo, ocupando el ancho disponible. para eso utilizamos Flexbox wrap y order.</p>
-            <ul>
-                <li>✅ Los elementos usan Flexbox y order para cambiar el diseño de forma inteligente.</li>
-                <li>📐 Reorganiza los bloques en horizontal ocupando todo el ancho del viewport.</li>
-                <li>📱 En pantallas pequeñas, los elementos se apilan verticalmente y ocupan el 100% del ancho.</li>
-            </ul>
+          <h4 class="doger">Layout Shifter</h4>
+          <p>
+            Su objetivo es reorganizar completamente el layout segun el tamaño
+            de la pantalla, moviendo bloques de contenido entre contenedores o
+            cambiando su orden visual.
+          </p>
+          <ul>
+            <li>
+              ✅ Los elementos usan Flexbox y order para cambiar el diseño de
+              forma inteligente.
+            </li>
+            <li>
+              📐 Reorganiza los bloques en horizontal o en nuevas posiciones
+              cuando el ancho aumenta.
+            </li>
+            <li>
+              📱 En pantallas pequeñas, los elementos se apilan verticalmente y
+              ocupan el 100% del ancho.
+            </li>
+          </ul>
 
-            <p style="margin-top: 100px;">Selecciona el patron que deseas ver, puedes aumentar el ancho de la ventana que te aparecera para ver como los elementos se organizan de acuerdo a su patron.</p>
-            <!-- Botones cuadro Patrones Diseño -->
-            <div class="controls seccionB"> 
-                <button class="btn-media titulos" onclick="abrirVentana('Mustly')"><b>Mustly Fluid</b></button>
-                <button class="btn-media titulos" onclick="abrirVentana('Shifter')"><b>Layout Shifter</b></button>   
-                <button class="btn-media titulos" onclick="abrirVentana('Drop')"><b>Column Drop</b></button>   
-            </div>         
+          <h4 class="doger">Column Drop</h4>
+          <p>
+            Este patron consiste en que cada bloque del contenido que esta
+            verticalmente en una sola columna en pantallas pequeñas, se vayan
+            desplegando horizontalmente en la primera fila segun vaya creciendo
+            la pantalla del dispositivo, ocupando el ancho disponible. para eso
+            utilizamos Flexbox wrap y order.
+          </p>
+          <ul>
+            <li>
+              ✅ Los elementos usan Flexbox y order para cambiar el diseño de
+              forma inteligente.
+            </li>
+            <li>
+              📐 Reorganiza los bloques en horizontal ocupando todo el ancho del
+              viewport.
+            </li>
+            <li>
+              📱 En pantallas pequeñas, los elementos se apilan verticalmente y
+              ocupan el 100% del ancho.
+            </li>
+          </ul>
+
+          <p style="margin-top: 100px">
+            Selecciona el patron que deseas ver, puedes aumentar el ancho de la
+            ventana que te aparecera para ver como los elementos se organizan de
+            acuerdo a su patron.
+          </p>
+          <!-- Botones cuadro Patrones Diseño -->
+          <div class="controls seccionB">
+            <button class="btn-media titulos" onclick="abrirVentana('Mustly')">
+              <b>Mustly Fluid</b>
+            </button>
+            <button class="btn-media titulos" onclick="abrirVentana('Shifter')">
+              <b>Layout Shifter</b>
+            </button>
+            <button class="btn-media titulos" onclick="abrirVentana('Drop')">
+              <b>Column Drop</b>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Media Queries en html -->
+      <section>
+        <h3 class="titulos margenTop">
+          Media Queries en <span class="doger">html</span>
+        </h3>
+        <p>
+          La velocidad de carga de una web influye enormemente en la experiencia
+          de usuario. Cuando nuestro proyecto crece considerablemente, es vital
+          distinguir qué elementos del CSS deben cargarse inmediatamente y
+          cuáles pueden hacerlo posteriormente. Aplicando técnicas específicas,
+          podemos garantizar una carga más rápida y eficiente.
+        </p>
+
+        <p>
+          Otra forma de aplicar los media queries es utilizando la etiqueta
+          &lt;<span class="doger">link</span>&gt; con el atributo
+          <span class="sky">media</span> para establecer la condicion. De este
+          modo podemos establecer varias hojas de estilo las cuales se
+          aplicarian de acuerdo a las medidas establecidas por la condicion. al
+          momento de cargar los archivo css le da prioridad al mas compatible
+          con la pantalla, haciendo asi el tiempo de carga mas fluido, y esta es
+          la razon de que sea el mas recomendado.
+        </p>
+
+        <div class="seccionB" style="font-size: 1.8rem">
+          <b class="doger">link</b>
+          <b class="sky">rel</b>=<b class="orange">"stylesheet"</b>
+          <b class="sky">href</b>=<b class="orange">"mobile.css"</b>
+          <b class="sky">media</b>=<b class="orange">"(max-width: 640px)"</b>
+
+          <br />
+          <b class="doger">link</b>
+          <b class="sky">rel</b>=<b class="orange">"stylesheet"</b>
+          <b class="sky">href</b>=<b class="orange">"desktop.css"</b>
+          <b class="sky">media</b>=<b class="orange">"(min-width: 1280px)"</b>
+
+          <br />
+          <b class="doger">link</b>
+          <b class="sky">rel</b>=<b class="orange"> "..."</b>
+          <b class="sky">href</b>=<b class="orange">"tablet.css"</b>
+          <b class="sky">media</b>=<b class="orange">"(min-width: 640px)"</b
+          >and<b class="orange">"(max-width: 1280px)"</b>
         </div>
 
-    </section>  
+        <h4 class="margen100">Carga diferida</h4>
+        <p>
+          La carga diferida (deferred loading) implica priorizar la
+          visualización del contenido esencial en el menor tiempo posible,
+          retrasando la carga de elementos secundarios. Al cargar primero los
+          estilos críticos y posponer pocos instantes los menos importantes, se
+          ayuda al usuario a interactuar rápidamente con el sitio.
+        </p>
 
+        <p>
+          Los <b>estilos críticos</b> son aquellos elementos visuales
+          fundamentales para la percepción inicial del usuario:
+        </p>
+        <ul>
+          <li>Tipografía del contenido principal.</li>
+          <li>Colores y disposición inicial.</li>
+          <li>Elementos que aparecen inmediatamente en pantalla.</li>
+        </ul>
+
+        <p class="margen60">
+          Por otro lado, los <b>estilos no críticos</b> afectan elementos
+          complementarios que no inciden directamente en la primera impresión
+          visual:
+        </p>
+        <ul>
+          <li>Efectos visuales secundarios.</li>
+          <li>Estilos en secciones inferiores o posteriores.</li>
+        </ul>
+
+        <p>
+          Para retrasar la carga del CSS no crítico hasta que los elementos
+          principales ya estén listos, se utiliza la siguiente estructura:
+        </p>
+
+        <div class="seccionB">
+          <p>
+            &lt;<b class="doger">link</b> <br />
+            &emsp; <b class="sky">rel</b>=<b class="orange">"stylesheet"</b>
+            <br />
+            &emsp; <b class="sky">href</b> = &emsp;
+            <b class="orange">"estilos-no-criticos.css"</b> <br />
+            &emsp; <b class="sky">media</b>=<b class="orange">"print"</b> <br />
+            &emsp; <b class="sky">onload</b> = "<b class="doger">this</b>.<b
+              class="sky"
+              >media</b
+            >=<b class="orange">'all'</b>"&gt;
+          </p>
+        </div>
+
+        <p>
+          La implementación de CSS diferido, aunque resulte casi imperceptible
+          en proyectos pequeños, toma gran valor cuando nuestra web crece.
+          Reducir la carga inicial incrementa notoriamente el desempeño
+          percibido por el usuario
+        </p>
+
+        <h4 class="margen100">
+          Carga diferida de estilos con
+          <span class="amarillo2">Javascript</span>
+        </h4>
+        <p>
+          Lazy loading consiste en cargar recursos como hojas de estilo CSS
+          cuando realmente son necesarios, generalmente en respuesta a una
+          interacción del usuario. Esto ayuda a disminuir el consumo innecesario
+          de recursos, mejorando la velocidad inicial y rendimiento general del
+          sitio web.
+        </p>
+        <p>
+          Para implementar esta técnica, seguimos estos pasos básicos en
+          JavaScript:
+        </p>
+
+        <ul>
+          <li>
+            Identificar elemento disparador: seleccionamos un botón o evento
+            específico que active la carga secundaria de estilos.
+          </li>
+          <li>Crear el elemento link dinámicamente</li>
+          <li>Insertar en el head del documento</li>
+          <li>
+            Evitar recargas múltiples: deshabilitamos el disparador luego de
+            usado, evitando duplicidad en la carga
+          </li>
+        </ul>
+
+        <div class="seccionB">
+          <p>
+            <b class="sky">document</b>.<b class="amarillo2">getElementById</b>
+            (<b class="orange">'boton'</b>).<b class="amarillo2"
+              >addEventListener</b
+            >('click', <b class="doger">function</b>() { <br />
+            &emsp; <b class="doger">let</b> <b class="sky">link</b> =
+            <b class="sky">document</b>.<b class="amarillo2">createElement</b
+            >(<b class="orange">'link'</b>); <br />
+
+            &emsp; <b class="sky">link</b>.rel = 'stylesheet'; <br />
+            &emsp; <b class="sky">link</b>.href =
+            <b class="orange">'estilos-no-criticos.css'</b>;
+            <br />
+            &emsp; <b class="sky">document</b>.<b class="doger">head</b>.<b
+              class="amarillo2"
+              >appendChild</b
+            >(<b class="sky">link</b>); <br />
+            &emsp; <b class="doger">this</b>.<b class="sky">disabled</b> = true;
+            <br />
+            });
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="../codigo.js"></script>
     <script src="responsivo.js"></script>
-</body>
+  </body>
 </html>

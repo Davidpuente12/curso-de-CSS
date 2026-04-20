@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalizar scroll</title>
+    <link rel="stylesheet" href="../estilo.css" />
+    <style>
+      #content-overflow {
+        background-color: bisque;
+        color: black;
+        padding: 8px;
+        width: 80%;
+        height: 100px;
+        box-sizing: border-box;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--doger) #303030;
+      }
+
+      #content-WebKit {
+        background-color: bisque;
+        color: black;
+        padding: 8px;
+        width: 80%;
+        height: 100px;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+
+      #content-WebKit::-webkit-scrollbar {
+        width: 10px;
+      }
+      #content-WebKit::-webkit-scrollbar-thumb {
+        background: var(--doger);
+        border-radius: 10px;
+      }
+      #content-WebKit::-webkit-scrollbar-track {
+        background: rgb(50, 50, 50);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="head">
+        <span id="button-temas"></span>
+      </div>
+      <div id="head-logo">
+        <h1>Especiales</h1>
+      </div>
+    </header>
+
+    <aside>
+      <nav>
+        <div id="listas">
+          <ul>
+            <li onclick="location.href = '#declaracion'">Declaraciones</li>
+            <li onclick="location.href = '#selectores'">Selectores</li>
+            <li onclick="location.href = '#Scombinados'">
+              Selectores Conbinados
+            </li>
+            <li onclick="location.href = './pseudoclases/pseudoClases.html'">
+              Pseudo clases y elementos
+            </li>
+            <li onclick="location.href = '#cascada'">
+              Cascada y especificidad
+            </li>
+            <li onclick="location.href = './tipos-de-display/display.html'">
+              Tipos de display
+            </li>
+            <li onclick="location.href = './flexbox/flexbox.html'">Flexbox</li>
+            <li onclick="location.href = './grid/grid.html'">Grid</li>
+            <li onclick="location.href = './modelo-de-caja/caja.html'">
+              Modelo de caja
+            </li>
+            <li onclick="location.href = './Tipos-de-fuentes/fuentes.html'">
+              Tipos de Fuentes
+            </li>
+            <li onclick="location.href = './Control-de-texto/texto.html'">
+              Control de texto
+            </li>
+            <li onclick="location.href = './Sistema-de-color/color.html'">
+              Sistema de color
+            </li>
+            <li onclick="location.href = './degradados/degradados.html'">
+              Degradados
+            </li>
+            <li onclick="location.href = '#tiposdeposiones'">
+              Tipos de Posicionamiento
+            </li>
+            <li onclick="location.href = './z-index/z-index.html'">Z-index</li>
+            <li onclick="location.href = './Unidades_de_medida/unidades.html'">
+              Unidades de medida
+            </li>
+            <li onclick="location.href = '#variables'">Variables Glovales</li>
+            <li onclick="location.href = '#herencias'">Herencias</li>
+            <li onclick="location.href = './diseño-responsivo/responsivo.html'">
+              Diseño Responsivo
+            </li>
+            <li
+              onclick="
+                location.href =
+                  './Transformaciones_Y_Transiciones/transformaciones.html'
+              "
+            >
+              Transformaciones
+            </li>
+            <li onclick="location.href = './animaciones/index.html'">
+              Animaciones
+            </li>
+            <li onclick="location.href = './Background/background.html'">
+              Background
+            </li>
+          </ul>
+
+          <ul>
+            <li class="titulo">Especiales</li>
+            <li>
+              <a href="./Especiales/personalizar-inputs.html"
+                >Personalizar inputs</a
+              >
+            </li>
+            <li>
+              <a href="./Especiales/personalizar-scroll.html"
+                >Personalizar scrolls</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h2>Personalizar Scrolls</h2>
+        <p>
+          Las propiedades estándar para dar estilo a las barras de scroll en CSS
+          son scrollbar-width y scrollbar-color. Además, en navegadores basados
+          en WebKit (Chrome, Safari, Edge), se usan pseudo-elementos como
+          ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, y
+          ::-webkit-scrollbar-track para un control más detallado.
+        </p>
+
+        <h3 class="sky">scrollbar-width</h3>
+        <p>
+          Permite controlar el grosor de las barras de desplazamiento en
+          contenedores con overflow. Es una propiedad estándar soportada
+          principalmente en <b>Firefox</b>, y se aplica al elemento contenedor
+          que tiene scroll.
+        </p>
+
+        <table class="tablaValores">
+          <thead>
+            <tr>
+              <th>Valor</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>auto</td>
+              <td>Grosor por defecto del navegador.</td>
+            </tr>
+            <tr>
+              <td>thin</td>
+              <td>Scroll más delgado que el estándar.</td>
+            </tr>
+            <tr>
+              <td>none</td>
+              <td>
+                Oculta la barra de scroll (aunque el contenido sigue siendo
+                desplazable con mouse/teclado).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="sky">scrollbar-color</h3>
+        <p>
+          Permite personalizar los colores de las barras de desplazamiento en
+          navegadores que la soportan (principalmente <b>Firefox</b>). Se aplica
+          al elemento contenedor que tiene scroll y define dos colores
+        </p>
+        <ul>
+          <li>Thumb → la parte que se arrastra.</li>
+          <li>Track → el fondo sobre el cual se mueve el thumb.</li>
+        </ul>
+        <div class="sintaxis">
+          <p><b class="sky">scrollbar-color</b>: color-thumb / color-track;</p>
+        </div>
+
+        <!-- codigo -->
+        <div class="codigo">
+          <div>
+            <p class="margencero">
+              <b class="golden">#contenedor</b> { <br />
+              &emsp; <b class="sky">width</b>: 80%; <br />
+              &emsp; <b class="sky">height</b>: 100px; <br />
+              &emsp; <b class="sky">overflow</b>: auto; <br />
+              &emsp; <b class="sky">scrollbar-width</b>: thin; <br />
+              &emsp; <b class="sky">scrollbar-color</b>: var(--doger) #303030;
+              <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <p id="content-overflow">
+              Lorem ipsum es un idioma creado por amigos greko romanes de la
+              antigua grecia en 1982. Este idioma a desaperecido ya que dejo de
+              ser utilizado Su uso en algunos editores de texto muy conocidos en
+              la actualidad ha dado al texto lorem ipsum nueva popularidad.
+              Lorem ipsum es un idioma creado por amigos greko romanes de la
+              antigua grecia en 1982. Este idioma a desaperecido ya que dejo de
+              ser utilizado Su uso en algunos editores de texto muy conocidos en
+              la actualidad ha dado al texto lorem ipsum nueva popularidad.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="margen150">
+          <span class="golden">Pseudo-elementos</span> WebKit
+        </h3>
+        <p>
+          Los pseudo-elementos WebKit son extensiones específicas de navegadores
+          basados en WebKit/Blink (como Chrome, Safari y Edge) que permiten
+          personalizar las barras de desplazamiento. No forman parte del
+          estándar CSS oficial, pero son ampliamente usados porque ofrecen un
+          control detallado sobre cada parte del scroll.
+        </p>
+
+        <table class="tablaPsudoElementos">
+          <thead>
+            <tr>
+              <th>Pseudo-elemento</th>
+              <th>Función</th>
+              <th>Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>::-webkit-scrollbar</td>
+              <td>Área completa de la barra (ancho/alto).</td>
+              <td>width: 12px;</td>
+            </tr>
+            <tr>
+              <td>::-webkit-scrollbar-thumb</td>
+              <td>El pulgar que se arrastra.</td>
+              <td>background: green;</td>
+            </tr>
+            <tr>
+              <td>::-webkit-scrollbar-track</td>
+              <td>El fondo de la barra.</td>
+              <td>background: lightgray;</td>
+            </tr>
+            <tr>
+              <td>::-webkit-scrollbar-corner</td>
+              <td>La esquina donde se cruzan scrollbars.</td>
+              <td>background: #ddd;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          solo ::-webkit-scrollbar cambia el tamaño, pero para que se note
+          visualmente necesitas también ::-webkit-scrollbar-thumb y
+          ::-webkit-scrollbar-track.
+        </p>
+
+        <!-- codigo -->
+        <div class="codigo margen60">
+          <div>
+            <p class="margencero">
+              <b class="golden">#contenedor</b> { <br />
+              &emsp; <b class="sky">width</b>: 80%; <br />
+              &emsp; <b class="sky">height</b>: 100px; <br />
+              &emsp; <b class="sky">overflow</b>: <b class="orange">auto</b>;
+              <br />
+              }
+            </p>
+            <p>
+              <b class="golden">#contenedor::-webkit-scrollbar</b> { <br />
+              &emsp; <b class="sky">width</b>: 10px; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">#contenedor::-webkit-scrollbar-thumb</b> {
+              <br />
+              &emsp; <b class="sky">background</b>: var(--doger); <br />
+              &emsp; <b class="sky">border-radius</b>: 10px; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">#contenedor::-webkit-scrollbar-track</b> {
+              <br />
+              &emsp; <b class="sky">background</b>: rgb(50, 50, 50); <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <p id="content-WebKit">
+              Lorem ipsum es un idioma creado por amigos greko romanes de la
+              antigua grecia en 1982. Este idioma a desaperecido ya que dejo de
+              ser utilizado Su uso en algunos editores de texto muy conocidos en
+              la actualidad ha dado al texto lorem ipsum nueva popularidad.
+              Lorem ipsum es un idioma creado por amigos greko romanes de la
+              antigua grecia en 1982. Este idioma a desaperecido ya que dejo de
+              ser utilizado Su uso en algunos editores de texto muy conocidos en
+              la actualidad ha dado al texto lorem ipsum nueva popularidad.
+            </p>
+          </div>
+        </div>
+
+        <p class="margen60">
+          <b>Consistencia</b>: Para cubrir todos los navegadores, se recomienda
+          usar tanto scrollbar-width y scrollbar-color (para Firefox) como los
+          pseudo-elementos WebKit (para Chrome/Edge/Safari).
+        </p>
+        <p>
+          <b>Consideraciones</b>: Cuando se modifica el ancho/alto de la barra,
+          el motor de renderizado elimina las flechas porque no están
+          contempladas en la implementación moderna del scrollbar.
+        </p>
+      </section>
+
+      <script src="../codigo.js"></script>
+    </main>
+  </body>
+</html>

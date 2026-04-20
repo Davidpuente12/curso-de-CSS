@@ -42,30 +42,38 @@
 
     <aside>
         <nav>
-            <ul>
-                <li onclick="location.href='#declaracion'">Declaraciones</li>
-                <li onclick="location.href='#selectores'">Selectores</li>
-                <li onclick="location.href='#Scombinados'">Selectores Conbinados</li>
-                <li onclick="location.href='./pseudoclases/pseudoClases.html'">Pseudo clases y elementos</li>
-                <li onclick="location.href='#cascada'">Cascada y especificidad</li>
-                <li onclick="location.href='./tipos-de-display/display.html'">Tipos de display</li>
-                <li onclick="location.href='./flexbox/flexbox.html'">Flexbox</li>
-                <li onclick="location.href='./grid/grid.html'">Grid</li>
-                <li onclick="location.href='./modelo-de-caja/caja.html'">Modelo de caja</li>
-                <li onclick="location.href='./Tipos-de-fuentes/fuentes.html'">Tipos de Fuentes</li>
-                <li onclick="location.href='./Control-de-texto/texto.html'">Control de texto</li>
-                <li onclick="location.href='./Sistema-de-color/color.html'">Sistema de color</li>
-                <li onclick="location.href='./degradados/degradados.html'">Degradados</li>
-                <li onclick="location.href='#tiposdeposiones'">Tipos de Posicionamiento</li>  
-                <li onclick="location.href='./z-index/z-index.html'">Z-index</li>
-                <li onclick="location.href='./Unidades_de_medida/unidades.html'">Unidades de medida</li>
-                <li onclick="location.href='#variables'">Variables Glovales</li>
-                <li onclick="location.href='#herencias'">Herencias</li>
-                <li onclick="location.href='./diseño-responsivo/responsivo.html'">Diseño Responsivo</li>
-                <li onclick="location.href='./Transformaciones_Y_Transiciones/transformaciones.html'">Transformaciones</li>
-                <li onclick="location.href='./animaciones/index.html'">Animaciones</li>
-                <li onclick="location.href='./Background/background.html'">Background</li>
-            </ul>
+            <div id="listas">
+                <ul>
+                    <li onclick="location.href='#declaracion'">Declaraciones</li>
+                    <li onclick="location.href='#selectores'">Selectores</li>
+                    <li onclick="location.href='#Scombinados'">Selectores Conbinados</li>
+                    <li onclick="location.href='./pseudoclases/pseudoClases.html'">Pseudo clases y elementos</li>
+                    <li onclick="location.href='#cascada'">Cascada y especificidad</li>
+                    <li onclick="location.href='./tipos-de-display/display.html'">Tipos de display</li>
+                    <li onclick="location.href='./flexbox/flexbox.html'">Flexbox</li>
+                    <li onclick="location.href='./grid/grid.html'">Grid</li>
+                    <li onclick="location.href='./modelo-de-caja/caja.html'">Modelo de caja</li>
+                    <li onclick="location.href='./Tipos-de-fuentes/fuentes.html'">Tipos de Fuentes</li>
+                    <li onclick="location.href='./Control-de-texto/texto.html'">Control de texto</li>
+                    <li onclick="location.href='./Sistema-de-color/color.html'">Sistema de color</li>
+                    <li onclick="location.href='./degradados/degradados.html'">Degradados</li>
+                    <li onclick="location.href='#tiposdeposiones'">Tipos de Posicionamiento</li>  
+                    <li onclick="location.href='./z-index/z-index.html'">Z-index</li>
+                    <li onclick="location.href='./Unidades_de_medida/unidades.html'">Unidades de medida</li>
+                    <li onclick="location.href='#variables'">Variables Glovales</li>
+                    <li onclick="location.href='#herencias'">Herencias</li>
+                    <li onclick="location.href='./diseño-responsivo/responsivo.html'">Diseño Responsivo</li>
+                    <li onclick="location.href='./Transformaciones_Y_Transiciones/transformaciones.html'">Transformaciones</li>
+                    <li onclick="location.href='./animaciones/index.html'">Animaciones</li>
+                    <li onclick="location.href='./Background/background.html'">Background</li>
+                </ul>
+
+                <ul>
+                    <li class="titulo">Especiales</li>
+                    <li><a href="./Especiales/personalizar-inputs.html">Personalizar inputs</a></li>
+                    <li><a href="./Especiales/personalizar-scroll.html">Personalizar scrolls</a></li>
+                </ul>
+            </div>
         </nav>
     </aside>
 
@@ -113,31 +121,15 @@
         <!-- SELECTOR -->
         <section id="selectores">
             <h2 class="sticky">Selectores básicos</h2>
-            
-            <h4 class="amarillo">Selector de tipo</h4>
-            <p>Selecciona todos los elementos que coincidan con el nombre de la etiqueta HTML.</p>
-
-            <h4 class="amarillo">Selector de clase</h4>
-            <p>Selecciona todos los elementos que coincidan con las etiquetas HTML que contengan el atributo class. Para seleccionar estos elementos, se empieza por un punto . y seguido el valor exacto del atributo class de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
-            
-            <h4 class="amarillo">Selector de identificador único</h4>
-            <p>Selecciona el único elemento que coincida con la etiqueta HTML que contenga el atributo id. Solo puede existir un valor id para todo el documento.Para seleccionar el elemento, se empieza por el símbolo de hashtag # y seguido el valor exacto del atributo id de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
-
-            <h4 class="amarillo">Selector de atributo</h4>
-            <p>Selecciona los elementos que coincidan con la etiqueta HTML que contenga el atributo y valor especificado.Para seleccionar los elementos, se empieza por el nombre de la etiqueta, seguido de corchetes [] que contiene el atributo y valor especificado.</p>
-            
-            <h4 class="amarillo">Selector universal</h4>
-            <p>Selecciona todos los elementos del documento mediante un asterisco.</p>
-
             <table>
                 <tr style="background-color: rgb(13, 13, 13);">
-                    <th class="doger">HTML</th>
-                    <th class="orange">CSS</th>
+                    <th>HTML</th>
+                    <th>CSS</th>
                 </tr>
 
                 <tr>
                     <td>&lt;<b class="doger">div</b>&gt;</td>
-                    <td><b class="amarillo">div</b> &lcub; afecta todos los div del documento &rcub;</td>
+                    <td><b class="golden">div</b> &lcub; afecta todos los div del documento &rcub;</td>
                 </tr>
                 <tr>
                     <td>
@@ -145,7 +137,7 @@
                         <b class="sky">class</b> =
                         "<b class="orange">red</b>"&gt;
                     </td>
-                    <td><b class="amarillo">.red</b> &lcub; afecta a los div con la clase &rcub;</td> 
+                    <td><b class="golden">.red</b> &lcub; afecta a los div con la clase &rcub;</td> 
                 </tr>
                 <tr>
                     <td>
@@ -153,7 +145,7 @@
                         <b class="sky">id</b> =
                         "<b class="orange">unico</b>"&gt;
                     </td>
-                    <td><b class="amarillo">.unico</b> &lcub; afecta solo la etiqueta con el id unico &rcub;</td> 
+                    <td><b class="golden">.unico</b> &lcub; afecta solo la etiqueta con el id unico &rcub;</td> 
                 </tr>
                 <!-- selector de atributo -->
                 <tr>
@@ -163,7 +155,7 @@
                         <b class="orange">"https://platzi.com"</b>&gt;
                     </td>
                     <td>
-                        <b class="amarillo">a</b>
+                        <b class="golden">a</b>
                         &lbrack;<b class="sky">href</b> = 
                         <b class="orange">"https://platzi.com"</b>&rbrack; 
                         &lcub; afecta solo los enlaces con el mismo valor &rcub;
@@ -174,6 +166,43 @@
                     <td colspan="2"><b class="doger">*</b> &lcub; afecta a todos los elementos de la pagina.&rcub;</td>
                 </tr>
             </table>
+            
+            <h4 class="golden">Selector de tipo</h4>
+            <p>Selecciona todos los elementos que coincidan con el nombre de la etiqueta HTML.</p>
+
+            <h4 class="golden">Selector de clase</h4>
+            <p>Selecciona todos los elementos que coincidan con las etiquetas HTML que contengan el atributo class. Para seleccionar estos elementos, se empieza por un punto . y seguido el valor exacto del atributo class de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
+            
+            <h4 class="golden">Selector de identificador único</h4>
+            <p>Selecciona el único elemento que coincida con la etiqueta HTML que contenga el atributo id. Solo puede existir un valor id para todo el documento.Para seleccionar el elemento, se empieza por el símbolo de hashtag # y seguido el valor exacto del atributo id de la etiqueta. Puede ser cualquier valor que desees colocar.</p>
+
+            <h4 class="golden">Selector de atributo</h4>
+            <p>Selecciona los elementos que coincidan con la etiqueta HTML que contenga el atributo y valor especificado.Para seleccionar los elementos, se empieza por el nombre de la etiqueta, seguido de corchetes [] que contiene el atributo y valor especificado.</p>
+            
+            <h3 class="golden">Selector universal</h3>
+            <p>Selecciona absolutamente todos los elementos del documento, sin importar su tipo. Es muy útil para aplicar estilos globales (como resets de márgenes y paddings), pero debe usarse con cuidado porque puede afectar el rendimiento y generar conflictos con selectores más específicos.</p>
+            <div class="sintaxis">
+                <p>
+                    <b class="doger">*</b> {
+                        <b class="sky">propiedad</b>: <b class="orange">valor</b>;
+                    }
+                </p>
+            </div>
+            <ul>
+                <li>Selecciona todos los elementos HTML dentro del alcance definido</li>
+                <li>Puede combinarse con otros selectores (ej. <b class="golden">div</b> <b class="doger">*</b> selecciona todos los descendientes de un div).</li>
+                <li>Suele usarse para eliminar márgenes y paddings por defecto de todos los elementos.</li>
+            </ul>
+            <div class="seccionB">
+                <p>
+                    <b class="doger">*</b> { <br>
+                    &emsp; <b class="sky">margin</b>: 0; <br>
+                    &emsp; <b class="sky">padding</b>: 0; <br>
+                    &emsp; <b class="sky">box-sizing</b>: <b class="orange">border-box</b>; <br>
+                    }
+                </p>
+            </div>
+            
         </section>
 
         <!-- COMBINADOS -->
@@ -185,9 +214,9 @@
                 <p>Selecciona todos los elementos del selector de la derecha (p) que son hijos del selector de la izquierda (div), independientemente de la profundidad de anidacion. Estos selectores están separados por un espacio.</p>
                 
                 <div class="sintaxis"> 
-                    <b class="amarillo">div p{</b> afecta todos los hijos 
-                    &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                    <b class="amarillo">.container img{</b> Todos los hijos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                    <b class="golden">div p{</b> afecta todos los hijos 
+                    &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="golden">}</b> <br>
+                    <b class="golden">.container img{</b> Todos los hijos &lt;<b class="doger">img</b>&gt; de la clase <b class="golden">"container"</b> <b class="golden">}</b> 
                 </div>
             </div>
 
@@ -196,8 +225,8 @@
                 <p>Selecciona todos los elementos del selector de la derecha que son hijos directos del selector de la izquierda. Estos selectores están separados por >.</p>
                 
                 <div class="sintaxis"> 
-                    <b class="amarillo">div > p{</b> todos los hijos directos &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                    <b class="amarillo">.container > img{</b> Todos los hijos directos &lt;<b class="doger">img</b>&gt; de la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                    <b class="golden">div > p{</b> todos los hijos directos &lt;<b class="doger">p</b>&gt; del &lt;<b class="doger">div</b>&gt;<b class="golden">}</b> <br>
+                    <b class="golden">.container > img{</b> Todos los hijos directos &lt;<b class="doger">img</b>&gt; de la clase <b class="golden">"container"</b> <b class="golden">}</b> 
                 </div>
             </div>
 
@@ -207,8 +236,8 @@
                 <p>Selecciona todos los elementos del selector de la derecha que están adyacente al selector de la izquierda. Estos selectores están separados por +. <b>elemento + adyacente {Elementos adyacentes}</b></p>
                 
                 <div class="sintaxis"> 
-                    <b class="amarillo">div + p{</b> todos los &lt;<b class="doger">p</b>&gt; adyacentes a &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                    <b class="amarillo">.container + img{</b> Todos los &lt;<b class="doger">img</b>&gt; adyacentes a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                    <b class="golden">div + p{</b> todos los &lt;<b class="doger">p</b>&gt; adyacentes a &lt;<b class="doger">div</b>&gt;<b class="golden">}</b> <br>
+                    <b class="golden">.container + img{</b> Todos los &lt;<b class="doger">img</b>&gt; adyacentes a la clase <b class="golden">"container"</b> <b class="golden">}</b> 
                 </div>
             
                 <p>Adyacente significa que comparten el mismo padre y está situado inmediatamente hacia abajo de otro elemento. Por ejemplo, en el siguiente código, &lt;div&gt; está adyacente a &lt;h1&gt; y &lt;p&gt; está adyacente a &lt;div&gt;. Sin embargo, &lt;h1&gt; no está adyacente a &lt;div&gt; y &lt;div&gt; no está adyacente a &lt;p&gt;. </p>
@@ -220,32 +249,32 @@
                 <p>Selecciona todos los elementos del selector de la derecha que son hermanos del selector de la izquierda. Estos selectores están separados por ~ (<kbd>Alt 126</kbd>) <b>elemento ~ hermanos</b>. Hermanos significa que comparten el mismo padre y están situados hacia abajo de otro elemento</p>
                 
                 <div class="sintaxis"> 
-                    <b class="amarillo">div ~ p{</b> todos los 
-                    &lt;<b class="doger">p</b>&gt; hermanos de &lt;<b class="doger">div</b>&gt;<b class="amarillo">}</b> <br>
-                    <b class="amarillo">.container ~ img{</b> Todos los 
-                    &lt;<b class="doger">img</b>&gt; hermanos a la clase <b class="amarillo">"container"</b> <b class="amarillo">}</b> 
+                    <b class="golden">div ~ p{</b> todos los 
+                    &lt;<b class="doger">p</b>&gt; hermanos de &lt;<b class="doger">div</b>&gt;<b class="golden">}</b> <br>
+                    <b class="golden">.container ~ img{</b> Todos los 
+                    &lt;<b class="doger">img</b>&gt; hermanos a la clase <b class="golden">"container"</b> <b class="golden">}</b> 
                 </div>
             </div>
 
             <!-- codigo -->
-            <div class="codigo" style="margin-top: 100px;">
+            <div class="codigo margen100" >
                 <div id="codigo-selectores">
                     <button>
-                        <b class="amarillo">section p</b> { 
+                        <b class="golden">section p</b> { 
                         <b class="sky">color</b> = <b class="orange">"orange"</b> } 
                     </button>
                     <button>
-                        <b class="amarillo">section</b> &gt; <b class="amarillo">p</b> { 
+                        <b class="golden">section</b> &gt; <b class="golden">p</b> { 
                         <b class="sky">color</b> = <b class="orange">"orange"</b> } 
                     </button>
                     <button>
-                        <b class="amarillo">section</b> 
-                        <b class="amarillo">h5</b> + <b class="amarillo">p</b> { 
+                        <b class="golden">section</b> 
+                        <b class="golden">h5</b> + <b class="golden">p</b> { 
                         <b class="sky">color</b> = <b class="orange">"orange"</b> } 
                     </button>
                     <button>
-                        <b class="amarillo">section</b> 
-                        <b class="amarillo">div</b> ~ <b class="amarillo">p</b> { 
+                        <b class="golden">section</b> 
+                        <b class="golden">div</b> ~ <b class="golden">p</b> { 
                         <b class="sky">color</b> = <b class="orange">"orange"</b> } 
                     </button>
                 </div>
@@ -307,7 +336,7 @@
                 &lt;/<b class="doger">h1</b>&gt;  
             </div>
 
-            <h4 class="amarillo">Especificidad en selectores</h4>
+            <h4 class="golden">Especificidad en selectores</h4>
             <p>Los selectores de tipo ID son más específicos que las clases, atributos y pseudoclases. Estas últimas son más específicas que los elementos y pseudoelementos. El selector universal tiene una especificidad de 0. Los selectores combinadores suman la especificidad de cada selector basico. Si utilizas Visual Studio y mantienes el mouse sobre el selector, te mostrará la especificidad total.</p>
             
             <h4>¿Cómo afectan la especificidad y el orden de las reglas CSS?</h4>
@@ -382,7 +411,7 @@
             <h3>Crear y usar variables en CSS</h3>
             <p>
                 Para declarar variables globales utilizaremos el selector / pseudo-clase
-                <code class="amarillo">:root</code> ya que tiene mayor especificidad y es global. 
+                <code class="golden">:root</code> ya que tiene mayor especificidad y es global. 
                 la sintaxis es: dos guiones (<b class="sky">--</b>) como prefijo al nombre que vamos 
                 a utilizar seguido del valor. Esta pseudoclase hace referencia al elemento raíz 
                 del documento &lt;<b class="doger">html</b>&gt;.
@@ -416,27 +445,30 @@
 
         </section>
 
-        <section id="herencias"> <!-- Herencias -->
-            <h2 class="sticky">¿Qué es la herencia en CSS?</h2>
+        <!-- Herencias -->
+        <section id="herencias"> 
+            <h2 class="sticky">Herencia en CSS</h2>
             <p>La herencia en CSS se refiere al fenómeno por el cual algunos estilos establecidos en un elemento HTML se transmiten automáticamente a sus elementos hijos. Por ejemplo, al definir un tamaño de fuente en la etiqueta <html>, ese tamaño puede propagar a etiquetas como &lt;p&gt; o &lt;span&gt; que no tengan un tamaño de fuente definido explícitamente.</p>
             <ul>
                 <li>Propiedades herederas comunes: tamaño de fuente (font-size), color de texto (color).</li>
                 <li>Propiedades no herederas: márgenes (margin), posición (position), anchura (width).</li>
             </ul>
 
-            <pre>
-            <b class="amarillo">html{</b>
-                <b class="sky">font-size</b>: <b class="verde">75%</b>; /* Aplica un 75% del tamaño de fuente por defecto */
-                <b class="sky">font-family</b>: <b class="orange">Verdana, sans-serif</b>; /* Cambia la fuente a Verdana */
-            <b class="amarillo">}</b></pre>
+            <div class="seccionB">
+                <b class="golden">html {</b> <br>
+                &emsp; <b class="sky">font-size</b>: <b class="verde">75%</b>; /* Aplica un 75% del tamaño de fuente por defecto */ <br>
+                &emsp; <b class="sky">font-family</b>: <b class="orange">Verdana, sans-serif</b>; /* Cambia la fuente a Verdana */ <br>
+                <b class="golden">}</b>
+            </div>
             <p>En el ejemplo anterior, se establece un tamaño de fuente del 75% para la etiqueta <html>. Esto significa que todos los elementos de texto dentro del documento heredarán este tamaño de fuente, a menos que se defina un tamaño específico en ellos.</p>
             
-            <h3>¿Cómo controlar o romper la herencia?</h3>
+            <h4>Controlar la herencia</h4>
             <p>En CSS, puedes decidir explícitamente cuándo deseas que un elemento herede propiedades. Mediante el uso de la propiedad inherit, puedes forzar a un elemento a que tome el estilo de su elemento padre, aunque no lo haga por defecto.</p>
-            <pre>
-            <b class="amarillo">h1{</b>
-                <b class="sky">font-size</b>: <b class="orange">inherit</b>; /* Hereda el tamaño del padre más cercano con tamaño definido */
-            <b class="amarillo">}</b></pre>
+            <div class="seccionB">
+                <b class="golden">h1{</b> <br>
+                &emsp; <b class="sky">font-size</b>: <b class="orange">inherit</b>; /* Hereda el tamaño del padre más cercano con tamaño definido */ <br>
+                <b class="golden">}</b>
+            </div>
         </section>
     </main>
 

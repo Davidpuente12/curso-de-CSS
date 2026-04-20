@@ -73,7 +73,7 @@ header #head {
   background-color: #242424;
   border-bottom: 1px rgb(75, 75, 75) solid;
   box-sizing: border-box;
-  z-index: 5;
+  z-index: 6;
 }
 #head #button-temas {
   width: 25px;
@@ -103,15 +103,25 @@ header img {
 aside {
   background: rgb(32, 32, 32);
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
-  height: 100vh;
   width: 270px;
-  padding: 0 20px 0 10px;
   z-index: 5;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+#listas {
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  padding: 0 20px 0 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amarillo) #151515;
+}
+#listas .titulo {
+  background-color: #080808;
+  padding: 8px;
 }
 aside.visible {
   transform: translateX(0);
@@ -148,11 +158,9 @@ section {
 }
 
 footer {
-  background-color: #272727;
-  height: 200px;
-  width: 1530px;
-  position: relative;
-  left: 250px;
+  background-color: #222222;
+  height: 100px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,15 +191,17 @@ h2 {
   text-align: center;
   margin-top: 120px;
   font-size: 4.8rem;
+  color: white;
 }
 h3 {
-  margin: 100px 0 0;
+  margin: 100px 0 40px;
   font-size: clamp(3.4rem, 2vw + 6px, 4rem);
   color: white;
 }
 h4 {
   margin: 60px 0 0;
   font-size: 2.8rem;
+  color: white;
 }
 
 .sticky {
@@ -239,7 +249,6 @@ h4 {
 }
 
 ul {
-  margin-top: 40px;
   list-style: none;
 }
 li {
@@ -287,19 +296,8 @@ table tr:nth-child(even) {
 .tablaPropiedades tr td:nth-child(1) {
   color: var(--sky);
 }
-
-/* MARGENES */
-.margincero {
-  margin: 0;
-}
-.margenIz {
-  margin-left: 25px;
-}
-.margenTop {
-  margin-top: 100px;
-}
-.margenInf {
-  margin-bottom: 50px;
+.tablaPsudoElementos tr td:nth-child(1) {
+  color: var(--amarillo);
 }
 
 /* NOTAS */
@@ -320,7 +318,6 @@ figure {
 .codigo {
   box-shadow: 0 2px 5px rgb(23, 23, 23);
   display: flex;
-  margin: 0 0 100px;
   content-visibility: auto;
 }
 .codigo > div {
@@ -329,7 +326,7 @@ figure {
 .codigo > div:nth-child(1) {
   background: rgb(35, 35, 35);
   width: 60%;
-  padding: 10px 10px 30px;
+  padding: 20px 15px 30px;
   font-family: monospace;
   line-height: 1.1;
   font-size: 1.7rem;
@@ -340,12 +337,26 @@ figure {
   padding: 15px;
 }
 .codigo button {
+  display: block;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 5px;
   color: white;
   font-size: 18px;
   padding: 5px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+.codigo .boton {
+  border: 1px solid white;
+  padding: 1px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 1px;
+  display: inline-block;
+}
+.boton:hover {
+  border: 1px solid var(--orange);
 }
 
 @media (max-width: 1200px) {
@@ -378,6 +389,23 @@ figure {
 }
 .controls-consola button:hover {
   background-color: #3f3f3f;
+}
+
+/* MARGENES */
+.margincero {
+  margin: 0;
+}
+.margenIz {
+  margin-left: 25px;
+}
+.margen60 {
+  margin-top: 60px;
+}
+.margen100 {
+  margin-top: 100px;
+}
+.margen150 {
+  margin-top: 150px;
 }
 
 /*__________________________________ S.COMBINADOS */
