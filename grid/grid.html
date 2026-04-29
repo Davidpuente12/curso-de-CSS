@@ -1,137 +1,735 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../estilo.css">
-    <link rel="stylesheet" href="grid.css">
-</head>
-<body>
-    <section>
-        <h2>Qué es grid</h2>
+    <link rel="stylesheet" href="../estilo.css" />
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <header>
+      <div id="head">
+        <span id="button-temas"></span>
+      </div>
+      <div id="head-logo">
+        <h1>Grid</h1>
+      </div>
+    </header>
+
+    <aside>
+      <nav>
+        <div id="listas">
+          <ul>
+            <li onclick="location.href = '#declaracion'">Declaraciones</li>
+            <li onclick="location.href = '#selectores'">Selectores</li>
+            <li onclick="location.href = '#Scombinados'">
+              Selectores Conbinados
+            </li>
+            <li onclick="location.href = './pseudoclases/pseudoClases.html'">
+              Pseudo clases y elementos
+            </li>
+            <li onclick="location.href = '#cascada'">
+              Cascada y especificidad
+            </li>
+            <li onclick="location.href = './tipos-de-display/display.html'">
+              Tipos de display
+            </li>
+            <li onclick="location.href = './flexbox/flexbox.html'">Flexbox</li>
+            <li onclick="location.href = './grid/grid.html'">Grid</li>
+            <li onclick="location.href = './modelo-de-caja/caja.html'">
+              Modelo de caja
+            </li>
+            <li onclick="location.href = './Tipos-de-fuentes/fuentes.html'">
+              Tipos de Fuentes
+            </li>
+            <li onclick="location.href = './Control-de-texto/texto.html'">
+              Control de texto
+            </li>
+            <li onclick="location.href = './Sistema-de-color/color.html'">
+              Sistema de color
+            </li>
+            <li onclick="location.href = './degradados/degradados.html'">
+              Degradados
+            </li>
+            <li onclick="location.href = '#tiposdeposiones'">
+              Tipos de Posicionamiento
+            </li>
+            <li onclick="location.href = './z-index/z-index.html'">Z-index</li>
+            <li onclick="location.href = './Unidades_de_medida/unidades.html'">
+              Unidades de medida
+            </li>
+            <li onclick="location.href = '#variables'">Variables Glovales</li>
+            <li onclick="location.href = '#herencias'">Herencias</li>
+            <li onclick="location.href = './diseño-responsivo/responsivo.html'">
+              Diseño Responsivo
+            </li>
+            <li
+              onclick="
+                location.href =
+                  './Transformaciones_Y_Transiciones/transformaciones.html'
+              "
+            >
+              Transformaciones
+            </li>
+            <li onclick="location.href = './animaciones/index.html'">
+              Animaciones
+            </li>
+            <li onclick="location.href = './Background/background.html'">
+              Background
+            </li>
+          </ul>
+
+          <ul>
+            <li class="titulo">Especiales</li>
+            <li>
+              <a href="./Especiales/personalizar-inputs.html"
+                >Personalizar inputs</a
+              >
+            </li>
+            <li>
+              <a href="./Especiales/personalizar-scroll.html"
+                >Personalizar scrolls</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
         <p>
-            Grid consiste en el ordenamiento de elementos hijos en dos ejes, como si fuera 
-            una cuadrícula o tabla. El elemento padre o contenedor deberá contener la propiedad y valor
-            <b class="sky">display</b>:<b class="orange">"grid"</b> y debes definir las 
-            medidas de las columnas y de las filas. A partir de aquí, ya puedes ordenar 
-            los hijos según sea necesario.
+          Grid consiste en el ordenamiento de elementos hijos en dos ejes, como
+          si fuera una cuadrícula o tabla. El elemento padre o contenedor deberá
+          contener la propiedad y valor
+          <b class="sky">display</b>:<b class="orange">"grid"</b> y debes
+          definir las medidas de las columnas y de las filas. A partir de aquí,
+          ya puedes ordenar los hijos según sea necesario.
         </p>
 
-        <table class="tabla tablaValores" style="width: 100%;">
-            <tr>
-                <th>Valor de display</th>
-                <th>Descripcion</th>
-            </tr>
+        <table class="tabla tablaValores" style="width: 100%">
+          <tr>
+            <th>Valor de display</th>
+            <th>Descripcion</th>
+          </tr>
 
-            <tr>
-                <td>grid</td>
-                <td>Establece una cuadrícula con ítems en bloque, de forma equivalente a block.</td>
-            </tr>
-            <tr>
-                <td>inline-grid</td>
-                <td>Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.</td>
-            </tr>
+          <tr>
+            <td>grid</td>
+            <td>
+              Establece una cuadrícula con ítems en bloque, de forma equivalente
+              a block.
+            </td>
+          </tr>
+          <tr>
+            <td>inline-grid</td>
+            <td>
+              Establece una cuadrícula con ítems en línea, de forma equivalente
+              a inline-block.
+            </td>
+          </tr>
         </table>
 
-        <p><b>Filas y columnas en grid:</b> la forma principal de definir una cuadrícula es indicar el tamaño de sus filas y sus columnas de forma explícita. Para ello, sólo tenemos que usar las propiedades CSS grid-template-columns y grid-template-rows</p>
+        <p>
+          <b>Filas y columnas en grid:</b> la forma principal de definir una
+          cuadrícula es indicar el tamaño de sus filas y sus columnas de forma
+          explícita. Para ello, sólo tenemos que usar las propiedades CSS
+          grid-template-columns y grid-template-rows
+        </p>
+
         <table class="tablaPropiedades">
-            <tr>
-                <th>Propiedad</th>
-                <th>Valor</th>
-                <th>Descripcion</th>
-            </tr>
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+            <th>Descripcion</th>
+          </tr>
 
-            <tr>
-                <td>grid-template-column</td>
-                <td>[<b class="orange">colum 1</b>][<b class="orange">colum 2</b>]</td>
-                <td>Establece el tamaño de cada columna.</td>
-            </tr>
-            <tr>
-                <td>grid-template-rows</td>
-                <td>[<b class="orange">fila 1</b>][<b class="orange">fila 2</b>]</td>
-                <td>Establece el tamaño de cada fila.</td>
-            </tr>
-            <tr>
-                <td>grid-template</td>
-                <td>[<b class="orange">rows</b>]/[<b class="orange">columns</b>]</td>
-                <td>Propiedad de atajo para filas y columnas.</td>
-            </tr>
+          <tr>
+            <td>grid-template-column</td>
+            <td>
+              [<b class="orange">colum 1</b>][<b class="orange">colum 2</b>]
+            </td>
+            <td>Establece el tamaño de cada columna.</td>
+          </tr>
+          <tr>
+            <td>grid-template-rows</td>
+            <td>
+              [<b class="orange">fila 1</b>][<b class="orange">fila 2</b>]
+            </td>
+            <td>Establece el tamaño de cada fila.</td>
+          </tr>
+          <tr>
+            <td>grid-template</td>
+            <td>
+              [<b class="orange">rows</b>]/[<b class="orange">columns</b>]
+            </td>
+            <td>Propiedad de atajo para filas y columnas.</td>
+          </tr>
         </table>
 
-        <h4 class="orange">Valores especiales</h4>
-        <p><b>Unidad especial</b> <b class="orange">fr</b> (fraccion restante) es exclusiva de Grid: representa una fracción del espacio disponible del contenedor. Por ejemplo, 1fr 1fr reparte el espacio en dos partes iguales; al añadir una tercera 1fr, tendrás tres columnas. Con cuatro elementos, se forma un grid dos por dos automáticamente.</p>
+        <h3><span class="orange">Valores</span> especiales</h3>
+        <p>
+          <b>Unidad especial</b> <b class="orange">fr</b> (fraccion restante) es
+          exclusiva de Grid: representa una fracción del espacio disponible del
+          contenedor. Por ejemplo, 1fr 1fr reparte el espacio en dos partes
+          iguales; al añadir una tercera 1fr, tendrás tres columnas. Con cuatro
+          elementos, se forma un grid dos por dos automáticamente.
+        </p>
 
-        <p><b>funcion</b> <b class="amarillo">repeat()</b> se usa en grid para evitar repetir valores, simplificando la definicion de columnas: repeat(3, 1fr) crea tres columnas iguales, seria lo mismo que: 1fr 1fr 1fr.</p>
+        <p>
+          <b class="orange">min-content</b> Ajusta el ancho de la celda lo
+          mínimo posible sin romper su contenido.
+        </p>
+        <p>
+          <b class="orange">max-content</b> Ajusta el ancho de la celda lo
+          máximo posible para mostrar su contenido.
+        </p>
+        <p>
+          <b class="orange">auto-fill</b> Agrega columnas “fantasma” que
+          rellenan el espacio sobrante del contenedor.
+        </p>
+        <p>
+          <b class="orange">auto-fit</b> Ensancha las columnas para que ocupen
+          todo el espacio del contenedor.
+        </p>
+
+        <p class="margen60">
+          <b>Funcion</b> <b class="golden">repeat()</b> se usa en grid para
+          evitar repetir valores, simplificando la definicion de columnas:
+          repeat(3, 1fr) crea tres columnas iguales, seria lo mismo que: 1fr 1fr
+          1fr.
+        </p>
         <div class="sintaxis">
-            <b class="amarillo">repeat</b>(
-            <b>veces</b>,
-            <b>tamaño</b>
-            )
-            =
-            <b class="amarillo">repeat</b>(
-            <b class="verde">4</b>,
-            <b class="verde">1fr</b>
-            )
+          <b class="golden">repeat</b>( <b>veces</b>,
+          <b>tamaño</b>
+          ) =
+          <b class="golden">repeat</b>( <b class="verde">4</b>,
+          <b class="verde">1fr</b>
+          )
         </div>
+
+        <p>
+          <b>Funcion</b> <b class="golden">minmax()</b> ayuda a declarar el
+          tamaño minimo y maximo para el ancho y alto de una celda, sin depender
+          del contenido que tengamos en ella.
+        </p>
+        <div class="sintaxis"><b class="golden">minmax</b>(30px, 300px)</div>
 
         <!-- grid-template-column -->
         <h3 class="sky">grid-template-column</h3>
-        <p>La propiedad grid-template-columns se usa dentro de un contenedor con display: grid para definir cuántas columnas tendrá la cuadrícula y qué tamaño de ancho ocupará cada una. Valores que usa: (px, %, fr) unidades fijas, relativas o proporcionales. </p> 
-        
-        <h3 class="sky">grid-template-rows</h3>
-        <p>La propiedad grid-template-rows se usa dentro de un contenedor con display: grid para definir cuántas filas tendrá la cuadrícula y qué tamaño de alto ocupará cada una. Valores que usa: (px, %, fr) unidades fijas, relativas o proporcionales. </p>
+        <p>
+          La propiedad grid-template-columns se usa dentro de un contenedor con
+          display: grid para definir cuántas columnas tendrá la cuadrícula y qué
+          tamaño de ancho ocupará cada una. Valores que usa: (px, %, fr)
+          unidades fijas, relativas o proporcionales.
+        </p>
 
+        <h3 class="sky margen60">grid-template-rows</h3>
+        <p>
+          La propiedad grid-template-rows se usa dentro de un contenedor con
+          display: grid para definir cuántas filas tendrá la cuadrícula y qué
+          tamaño de alto ocupará cada una. Valores que usa: (px, %, fr) unidades
+          fijas, relativas o proporcionales.
+        </p>
 
-        <!-- codigo -->
-        <div class="codigo" style="margin-top: 100px;">
-            <div id="content-codigo">
-                <p>
-                    <b class="amarillo">.content</b>{ 
-                    <b class="sky">display</b>: <b class="orange">grid</b> } 
-                </p>
-                <!-- pixeles -->
-                <p>
-                    <b class="amarillo">.pixeles</b>{ <br>
-                    &emsp; <b class="sky">grid-template-columns</b>: <b class="verde">100px 250px</b>; <br>
-                    &emsp; <b class="sky">grid-template-rows</b>: <b class="verde">250px 100px</b>; <br>
-                    }
-                    <button class="btn-ejecutar">ejecutar</button>
-                </p>
-
-                <!-- fracciones -->
-                <p>
-                    <b class="amarillo">.fracciones</b>{ <br>
-                    &emsp; <b class="sky">grid-template-columns</b>: <b class="verde">2.5fr 1fr</b>; <br>
-                    &emsp; <b class="sky">grid-template-rows</b>: <b class="verde">2.5fr 1fr</b>; <br>
-                    }
-                    <button class="btn-ejecutar">ejecutar</button>
-                </p>
-
-                <!-- repeat -->
-                 <p>
-                    <b class="amarillo">.repeat</b>{ <br>
-                    &emsp; <b class="sky">grid-template-columns</b>:
-                    <b class="amarillo">repeat</b>(<b class="verde">4, 1fr</b>); <br>
-
-                    &emsp; <b class="sky">grid-template-rows</b>: 
-                    <b class="amarillo">repeat</b>(<b class="verde">4, 1fr</b>); <br>
-                    }
-                    <button class="btn-ejecutar">ejecutar</button>
-                </p>
-            </div>
-
-            <div id="content-grid">
-                <div class="item-grid">celda uno</div>
-                <div class="item-grid">celda dos</div>
-                <div class="item-grid">celda tres</div>
-                <div class="item-grid">celda cuatro</div>     
-            </div>
+        <h3>Formación del grid</h3>
+        <p>
+          Ten en cuenta que el número de columnas o filas que se formaran en el
+          grid dependerá del número de valores que le asignes a estas
+          propiedades. Por ejemplo, si le asignas dos valores, se formarán dos
+          columnas; si le asignas tres valores, se formarán tres columnas y así
+          sucesivamente.
+        </p>
+        <p>
+          Si quieres crear una cuadrícula de 2x2, con cuatro columnas y cuatro
+          filas, debes asignar cuatro valores a cada propiedad. También puedes
+          usar fracciones: o usar la función repeat.
+        </p>
+        <div class="seccionB monospace">
+          <b class="sky">grid-template-columns</b>: 100px 250px 100px 250px;
+          <br />
+          <b class="sky">grid-template-rows</b>: 250px 100px 250px 100px;
+          <hr />
+          <b class="sky">grid-template-columns</b>: 2.5fr 1fr 2.5fr 1fr; <br />
+          <b class="sky">grid-template-rows</b>: 2.5fr 1fr 2.5fr 1fr;
+          <hr />
+          <b class="sky">grid-template-columns</b>: repeat(4, 1fr); <br />
+          <b class="sky">grid-template-rows</b>: repeat(4, 1fr);
         </div>
 
-        <p>Ahora, ten en cuenta que corre de nuestra cuenta vigilar que el número de elementos hijos en el grid es el que debería. Dependiendo del número de elementos hijos que tenga definido el contenedor grid en su HTML, tendremos una cuadrícula de 2x2 elementos (4 ítems), 2x3 elementos (6 ítems), 2x4 elementos (8 ítems) y así sucesivamente.</p>
-    </section>
+        <!-- codigo -->
+        <div class="codigo margen100">
+          <div class="content-codigo">
+            <p>
+              <b class="golden">.content</b>{ <b class="sky">display</b>:
+              <b class="orange">grid</b> }
+            </p>
+            <!-- pixeles -->
+            <p>
+              <b class="golden">.pixeles</b>{ <br />
+              &emsp; <b class="sky">grid-template-columns</b>:
+              <b class="verde">100px 250px</b>; <br />
+              &emsp; <b class="sky">grid-template-rows</b>:
+              <b class="verde">250px 100px</b>; <br />
+              }
+              <button class="btn-ejecutar">ejecutar</button>
+            </p>
+
+            <!-- fracciones -->
+            <p>
+              <b class="golden">.fracciones</b>{ <br />
+              &emsp; <b class="sky">grid-template-columns</b>:
+              <b class="verde">2.5fr 1fr</b>; <br />
+              &emsp; <b class="sky">grid-template-rows</b>:
+              <b class="verde">2.5fr 1fr</b>; <br />
+              }
+              <button class="btn-ejecutar">ejecutar</button>
+            </p>
+
+            <!-- repeat -->
+            <p>
+              <b class="golden">.repeat</b>{ <br />
+              &emsp; <b class="sky">grid-template-columns</b>:
+              <b class="golden">repeat</b>(<b class="verde">4, 1fr</b>);
+              <br />
+
+              &emsp; <b class="sky">grid-template-rows</b>:
+              <b class="golden">repeat</b>(<b class="verde">4, 1fr</b>);
+              <br />
+              }
+              <button class="btn-ejecutar">ejecutar</button>
+            </p>
+          </div>
+
+          <div>
+            <div id="content-grid">
+              <div class="item-grid">celda uno</div>
+              <div class="item-grid">celda dos</div>
+              <div class="item-grid">celda tres</div>
+              <div class="item-grid">celda cuatro</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="margen60">
+          Ahora, ten en cuenta que corre de nuestra cuenta vigilar que el número
+          de elementos hijos en el grid es el que debería. Dependiendo del
+          número de elementos hijos que tenga definido el contenedor grid en su
+          HTML, tendremos una cuadrícula de 2x2 elementos (4 ítems), 2x3
+          elementos (6 ítems), 2x4 elementos (8 ítems) y así sucesivamente.
+        </p>
+
+        <h3>Propiedades del Grid</h3>
+        <p>
+          A continuación, se muestran otras subpropiedades importantes de Grid:
+        </p>
+
+        <table class="tablaPropiedades">
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+            <th>Descripcion</th>
+          </tr>
+
+          <tr>
+            <td>grid-auto-columns</td>
+            <td>
+              [<b class="orange">colum 1</b>][<b class="orange">colum 2</b>]
+            </td>
+            <td>
+              Establece el tamaño de las columnas que se formen automáticamente
+              al añadir más elementos hijos de los que se han definido en
+              grid-template-columns.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-auto-rows</td>
+            <td>
+              [<b class="orange">fila 1</b>][<b class="orange">fila 2</b>]
+            </td>
+            <td>
+              Establece el tamaño de las filas que se formen automáticamente al
+              añadir más elementos hijos de los que se han definido en
+              grid-template-rows.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-auto-flow</td>
+            <td>
+              <b class="orange">row</b> | <b class="orange">column</b> |
+              <b class="orange">dense</b>
+            </td>
+            <td>
+              Establece la dirección en la que se formarán las filas o columnas
+              automáticamente al añadir más elementos hijos de los que se han
+              definido en grid-template-columns o grid-template-rows.
+            </td>
+          </tr>
+        </table>
+
+        <table class="tablaPropiedades">
+          <caption>
+            Propiedades para establecer espacios
+          </caption>
+
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td>grid-gap</td>
+            <td>
+              [<b class="orange">gap filas</b>][<b class="orange"
+                >gap columnas</b
+              >]
+            </td>
+            <td>
+              Establece el espacio entre filas y columnas, es decir, el espacio
+              entre los elementos hijos del grid. tambien se puede usar solo la
+              palabra
+              <b class="sky">gap</b>.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row-gap</td>
+            <td>[<b class="orange">gap filas</b>]</td>
+            <td>
+              Establece el espacio entre filas, es decir, el espacio entre los
+              elementos hijos del grid en sentido vertical.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-column-gap</td>
+            <td>[<b class="orange">gap columnas</b>]</td>
+            <td>
+              Establece el espacio entre columnas, es decir, el espacio entre
+              los elementos hijos del grid en sentido horizontal.
+            </td>
+          </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+          <div>
+            <p>
+              <b class="golden">.content</b> { <br />
+              &emsp; <b class="sky">display</b>: <b class="orange">grid</b>
+              <br />
+              &emsp; <b class="sky">grid-template-columns</b>:
+              <b class="verde">100px 150px 200px</b>; <br />
+              <!-- grid-template-rows -->
+              <span class="boton grid-template-rows">
+                &emsp;<b class="sky">grid-template-rows</b>:
+                <b class="verde">100px 150px </b>;
+              </span>
+              <br />
+              <!-- grid-auto-rows -->
+              <span class="boton grid-auto-rows">
+                &emsp;<b class="sky">grid-auto-rows</b>:
+                <b class="verde">150px </b>;
+              </span>
+              <br />
+              <!-- grid-auto-flow -->
+              <span class="boton grid-auto-flow">
+                &emsp;<b class="sky">grid-auto-flow</b>:
+                <b class="orange">column </b>;
+              </span>
+              <br />
+
+              }
+            </p>
+          </div>
+
+          <div>
+            <div class="content-grid-2">
+              <div class="item-grid">1</div>
+              <div class="item-grid">2</div>
+              <div class="item-grid">3</div>
+              <div class="item-grid">4</div>
+              <div class="item-grid">5</div>
+              <div class="item-grid">6</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Propiedades de alineación -->
+        <table class="tablaPropiedades margen150">
+          <caption>
+            Propiedades de alineación
+          </caption>
+
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+            <th>Descripcion</th>
+          </tr>
+
+          <tr>
+            <td>justify-items</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación horizontal de los elementos hijos del grid
+              dentro de sus celdas.
+            </td>
+          </tr>
+          <tr>
+            <td>align-items</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación vertical de los elementos hijos del grid
+              dentro de sus celdas.
+            </td>
+          </tr>
+          <tr>
+            <td>justify-content</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación horizontal del grid dentro de su
+              contenedor padre.
+            </td>
+          </tr>
+          <tr>
+            <td>align-content</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación vertical del grid dentro de su contenedor
+              padre.
+            </td>
+          </tr>
+          <tr>
+            <td>place-items</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>Propiedad de atajo para justify-items y align-items.</td>
+          </tr>
+          <tr>
+            <td>place-content</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>Propiedad de atajo para justify-content y align-content.</td>
+          </tr>
+          <tr>
+            <td>justify-self</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación horizontal de un elemento hijo del grid
+              dentro de su celda.
+            </td>
+          </tr>
+          <tr>
+            <td>align-self</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>
+              Establece la alineación vertical de un elemento hijo del grid
+              dentro de su celda.
+            </td>
+          </tr>
+          <tr>
+            <td>place-self</td>
+            <td>
+              <b class="orange">start</b> | <b class="orange">end</b> |
+              <b class="orange">center</b> | <b class="orange">stretch</b>
+            </td>
+            <td>Propiedad de atajo para justify-self y align-self.</td>
+          </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="codigo">
+          <div>
+            <p>
+              <b class="golden">.content</b> { <br />
+              &emsp; <b class="sky">display</b>: <b class="orange">grid</b>
+              <br />
+              &emsp; <b class="sky">grid-template-columns</b>:
+              <b class="verde">100px 100px 100px</b>; <br />
+              &emsp; <b class="sky">grid-auto-rows: </b>
+              <b class="verde">100px</b>;
+              <br />
+              <!-- justify-content -->
+              <span class="boton justify-content">
+                &emsp;<b class="sky">justify-content</b>:
+                <b class="orange">center </b>;
+              </span>
+              <br />
+              <!-- align-content -->
+              <span class="boton align-content">
+                &emsp;<b class="sky">align-content</b>:
+                <b class="orange">center </b>;
+              </span>
+              <br />
+              <!-- place-content -->
+              <span class="boton place-content">
+                &emsp;<b class="sky">place-content</b>:
+                <b class="orange">center </b>;
+              </span>
+              <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <div class="content-grid-3">
+              <div class="item-grid">1</div>
+              <div class="item-grid">2</div>
+              <div class="item-grid">3</div>
+
+              <div class="item-grid">4</div>
+              <div class="item-grid">5</div>
+              <div class="item-grid">6</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Propiedades de Ubicacion</h3>
+        <p>
+          Las propiedades de ubicación en CSS Grid son aquellas que permiten
+          colocar un elemento hijo dentro de la cuadrícula especificando en qué
+          líneas de columna y fila comienza y termina. En otras palabras,
+          controlan la posición y el área que ocupa un ítem dentro del grid.
+        </p>
+
+        <table class="tablaPropiedades">
+          <tr>
+            <th>Propiedad</th>
+            <th>Valor</th>
+            <th>Descripcion</th>
+          </tr>
+
+          <tr>
+            <td>grid-area</td>
+            <td>[<b class="orange">nombre</b>]</td>
+            <td>
+              Asigna un nombre a una celda del grid para poder referenciarla
+              posteriormente.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-template-areas</td>
+            <td>
+              [<b class="orange">area 1</b>][<b class="orange">area 2</b>]
+            </td>
+            <td>
+              Define áreas del grid asignándoles un nombre, para poder
+              referenciarlas posteriormente.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-column</td>
+            <td>[<b class="orange">start</b>]/[<b class="orange">end</b>]</td>
+            <td>
+              Define el inicio y el fin de una columna para un elemento hijo del
+              grid, permitiendo que ocupe más de una columna.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row</td>
+            <td>[<b class="orange">start</b>]/[<b class="orange">end</b>]</td>
+            <td>
+              Define el inicio y el fin de una fila para un elemento hijo del
+              grid, permitiendo que ocupe más de una fila.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-column-start</td>
+            <td>[<b class="orange">start</b>]</td>
+            <td>
+              Define el inicio de una columna para un elemento hijo del grid.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-column-end</td>
+            <td>[<b class="orange">end</b>]</td>
+            <td>
+              Define el final de una columna para un elemento hijo del grid.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row-start</td>
+            <td>[<b class="orange">start</b>]</td>
+            <td>
+              Define el inicio de una fila para un elemento hijo del grid.
+            </td>
+          </tr>
+          <tr>
+            <td>grid-row-end</td>
+            <td>[<b class="orange">end</b>]</td>
+            <td>Define el final de una fila para un elemento hijo del grid.</td>
+          </tr>
+        </table>
+
+        <!-- codigo -->
+        <div class="controls-consola btns-ejemploGridUbicacion">
+          <button>Ejemplo 1</button>
+          <button>Ejemplo 2</button>
+        </div>
+        <div class="codigo">
+          <div id="codigoPropiedadesUbicacion">
+            <p>
+              <b class="golden">.content</b> { <br />
+              &emsp; <b class="sky">display</b>: grid; <br />
+              &emsp; <b class="sky">grid-template-columns</b>: 150px 150px
+              150px;
+              <br />
+              &emsp; <b class="sky">grid-template-rows</b>: 75px 75px 75px;
+              <br />
+              &emsp; <b class="sky">place-content</b>: center; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">.item.uno</b> { <br />
+              &emsp; <b class="sky">grid-column-start</b>: 1; <br />
+              &emsp; <b class="sky">grid-column-end</b>: 4; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">.item.dos</b> { <br />
+              &emsp; <b class="sky">grid-row</b>: 2 / 4; <br />
+              }
+            </p>
+            <p>
+              <b class="golden">.item.tres</b> { <br />
+              &emsp; <b class="sky">grid-area</b>: 2 / 2 / 4 / 4; <br />
+              }
+            </p>
+          </div>
+
+          <div>
+            <div id="content-grid-ubicacion" class="content-grid-ubicacion">
+              <div class="item-grid uno">1.Header</div>
+              <div class="item-grid dos">2.Aside</div>
+              <div class="item-grid tres">3.Main</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="grid.js"></script>
-</body>
+  </body>
 </html>

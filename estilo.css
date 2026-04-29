@@ -117,7 +117,7 @@ aside {
   padding: 0 20px 0 10px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: var(--amarillo) #151515;
+  scrollbar-color: rgb(60, 119, 255) #151515;
 }
 #listas .titulo {
   background-color: #080808;
@@ -349,7 +349,7 @@ figure {
 }
 .codigo .boton {
   border: 1px solid white;
-  padding: 1px 5px;
+  padding: 2px 5px;
   border-radius: 4px;
   cursor: pointer;
   margin: 1px;
@@ -357,6 +357,8 @@ figure {
 }
 .boton:hover {
   border: 1px solid var(--orange);
+  box-shadow: 0 5px 5px black;
+  transform: translateY(1px);
 }
 
 @media (max-width: 1200px) {
